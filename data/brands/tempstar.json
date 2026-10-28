@@ -1,0 +1,41 @@
+{
+  "brand": "Tempstar",
+  "slug": "tempstar",
+  "parent": "ICP",
+  "sisters": ["Keeprite"],
+  "sourceUrl": "https://www.building-center.org/tempstar-hvac-age/",
+  "notes": "ICP system. Sister Keeprite shares styles 1-5 with identical examples and positions, but Keeprite lists no style 6, so no verbatim reuse is claimed in either direction. Style 2 is the same system as style 1 with a printed MFG date on the tag. HELD GAPS — style 4 (8-digit numeric, year = 1st digit, week = 2nd-3rd digits): the format example 30512345 has no stated decode and its year-digit mapping is chart-image-only; styles 5 (letter-digit-letter prefix, year = 3rd letter) and 6 (two-letter prefix, year = 2nd letter): the page shows only placeholders Z3Zxxxxx / ZZxxxxx and the year-letter charts are image-only, and the xxxxx tail shapes are undocumented. None of styles 4-6 is shipped rather than guessed.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Letter followed by 9 digits",
+      "pattern": "^[A-Z]\\d{9}$",
+      "year": {"kind": "digits", "positions": [1, 3]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [3, 5]},
+      "examples": [{"serial": "G051650885", "expectedYear": 2005, "expectedWeek": 16}],
+      "notes": "Year is 2nd-3rd digits, week is 4th-5th digits. Week decode for the example is 16."
+    },
+    {
+      "id": "style-2",
+      "era": "Letter followed by 9 digits, with printed MFG date on tag",
+      "pattern": "^[A-Z]\\d{9}$",
+      "year": {"kind": "digits", "positions": [1, 3]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [3, 5]},
+      "examples": [{"serial": "L920671787", "expectedYear": 1992, "expectedWeek": 6}],
+      "notes": "Page states this serial is identical in system to style 1; the printed MFG date 2/92 corroborates year 1992 and week 06. Pattern and positions duplicate style 1, so this style never wins first-match, but its decode is identical."
+    },
+    {
+      "id": "style-3",
+      "era": "10-character format, year-week in first four digits",
+      "pattern": "^\\d{4}[A-Z]\\d{5}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [2, 4]},
+      "examples": [{"serial": "9414B39332", "expectedYear": 1994, "expectedWeek": 14}],
+      "notes": "Year is 1st-2nd digits, week is 3rd-4th digits. Week decode for the example is 14."
+    }
+  ]
+}

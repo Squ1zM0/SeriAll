@@ -1,0 +1,51 @@
+{
+  "brand": "Payne",
+  "slug": "payne",
+  "parent": "Carrier Corporation",
+  "sisters": ["Bryant"],
+  "sourceUrl": "https://www.building-center.org/payne-hvac-age/",
+  "notes": "BDP system. Styles 1-4 match Bryant styles 1-4 in shape, positions, era, and example serials (style 2, style 3 and style 4 examples are identical serials on both pages). Payne is NOT usesStylesOf Bryant because Payne style 5 differs from Bryant style 5 and Payne lists no Canada variant for style 3. Styles 3-4 letter/digit tables are transcribed from Bryant page text because Payne's own charts are image-only in text fetch; confirm against Payne chart images before treating those tables as Payne-page-confirmed. HELD GAP — style 5 (prior to 1970, 7-digit all-numeric, year = 1st digit): the page shows only the placeholder 6######, which is not a real serial, and the decade mapping lives only in the chart image; no style 5 is shipped rather than guessed. Carrier is a related brand but its page states no serial system, so it is not claimed as sharing this system.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "10-character format, week-year in first four digits",
+      "pattern": "^\\d{4}[A-Z]\\d{5}$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [0, 2]},
+      "examples": [{"serial": "4006A17330", "expectedYear": 2006, "expectedWeek": 40}],
+      "notes": "Week is 1st-2nd positions, year is 3rd-4th positions. Week decode for the example is 40."
+    },
+    {
+      "id": "style-2",
+      "era": "9-character all-numeric",
+      "pattern": "^\\d{9}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "examples": [{"serial": "850304091", "expectedYear": 1985, "expectedMonth": 3}],
+      "notes": "Year is 1st-2nd positions, month is 3rd-4th positions. Same example serial as Bryant style 2."
+    },
+    {
+      "id": "style-3",
+      "era": "1980-1984",
+      "pattern": "^[A-Z]\\d[A-Z]\\d{5}$",
+      "year": {"kind": "letterTable", "positions": [1, 2], "table": {"0": 1980, "1": 1981, "2": 1982, "3": 1983, "4": 1984}},
+      "month": {"kind": "letterTable", "positions": [0, 1], "table": {"M": 1, "N": 2, "P": 3, "Q": 4, "R": 5, "S": 6, "T": 7, "V": 8, "W": 9, "X": 10, "Y": 11, "Z": 12}},
+      "week": null,
+      "examples": [{"serial": "W4D14008", "expectedYear": 1984, "expectedMonth": 9}],
+      "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
+    },
+    {
+      "id": "style-4",
+      "era": "1970-1979",
+      "pattern": "^[A-Z]\\d{6}$",
+      "year": {"kind": "letterTable", "positions": [1, 2], "table": {"0": 1970, "1": 1971, "2": 1972, "3": 1973, "4": 1974, "5": 1975, "6": 1976, "7": 1977, "8": 1978, "9": 1979}},
+      "month": {"kind": "letterTable", "positions": [0, 1], "table": {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9, "J": 10, "K": 11, "L": 12}},
+      "week": null,
+      "examples": [{"serial": "A167890", "expectedYear": 1971, "expectedMonth": 1}],
+      "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
+    }
+  ]
+}
