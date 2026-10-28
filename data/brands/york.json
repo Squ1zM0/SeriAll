@@ -1,0 +1,170 @@
+{
+  "brand": "York",
+  "slug": "york",
+  "parent": "Johnson Controls International",
+  "sisters": [
+    "Coleman",
+    "Luxaire"
+  ],
+  "sourceUrl": "https://www.building-center.org/york-hvac-age/",
+  "notes": "Style-1 year uses split-year extraction as an ordered list of half-open ranges [[1,2],[3,4]] whose sliced digits concatenate ('0'+'5'='05') before the century rule; style-2 year uses a dual-candidate letter table whose values are either a single full year (exactly one year) or a two-element candidate list (21-year cycle, both years, never a guessed pick). MONTH CONFLICT RESOLVED FOR YORK: both York charts (style 1 and style 2) map K to September, agreeing with Coleman and with Luxaire's style-4 table; Luxaire's own style-1 chart (K October) remains the sole outlier and is a Luxaire-internal inconsistency, not a York question \u2014 York's decode of W0K5896070 is September 2005. No usesStylesOf: York's two styles are defined here in full; Coleman and Luxaire share these two systems (same sample serials, same tables, same October 2004 boundary) but each carries additional numeric styles, so reuse would be wrong in both directions. Parent note: the page names Johnson Controls International as parent and records Bosch's July 2024 agreement to buy the residential/light-commercial HVAC business (sale slated within ~12 months); completion status is not verified on this page (last updated 12/26/2024), so the parent field keeps Johnson Controls International. Quirk: the style-2 data-plate image header reads 'Style 4 Data Plate' although the page text numbers this system Style 2; the plate serial is the same WAKM011379, so this is a legacy image label, not a third style. PARENTHETICAL-PREFIX EDGE, NOT ENCODED: the page cautions that some serials of this style begin with a letter in parentheses, e.g. (S)EBHM062202, meaning 'ignore the first letter in parenthesis' (decodes as EBHM062202: February, 1978 or 1999); the locked normalization strips spaces/dashes only, so that literal input would not match this pattern \u2014 left in notes only, deliberately not a formal example, so the builder's every-example-must-decode rule is not broken.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Since October 2004 (10-character serials)",
+      "pattern": "^[A-Z]\\d[A-Z]\\d\\d{6}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          2,
+          3
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "K": 9,
+          "L": 10,
+          "M": 11,
+          "N": 12
+        }
+      },
+      "week": null,
+      "yearFloor": 2004,
+      "examples": [
+        {
+          "serial": "W0K5896070",
+          "expectedYear": 2005,
+          "expectedMonth": 9
+        }
+      ],
+      "notes": "Split-year: 2nd character (index 1) and 4th character (index 3) are the two year digits, split around the month letter; the chart states this explicitly ('The 2nd digit is a 0 and the 4th digit is a 5 ... Combined they read 05 which is equivalent to the year 2005'). Position 0 is the plant letter (chart table: A Apodaca, N Norman, S Source One, W Wichita; not validated by the pattern). Positions 4-9 are a six-digit sequence. Month letters skip I and J. yearFloor 2004 reflects the documented October 2004 start: with this floor, YY=05 resolves to 2005 only and a pre-2004 YY cannot match this style."
+    },
+    {
+      "id": "style-2",
+      "era": "1971 to October 2004 (4 letters + 6-digit sequence)",
+      "pattern": "^[A-Z]{4}\\d{6}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          2,
+          3
+        ],
+        "table": {
+          "A": [
+            1971,
+            1992
+          ],
+          "B": [
+            1972,
+            1993
+          ],
+          "C": [
+            1973,
+            1994
+          ],
+          "D": [
+            1974,
+            1995
+          ],
+          "E": [
+            1975,
+            1996
+          ],
+          "F": [
+            1976,
+            1997
+          ],
+          "G": [
+            1977,
+            1998
+          ],
+          "H": [
+            1978,
+            1999
+          ],
+          "J": [
+            1979,
+            2000
+          ],
+          "K": [
+            1980,
+            2001
+          ],
+          "L": [
+            1981,
+            2002
+          ],
+          "M": [
+            1982,
+            2003
+          ],
+          "N": [
+            1983,
+            2004
+          ],
+          "P": 1984,
+          "R": 1985,
+          "S": 1986,
+          "T": 1987,
+          "V": 1988,
+          "W": 1989,
+          "X": 1990,
+          "Y": 1991
+        }
+      },
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          1,
+          2
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "K": 9,
+          "L": 10,
+          "M": 11,
+          "N": 12
+        }
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "WAKM011379",
+          "expectedYear": [
+            1980,
+            2001
+          ],
+          "expectedMonth": 1
+        }
+      ],
+      "notes": "21-year cycle, dual-candidate letters A-N (13 letters): first cycle 1971-1991, second cycle 1992-2004, truncated at N=2004 because the style ended October 2004. Single-year letters P-Y (1984-1991) are first-cycle only; their second-cycle years (2005-2012) never occurred under this style, so they decode exactly, never as candidates. Year letters skip I, O, Q, U, Z. Position 0 is the plant letter (chart table: A Addison, B Blackville, C Canada, D Medina, E Elyra, M Madyville, N Norman, W Wichita, X Mexico, Y York). Position 3 is the item type (M Mfg Basic Unit, P Purchased Basic Unit, S Mfg Low Side Item, T Purchased Low Side Item, Y Mfg Accessory, Z Purchased Accessory, O Filler). Positions 4-9 are a six-digit sequence."
+    }
+  ]
+}
