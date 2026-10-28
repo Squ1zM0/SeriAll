@@ -1,0 +1,250 @@
+{
+  "brand": "Weil-McLain",
+  "slug": "weil-mclain",
+  "sourceUrl": "https://www.building-center.org/weil-mclain-hvac-age/",
+  "parent": "Marley-Wylain Company",
+  "notes": "Age is decoded from the 7-digit CP number on a separate tag/sticker, NOT from the serial number. Page states the chart is a 'guideline for approximate manufacture year' (1988 into 2023), so every band is approximate:true. Bands 1988-2008 are printed in full and are consecutive with no gaps or overlaps. Bands 2009-2022 are printed with masked xxx endings/beginnings (e.g. 6150xxx); the file expands each xxx prefix to its full 1000-number block, so every CP in a shared-prefix block falls in two bands and must decode to 'cannot determine', never first-match. 2023 device band: the chart prints 2023 as beginning 8067xxx with ending '???', so its entire known range coincides with 2022's ending block; the 8067000-8067999 band for 2023 exists ONLY to force 'cannot determine' on that block, it is not a true 2023 range, and CPs above 8067999 match zero bands (2023 continuation and 2024+ unknown from this chart). Fallback if device bands are rejected: truncate 2022 to max 8066999 and drop 2023. NORMALIZATION (resolved): locked normalization strips spaces, so the prose form 'CP 2530051' normalizes to 'CP2530051'; pattern ^CP\\d{7}$ with year positions [2,9] is therefore correct. CAVEATS: AquaBalance model CP numbers are NOT sequential and the chart may not suffice for them (serial alone cannot distinguish them); 6-digit CP numbers are generally early-1980s and prior and the page directs techs to contact Weil-McLain (pattern covers 7-digit only; zero-padded 6-digit values fall below the chart and correctly do not match). Page header misspells parent as 'Marely-Wylain'; history section spelling 'Marley-Wylain' used here. Page header lists Williamson Thermoflo as a related brand; sharing of the CP system is NOT verified, so it is not listed as a sister.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "7-digit CP numbers, chart years 1988-2023 (approximate)",
+      "pattern": "^CP\\d{7}$",
+      "year": {
+        "kind": "rangeTable",
+        "positions": [
+          2,
+          9
+        ],
+        "bands": [
+          {
+            "min": 1414001,
+            "max": 1681500,
+            "year": 1988,
+            "approximate": true
+          },
+          {
+            "min": 1681501,
+            "max": 1871500,
+            "year": 1989,
+            "approximate": true
+          },
+          {
+            "min": 1871501,
+            "max": 2056000,
+            "year": 1990,
+            "approximate": true
+          },
+          {
+            "min": 2056001,
+            "max": 2217399,
+            "year": 1991,
+            "approximate": true
+          },
+          {
+            "min": 2217400,
+            "max": 2399999,
+            "year": 1992,
+            "approximate": true
+          },
+          {
+            "min": 2400000,
+            "max": 2609500,
+            "year": 1993,
+            "approximate": true
+          },
+          {
+            "min": 2609501,
+            "max": 2815000,
+            "year": 1994,
+            "approximate": true
+          },
+          {
+            "min": 2815001,
+            "max": 3003000,
+            "year": 1995,
+            "approximate": true
+          },
+          {
+            "min": 3003001,
+            "max": 3213000,
+            "year": 1996,
+            "approximate": true
+          },
+          {
+            "min": 3213001,
+            "max": 3441400,
+            "year": 1997,
+            "approximate": true
+          },
+          {
+            "min": 3441401,
+            "max": 3621000,
+            "year": 1998,
+            "approximate": true
+          },
+          {
+            "min": 3621001,
+            "max": 3810000,
+            "year": 1999,
+            "approximate": true
+          },
+          {
+            "min": 3810001,
+            "max": 4055000,
+            "year": 2000,
+            "approximate": true
+          },
+          {
+            "min": 4055001,
+            "max": 4311000,
+            "year": 2001,
+            "approximate": true
+          },
+          {
+            "min": 4311001,
+            "max": 4586999,
+            "year": 2002,
+            "approximate": true
+          },
+          {
+            "min": 4587000,
+            "max": 4807000,
+            "year": 2003,
+            "approximate": true
+          },
+          {
+            "min": 4807001,
+            "max": 5047000,
+            "year": 2004,
+            "approximate": true
+          },
+          {
+            "min": 5047001,
+            "max": 5301000,
+            "year": 2005,
+            "approximate": true
+          },
+          {
+            "min": 5301001,
+            "max": 5454497,
+            "year": 2006,
+            "approximate": true
+          },
+          {
+            "min": 5454498,
+            "max": 5731063,
+            "year": 2007,
+            "approximate": true
+          },
+          {
+            "min": 5731064,
+            "max": 5957346,
+            "year": 2008,
+            "approximate": true
+          },
+          {
+            "min": 5957347,
+            "max": 6150999,
+            "year": 2009,
+            "approximate": true
+          },
+          {
+            "min": 6150000,
+            "max": 6368999,
+            "year": 2010,
+            "approximate": true
+          },
+          {
+            "min": 6368000,
+            "max": 6555999,
+            "year": 2011,
+            "approximate": true
+          },
+          {
+            "min": 6555000,
+            "max": 6779999,
+            "year": 2012,
+            "approximate": true
+          },
+          {
+            "min": 6779000,
+            "max": 6998999,
+            "year": 2013,
+            "approximate": true
+          },
+          {
+            "min": 6998000,
+            "max": 7209999,
+            "year": 2014,
+            "approximate": true
+          },
+          {
+            "min": 7209000,
+            "max": 7429999,
+            "year": 2015,
+            "approximate": true
+          },
+          {
+            "min": 7429000,
+            "max": 7493999,
+            "year": 2016,
+            "approximate": true
+          },
+          {
+            "min": 7493000,
+            "max": 7629999,
+            "year": 2017,
+            "approximate": true
+          },
+          {
+            "min": 7629000,
+            "max": 7729999,
+            "year": 2018,
+            "approximate": true
+          },
+          {
+            "min": 7729000,
+            "max": 7782999,
+            "year": 2019,
+            "approximate": true
+          },
+          {
+            "min": 7782000,
+            "max": 7880999,
+            "year": 2020,
+            "approximate": true
+          },
+          {
+            "min": 7880000,
+            "max": 7961999,
+            "year": 2021,
+            "approximate": true
+          },
+          {
+            "min": 7961000,
+            "max": 8067999,
+            "year": 2022,
+            "approximate": true
+          },
+          {
+            "min": 8067000,
+            "max": 8067999,
+            "year": 2023,
+            "approximate": true
+          }
+        ]
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "CP2530051",
+          "expectedYear": 1993,
+          "expectedApproximate": true
+        }
+      ],
+      "notes": "Example CP2530051 is the page's format example (text + data-plate photo, Model GU-4, Series No. 2 \u2014 the '2' is a series number, not a year); its year 1993 is chart-derived (2530051 falls in 2400000-2609500), not page-stated. No other example serial appears on the page."
+    }
+  ]
+}
