@@ -1,0 +1,89 @@
+{
+  "brand": "Rheem",
+  "slug": "rheem",
+  "parent": "The Paloma Group",
+  "sisters": ["Ruud"],
+  "sourceUrl": "https://www.building-center.org/rheem-hvac-age/",
+  "notes": "Six documented serial styles. Styles 2-4 share one factory-letter rule (week = 1st and 2nd digits after the factory letter, year = 3rd and 4th digits after it) but are kept as separate styles because the schema positions are absolute and the factory letter sits at a different index in each documented example (index 7, 4, and 5 respectively). Style 5 is described on the page as a common water-heater style also used on some older HVAC systems; style 6 is an older discontinued style from the mid-1970s and prior, also a water-heater style used on older HVAC systems. Example expected values are derived from the page's stated positions (the page states positions, not printed year values); each derived year is the unique candidate under the 1960 floor and 2026 current year. Ambiguity: the factory letter is described as typically F, M, G, W, or N, so a style 2-4 serial with a non-typical factory letter would fall through to style 5 and mis-decode; ordering (styles 2-4 before style 5) protects only the typical-letter cases. Patterns for styles 2-4 anchor the factory-letter position to the documented example's prefix length; a serial with a different prefix length before the factory letter is not covered and must not be guessed.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Letter followed by digits; week and year in the opening digits",
+      "pattern": "^[A-Z]\\d{9}$",
+      "year": {"kind": "digits", "positions": [3, 5]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [1, 3]},
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "W291013412", "expectedYear": 2010, "expectedWeek": 29}
+      ],
+      "notes": "Page: year = 4th and 5th positions, week = 2nd and 3rd positions. Normalized W291013412: positions 2-3 = 29 (week), positions 4-5 = 10 (year 2010)."
+    },
+    {
+      "id": "style-2",
+      "era": "Seven-character prefix, then factory letter, then week-year digits",
+      "pattern": "^[A-Z0-9]{7}[FMGWN]\\d{4,}$",
+      "year": {"kind": "digits", "positions": [10, 12]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [8, 10]},
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "CB5D302F099903346", "expectedYear": 1999, "expectedWeek": 9}
+      ],
+      "notes": "Page: year = 3rd and 4th numbers following the middle (factory) letter, week = 1st and 2nd numbers following it; factory letter typically F, M, G, W, or N. Normalized CB5D302F099903346: factory letter F at index 7, following digits 09 (week) and 99 (year 1999). Example serial shown on the page with a space (CB5D302F09 9903346); normalized form strips the space."
+    },
+    {
+      "id": "style-3",
+      "era": "Four-digit prefix, then factory letter, then week-year digits",
+      "pattern": "^\\d{4}[FMGWN]\\d{4,}$",
+      "year": {"kind": "digits", "positions": [7, 9]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [5, 7]},
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "7351M280616735", "expectedYear": 2006, "expectedWeek": 28}
+      ],
+      "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized 7351M280616735: factory letter M at index 4, following digits 28 (week) and 06 (year 2006). Example serial shown on the page with spaces (7351 M28 06 16735); normalized form strips spaces."
+    },
+    {
+      "id": "style-4",
+      "era": "Five-character prefix, then factory letter, then week-year digits",
+      "pattern": "^[A-Z0-9]{5}[FMGWN]\\d{4,}$",
+      "year": {"kind": "digits", "positions": [8, 10]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [6, 8]},
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "OR177M280700097", "expectedYear": 2007, "expectedWeek": 28}
+      ],
+      "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized OR177M280700097: factory letter M at index 5, following digits 28 (week) and 07 (year 2007). Example serial shown on the page with spaces (OR177 M28 07 00097); normalized form strips spaces."
+    },
+    {
+      "id": "style-5",
+      "era": "Older HVAC systems; month-year opening digits, also a common water-heater style",
+      "pattern": "^(0[1-9]|1[0-2])\\d{2}[A-Z]\\d+$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": {"kind": "digits", "positions": [0, 2]},
+      "week": null,
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "0804B10488", "expectedYear": 2004, "expectedMonth": 8}
+      ],
+      "notes": "Page: year = 3rd and 4th positions, month = 1st and 2nd positions; common water-heater style also used on some older HVAC systems. Normalized 0804B10488: positions 1-2 = 08 (month August), positions 3-4 = 04 (year 2004). Example serial shown on the page with a space (08 04B10488); normalized form strips the space."
+    },
+    {
+      "id": "style-6",
+      "era": "Older discontinued style, mid-1970s and prior; also a common water-heater style",
+      "pattern": "^\\d{9}$",
+      "year": {"kind": "digits", "positions": [7, 9]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [5, 7]},
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "123451872", "expectedYear": 1972, "expectedWeek": 18}
+      ],
+      "notes": "Page: year = last 2 digits, week = 4th and 3rd from last digits (in that order). Normalized 123451872: last 2 digits 72 (year 1972); 4th from last = 1 and 3rd from last = 8, giving week 18. Example serial shown on the page with a space (1234518 72); normalized form strips the space. Limitation: with the default 1960 floor, a genuine pre-1960 style-6 serial (two-digit year below 60) has no valid candidate under the century rule and returns cannot-determine rather than a guessed year; the page gives no start date that would justify a different floor."
+    }
+  ]
+}

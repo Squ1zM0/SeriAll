@@ -1,0 +1,10 @@
+{
+  "brand": "Ruud",
+  "slug": "ruud",
+  "parent": "Rheem Manufacturing (The Paloma Group)",
+  "sisters": ["Rheem"],
+  "sourceUrl": "https://www.building-center.org/ruud-hvac-age/",
+  "notes": "Reuse evidence (page-confirmed, not parent alone): the Ruud page lists the exact same six example serials as the Rheem page (W291013412; CB5D302F09 9903346; 7351 M28 06 16735; OR177 M28 07 00097; 08 04B10488; 1234518 72), with identical position descriptions for year, month, and week, the identical factory-letter note (typically F, M, G, W, or N), and the identical style images (Rheem-HVAC-style-1.jpg through style-6-1.jpg). The Ruud page also states Rheem Manufacturing acquired Ruud in 1959 and Ruud remains a subsidiary of Rheem Manufacturing. The Rheem page lists many other related brands, but only Ruud is verified here as sharing this serial system; no other related brand is claimed as sharing it.",
+  "usesStylesOf": "rheem",
+  "styles": []
+}

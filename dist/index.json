@@ -1,5 +1,5 @@
 {
-  "brandCount": 3,
+  "brandCount": 5,
   "brands": {
     "goodman": {
       "aliases": [
@@ -151,6 +151,386 @@
             "positions": [
               10,
               12
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "rheem": {
+      "aliases": null,
+      "brand": "Rheem",
+      "notes": "Six documented serial styles. Styles 2-4 share one factory-letter rule (week = 1st and 2nd digits after the factory letter, year = 3rd and 4th digits after it) but are kept as separate styles because the schema positions are absolute and the factory letter sits at a different index in each documented example (index 7, 4, and 5 respectively). Style 5 is described on the page as a common water-heater style also used on some older HVAC systems; style 6 is an older discontinued style from the mid-1970s and prior, also a water-heater style used on older HVAC systems. Example expected values are derived from the page's stated positions (the page states positions, not printed year values); each derived year is the unique candidate under the 1960 floor and 2026 current year. Ambiguity: the factory letter is described as typically F, M, G, W, or N, so a style 2-4 serial with a non-typical factory letter would fall through to style 5 and mis-decode; ordering (styles 2-4 before style 5) protects only the typical-letter cases. Patterns for styles 2-4 anchor the factory-letter position to the documented example's prefix length; a serial with a different prefix length before the factory letter is not covered and must not be guessed.",
+      "parent": "The Paloma Group",
+      "sisters": [
+        "Ruud"
+      ],
+      "slug": "rheem",
+      "sourceUrl": "https://www.building-center.org/rheem-hvac-age/",
+      "styles": [
+        {
+          "era": "Letter followed by digits; week and year in the opening digits",
+          "examples": [
+            {
+              "expectedWeek": 29,
+              "expectedYear": 2010,
+              "serial": "W291013412"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page: year = 4th and 5th positions, week = 2nd and 3rd positions. Normalized W291013412: positions 2-3 = 29 (week), positions 4-5 = 10 (year 2010).",
+          "pattern": "^[A-Z]\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Seven-character prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 9,
+              "expectedYear": 1999,
+              "serial": "CB5D302F099903346"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page: year = 3rd and 4th numbers following the middle (factory) letter, week = 1st and 2nd numbers following it; factory letter typically F, M, G, W, or N. Normalized CB5D302F099903346: factory letter F at index 7, following digits 09 (week) and 99 (year 1999). Example serial shown on the page with a space (CB5D302F09 9903346); normalized form strips the space.",
+          "pattern": "^[A-Z0-9]{7}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              10,
+              12
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Four-digit prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 28,
+              "expectedYear": 2006,
+              "serial": "7351M280616735"
+            }
+          ],
+          "id": "style-3",
+          "month": null,
+          "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized 7351M280616735: factory letter M at index 4, following digits 28 (week) and 06 (year 2006). Example serial shown on the page with spaces (7351 M28 06 16735); normalized form strips spaces.",
+          "pattern": "^\\d{4}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              7,
+              9
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Five-character prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 28,
+              "expectedYear": 2007,
+              "serial": "OR177M280700097"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized OR177M280700097: factory letter M at index 5, following digits 28 (week) and 07 (year 2007). Example serial shown on the page with spaces (OR177 M28 07 00097); normalized form strips spaces.",
+          "pattern": "^[A-Z0-9]{5}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              6,
+              8
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Older HVAC systems; month-year opening digits, also a common water-heater style",
+          "examples": [
+            {
+              "expectedMonth": 8,
+              "expectedYear": 2004,
+              "serial": "0804B10488"
+            }
+          ],
+          "id": "style-5",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "notes": "Page: year = 3rd and 4th positions, month = 1st and 2nd positions; common water-heater style also used on some older HVAC systems. Normalized 0804B10488: positions 1-2 = 08 (month August), positions 3-4 = 04 (year 2004). Example serial shown on the page with a space (08 04B10488); normalized form strips the space.",
+          "pattern": "^(0[1-9]|1[0-2])\\d{2}[A-Z]\\d+$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Older discontinued style, mid-1970s and prior; also a common water-heater style",
+          "examples": [
+            {
+              "expectedWeek": 18,
+              "expectedYear": 1972,
+              "serial": "123451872"
+            }
+          ],
+          "id": "style-6",
+          "month": null,
+          "notes": "Page: year = last 2 digits, week = 4th and 3rd from last digits (in that order). Normalized 123451872: last 2 digits 72 (year 1972); 4th from last = 1 and 3rd from last = 8, giving week 18. Example serial shown on the page with a space (1234518 72); normalized form strips the space. Limitation: with the default 1960 floor, a genuine pre-1960 style-6 serial (two-digit year below 60) has no valid candidate under the century rule and returns cannot-determine rather than a guessed year; the page gives no start date that would justify a different floor.",
+          "pattern": "^\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              7,
+              9
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "ruud": {
+      "aliases": null,
+      "brand": "Ruud",
+      "notes": "Reuse evidence (page-confirmed, not parent alone): the Ruud page lists the exact same six example serials as the Rheem page (W291013412; CB5D302F09 9903346; 7351 M28 06 16735; OR177 M28 07 00097; 08 04B10488; 1234518 72), with identical position descriptions for year, month, and week, the identical factory-letter note (typically F, M, G, W, or N), and the identical style images (Rheem-HVAC-style-1.jpg through style-6-1.jpg). The Ruud page also states Rheem Manufacturing acquired Ruud in 1959 and Ruud remains a subsidiary of Rheem Manufacturing. The Rheem page lists many other related brands, but only Ruud is verified here as sharing this serial system; no other related brand is claimed as sharing it.",
+      "parent": "Rheem Manufacturing (The Paloma Group)",
+      "sisters": [
+        "Rheem"
+      ],
+      "slug": "ruud",
+      "sourceUrl": "https://www.building-center.org/ruud-hvac-age/",
+      "styles": [
+        {
+          "era": "Letter followed by digits; week and year in the opening digits",
+          "examples": [
+            {
+              "expectedWeek": 29,
+              "expectedYear": 2010,
+              "serial": "W291013412"
+            }
+          ],
+          "id": "style-1",
+          "inheritedFrom": "rheem",
+          "month": null,
+          "notes": "Page: year = 4th and 5th positions, week = 2nd and 3rd positions. Normalized W291013412: positions 2-3 = 29 (week), positions 4-5 = 10 (year 2010).",
+          "pattern": "^[A-Z]\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Seven-character prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 9,
+              "expectedYear": 1999,
+              "serial": "CB5D302F099903346"
+            }
+          ],
+          "id": "style-2",
+          "inheritedFrom": "rheem",
+          "month": null,
+          "notes": "Page: year = 3rd and 4th numbers following the middle (factory) letter, week = 1st and 2nd numbers following it; factory letter typically F, M, G, W, or N. Normalized CB5D302F099903346: factory letter F at index 7, following digits 09 (week) and 99 (year 1999). Example serial shown on the page with a space (CB5D302F09 9903346); normalized form strips the space.",
+          "pattern": "^[A-Z0-9]{7}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              10,
+              12
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Four-digit prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 28,
+              "expectedYear": 2006,
+              "serial": "7351M280616735"
+            }
+          ],
+          "id": "style-3",
+          "inheritedFrom": "rheem",
+          "month": null,
+          "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized 7351M280616735: factory letter M at index 4, following digits 28 (week) and 06 (year 2006). Example serial shown on the page with spaces (7351 M28 06 16735); normalized form strips spaces.",
+          "pattern": "^\\d{4}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              7,
+              9
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Five-character prefix, then factory letter, then week-year digits",
+          "examples": [
+            {
+              "expectedWeek": 28,
+              "expectedYear": 2007,
+              "serial": "OR177M280700097"
+            }
+          ],
+          "id": "style-4",
+          "inheritedFrom": "rheem",
+          "month": null,
+          "notes": "Page: same factory-letter rule as style 2; serial may or may not contain spaces. Normalized OR177M280700097: factory letter M at index 5, following digits 28 (week) and 07 (year 2007). Example serial shown on the page with spaces (OR177 M28 07 00097); normalized form strips spaces.",
+          "pattern": "^[A-Z0-9]{5}[FMGWN]\\d{4,}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              6,
+              8
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Older HVAC systems; month-year opening digits, also a common water-heater style",
+          "examples": [
+            {
+              "expectedMonth": 8,
+              "expectedYear": 2004,
+              "serial": "0804B10488"
+            }
+          ],
+          "id": "style-5",
+          "inheritedFrom": "rheem",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "notes": "Page: year = 3rd and 4th positions, month = 1st and 2nd positions; common water-heater style also used on some older HVAC systems. Normalized 0804B10488: positions 1-2 = 08 (month August), positions 3-4 = 04 (year 2004). Example serial shown on the page with a space (08 04B10488); normalized form strips the space.",
+          "pattern": "^(0[1-9]|1[0-2])\\d{2}[A-Z]\\d+$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Older discontinued style, mid-1970s and prior; also a common water-heater style",
+          "examples": [
+            {
+              "expectedWeek": 18,
+              "expectedYear": 1972,
+              "serial": "123451872"
+            }
+          ],
+          "id": "style-6",
+          "inheritedFrom": "rheem",
+          "month": null,
+          "notes": "Page: year = last 2 digits, week = 4th and 3rd from last digits (in that order). Normalized 123451872: last 2 digits 72 (year 1972); 4th from last = 1 and 3rd from last = 8, giving week 18. Example serial shown on the page with a space (1234518 72); normalized form strips the space. Limitation: with the default 1960 floor, a genuine pre-1960 style-6 serial (two-digit year below 60) has no valid candidate under the century rule and returns cannot-determine rather than a guessed year; the page gives no start date that would justify a different floor.",
+          "pattern": "^\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              7,
+              9
             ]
           },
           "yearFloor": 1960
