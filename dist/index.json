@@ -1,0 +1,75 @@
+{
+  "brandCount": 1,
+  "brands": {
+    "nordyne": {
+      "aliases": null,
+      "brand": "Nordyne",
+      "notes": "Parent company as stated on the page. The page lists related brands (Broan, Frigidaire, Gibson, Intertherm, Kelvinator, Mammoth, Maytag, Miller, NuTone, Philco, Tappan, Westinghouse, Gaz Industrie, Ambirad, Partners Choice, Reznor and private labels) but does not state they share Nordyne's serial system, so no sisters are claimed. No era dates are documented for either style; eras below describe serial shape only. The two styles do not overlap: style-1 is 12 characters, style-2 is 16 characters.",
+      "parent": "Nortek Global",
+      "sisters": null,
+      "slug": "nordyne",
+      "sourceUrl": "https://www.building-center.org/nordyne-hvac-age/",
+      "styles": [
+        {
+          "era": "3-letter prefix followed by 9 digits; year and month encoded",
+          "examples": [
+            {
+              "expectedMonth": 7,
+              "expectedYear": 2003,
+              "serial": "GBB030708229"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "notes": "Page example shown as GBB03 0708229. Year is the 4th and 5th positions (03, resolving to 2003 under the 1960 floor); month is the 6th and 7th positions (07 = July). Hyphen variants GBB-030708229 and GBB-0307-08229 normalize to the same serial.",
+          "pattern": "^[A-Z]{3}\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "16-character serial with a letter-delimited middle section; week and year encoded, no month",
+          "examples": [
+            {
+              "expectedWeek": 38,
+              "expectedYear": 1991,
+              "serial": "MN3D102F38914228"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page example shown as MN3D102 F38 91 4228. Week is the 9th and 10th positions (38, the first two digits after the middle-section letter F); year is the 11th and 12th positions (91, the last two digits of that section, resolving to 1991 under the 1960 floor). The page notes this style is similar to Rheem style serials and likely indicates Rheem manufacture for Nordyne; that similarity is not documented verbatim reuse, so usesStylesOf stays null.",
+          "pattern": "^[A-Z]{2}\\d[A-Z]\\d{3}[A-Z]\\d{8}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              10,
+              12
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    }
+  },
+  "version": 1
+}
