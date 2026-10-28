@@ -36,7 +36,7 @@ and the app can consume the built index directly. Human-readable notes go in
 | `aliases` | no | Other names techs type for this brand (e.g. `GmC`). Used for matching user input. |
 | `parent` | no | Parent company, as a fact (e.g. `Daikin Group`). |
 | `sisters` | no | Sister / related brands sharing this rule system, as facts. |
-| `sourceUrl` | yes | The brand's Building Center page. Also the app's fallback link. |
+| `sourceUrl` | yes | The brand's Building Center page. Also the app's fallback link. **Exception (Phase 2b):** when the Building Center page carries no serial system (history-only), `sourceUrl` is the actual rule source (manufacturer documentation or a corroborated decoder), and the Building Center page URL is recorded in `notes`. |
 | `notes` | no | Curator notes, caveats, era remarks. Never copied prose. |
 | `usesStylesOf` | no | Slug of another brand whose styles this brand reuses verbatim (sister-brand reuse). When set, `styles` must be empty and the builder copies the referenced brand's styles at build time, tagged as inherited. Reuse is explicit and visible — never silent duplication. |
 | `styles` | yes, unless `usesStylesOf` is set | Ordered list of serial styles (below). Tried in order. |
