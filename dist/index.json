@@ -1,6 +1,179 @@
 {
-  "brandCount": 10,
+  "brandCount": 12,
   "brands": {
+    "american-standard": {
+      "aliases": null,
+      "brand": "American Standard",
+      "notes": "Reuse evidence comes from the Trane page, NOT from this page: the Trane page labels the year-first system as a Trane (American Standard) style begun in 2002, states it remains in use under the Trane, American Standard, Ameristar and Ingersoll Rand names, and states the older styles continued in use for many years under the Ingersoll Rand, American Standard, Trane and GE names. CAVEAT: the American Standard page itself contains history only and no serial-number decoding section, so sister-page confirmation is unavailable; if the project requires sister-page confirmation strictly, hold this file as a gap instead of shipping reuse. No parent company is stated on the American Standard page, so parent is omitted.",
+      "parent": null,
+      "sisters": [
+        "Trane"
+      ],
+      "slug": "american-standard",
+      "sourceUrl": "https://www.building-center.org/american-standard-hvac-age/",
+      "styles": [
+        {
+          "era": "2002-2009, digit-led serials (page Style 1, early form)",
+          "examples": [
+            {
+              "expectedWeek": 15,
+              "expectedYear": 2009,
+              "serial": "91531S41F"
+            }
+          ],
+          "id": "style-1",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. Digit-led serials starting 20-26 are genuinely ambiguous with the 2010+ two-digit reading (page notes styles overlap); style-2 claims those, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate.",
+          "pattern": "^[2-9][0-5][0-9][A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "2": 2002,
+              "3": 2003,
+              "4": 2004,
+              "5": 2005,
+              "6": 2006,
+              "7": 2007,
+              "8": 2008,
+              "9": 2009
+            }
+          }
+        },
+        {
+          "era": "2010-present, digit-led serials (page Style 1, later form)",
+          "examples": [
+            {
+              "expectedWeek": 16,
+              "expectedYear": 2010,
+              "serial": "10161KEDAA"
+            },
+            {
+              "expectedWeek": 3,
+              "expectedYear": 2013,
+              "serial": "130313596L"
+            }
+          ],
+          "id": "style-2",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. Digit-led serials starting 20-26 are genuinely ambiguous with the 2002-2009 single-digit reading (the page notes styles overlap); the decoder returns the 2010+ reading, so use the data-plate MFR date to disambiguate.",
+          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "era": "1983-2001, letter-led 9-character serials (page Style 2)",
+          "examples": [
+            {
+              "expectedWeek": 17,
+              "expectedYear": 2000,
+              "serial": "R1742DWBF"
+            },
+            {
+              "expectedWeek": 35,
+              "expectedYear": 1997,
+              "serial": "M35123456"
+            },
+            {
+              "expectedWeek": 23,
+              "expectedYear": 1991,
+              "serial": "F23456789"
+            },
+            {
+              "expectedWeek": 1,
+              "expectedYear": 1988,
+              "serial": "C01D47415"
+            }
+          ],
+          "id": "style-3",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. DISCREPANCY FLAGGED: page text says letters A, I, L, O and Q were not used, yet the standard chart reading (corroborated by three independent sources) gives L = 1996; L = 1996 is included pending visual chart verification. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
+          "pattern": "^[A-Z][0-9]{2}[A-Z0-9]{6}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "B": 1987,
+              "C": 1988,
+              "D": 1989,
+              "E": 1990,
+              "F": 1991,
+              "G": 1992,
+              "H": 1993,
+              "J": 1994,
+              "K": 1995,
+              "L": 1996,
+              "M": 1997,
+              "N": 1998,
+              "P": 1999,
+              "R": 2000,
+              "S": 1986,
+              "W": 1983,
+              "X": 1984,
+              "Y": 1985,
+              "Z": 2001
+            }
+          }
+        },
+        {
+          "era": "1970s onward, factory letter + 2-digit year + month letter, 9 characters (page Style 3)",
+          "examples": [
+            {
+              "expectedYear": 1992,
+              "serial": "A92M07217"
+            }
+          ],
+          "id": "style-4",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Page states the 4th position encodes month but gives no letter-to-month table (the documented example's 4th character is M), so month is not encoded. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
+          "pattern": "^[A-Z][0-9]{2}[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        }
+      ]
+    },
     "bryant": {
       "aliases": null,
       "brand": "Bryant",
@@ -1317,6 +1490,177 @@
             "positions": [
               0,
               2
+            ]
+          }
+        }
+      ]
+    },
+    "trane": {
+      "aliases": null,
+      "brand": "Trane",
+      "notes": "Multiple overlapping serial systems; the page advises using data-plate MFR date, ANSI standard date, condition and appearance to disambiguate overlapping styles. Page Style 1 (2002 onward) is documented as used under the Trane, American Standard, Ameristar and Ingersoll Rand names; the page also names GE among brands under which these styles appear. Known-context correction: the page documents the letter-year system from 1983 (not from 1987) through 2001, then the year-first digit system from 2002. Parent per the page header is Ingersoll Rand; the page history notes the 2020 rename to Trane Technologies. HELD, NOT SHIPPED: page Style 7 (8-character serials, documented serial F9190391 with no stated decode; year positions inferred only from similarity to page Style 3) and page Styles 4 (1981-1983, year letter in first or last position depending on product type, ambiguous letter wording), 5 (single-digit year + month letter with no table, decade ambiguous 1970s vs early 1980s), 6 (third-to-last letter year, last two digits week, 1980-1982, no L/M/N letter table), 8 (European; page states it cannot be decoded from any known chart).",
+      "parent": "Ingersoll Rand",
+      "sisters": [
+        "American Standard",
+        "Ameristar",
+        "Ingersoll Rand"
+      ],
+      "slug": "trane",
+      "sourceUrl": "https://www.building-center.org/trane-hvac-age/",
+      "styles": [
+        {
+          "era": "2002-2009, digit-led serials (page Style 1, early form)",
+          "examples": [
+            {
+              "expectedWeek": 15,
+              "expectedYear": 2009,
+              "serial": "91531S41F"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. Digit-led serials starting 20-26 are genuinely ambiguous with the 2010+ two-digit reading (page notes styles overlap); style-2 claims those, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate.",
+          "pattern": "^[2-9][0-5][0-9][A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "2": 2002,
+              "3": 2003,
+              "4": 2004,
+              "5": 2005,
+              "6": 2006,
+              "7": 2007,
+              "8": 2008,
+              "9": 2009
+            }
+          }
+        },
+        {
+          "era": "2010-present, digit-led serials (page Style 1, later form)",
+          "examples": [
+            {
+              "expectedWeek": 16,
+              "expectedYear": 2010,
+              "serial": "10161KEDAA"
+            },
+            {
+              "expectedWeek": 3,
+              "expectedYear": 2013,
+              "serial": "130313596L"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. Digit-led serials starting 20-26 are genuinely ambiguous with the 2002-2009 single-digit reading (the page notes styles overlap); the decoder returns the 2010+ reading, so use the data-plate MFR date to disambiguate.",
+          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "era": "1983-2001, letter-led 9-character serials (page Style 2)",
+          "examples": [
+            {
+              "expectedWeek": 17,
+              "expectedYear": 2000,
+              "serial": "R1742DWBF"
+            },
+            {
+              "expectedWeek": 35,
+              "expectedYear": 1997,
+              "serial": "M35123456"
+            },
+            {
+              "expectedWeek": 23,
+              "expectedYear": 1991,
+              "serial": "F23456789"
+            },
+            {
+              "expectedWeek": 1,
+              "expectedYear": 1988,
+              "serial": "C01D47415"
+            }
+          ],
+          "id": "style-3",
+          "month": null,
+          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. DISCREPANCY FLAGGED: page text says letters A, I, L, O and Q were not used, yet the standard chart reading (corroborated by three independent sources) gives L = 1996; L = 1996 is included pending visual chart verification. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
+          "pattern": "^[A-Z][0-9]{2}[A-Z0-9]{6}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "B": 1987,
+              "C": 1988,
+              "D": 1989,
+              "E": 1990,
+              "F": 1991,
+              "G": 1992,
+              "H": 1993,
+              "J": 1994,
+              "K": 1995,
+              "L": 1996,
+              "M": 1997,
+              "N": 1998,
+              "P": 1999,
+              "R": 2000,
+              "S": 1986,
+              "W": 1983,
+              "X": 1984,
+              "Y": 1985,
+              "Z": 2001
+            }
+          }
+        },
+        {
+          "era": "1970s onward, factory letter + 2-digit year + month letter, 9 characters (page Style 3)",
+          "examples": [
+            {
+              "expectedYear": 1992,
+              "serial": "A92M07217"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Page states the 4th position encodes month but gives no letter-to-month table (the documented example's 4th character is M), so month is not encoded. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
+          "pattern": "^[A-Z][0-9]{2}[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
             ]
           }
         }

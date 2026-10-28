@@ -1,0 +1,9 @@
+{
+  "brand": "American Standard",
+  "slug": "american-standard",
+  "sisters": ["Trane"],
+  "sourceUrl": "https://www.building-center.org/american-standard-hvac-age/",
+  "notes": "Reuse evidence comes from the Trane page, NOT from this page: the Trane page labels the year-first system as a Trane (American Standard) style begun in 2002, states it remains in use under the Trane, American Standard, Ameristar and Ingersoll Rand names, and states the older styles continued in use for many years under the Ingersoll Rand, American Standard, Trane and GE names. CAVEAT: the American Standard page itself contains history only and no serial-number decoding section, so sister-page confirmation is unavailable; if the project requires sister-page confirmation strictly, hold this file as a gap instead of shipping reuse. No parent company is stated on the American Standard page, so parent is omitted.",
+  "usesStylesOf": "trane",
+  "styles": []
+}
