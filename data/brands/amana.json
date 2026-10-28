@@ -1,0 +1,98 @@
+{
+  "brand": "Amana",
+  "slug": "amana",
+  "parent": "Daikin Group",
+  "sisters": [
+    "Goodman",
+    "Janitrol"
+  ],
+  "sourceUrl": "https://www.pickhvac.com/hvac/age-serial-number/amana/",
+  "notes": "Building Center Amana page is history-only (https://www.building-center.org/amana-hvac-age/, no serial system), so these styles come from Amana-specific independent sources, NOT inherited from Goodman (usesStylesOf is null; the Goodman file is not cited as source): PickHVAC Amana page (primary), corroborated by GGR Home Inspections Amana guide and HowToLookAtAHouse Amana posts (first two digits = year) and an InterNACHI thread (9108033656 = August 1991, year-first/second-two-month). CONFLICT FLAGGED: QualityHomeAirCare states the opposite order (MMYY, example 0215 = February 2015) for Goodman & Amana; that source is the outlier against PickHVAC, GGR, HowToLookAtAHouse, InterNACHI, and the Building Center Goodman rule (YYMM), and its example contains a letter, inconsistent with all-numeric Amana serials, so YYMM is used. AUTHORITY-TIER CAVEAT: PickHVAC is a third-party decoder site, not manufacturer documentation; if the bar is manufacturer/official only, this file stays a gap \u2014 reversible in one move. yearFloor 2001 on styles 1-2 reflects the sources' stated 2001-present era.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "10-character all-numeric, 2001 to present",
+      "pattern": "^\\d{10}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "month": {
+        "kind": "digits",
+        "positions": [
+          2,
+          4
+        ]
+      },
+      "week": null,
+      "yearFloor": 2001,
+      "examples": [
+        {
+          "serial": "0211847363",
+          "expectedYear": 2002,
+          "expectedMonth": 11
+        },
+        {
+          "serial": "1612117501",
+          "expectedYear": 2016,
+          "expectedMonth": 12
+        }
+      ],
+      "notes": "PickHVAC Style 1 example 0211847363 = November 2002; plate example 1612117501 = December 2016 (shown on the Amana page as a Goodman plate illustrating the same system)."
+    },
+    {
+      "id": "style-2",
+      "era": "9-character all-numeric, 2001 to present",
+      "pattern": "^\\d{9}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "month": {
+        "kind": "digits",
+        "positions": [
+          2,
+          4
+        ]
+      },
+      "week": null,
+      "yearFloor": 2001,
+      "examples": [
+        {
+          "serial": "080359478",
+          "expectedYear": 2008,
+          "expectedMonth": 3
+        }
+      ],
+      "notes": "PickHVAC Style 2 example 080359478 = March 2008. Source states the 9- vs 10-character difference is unclear; first four digits carry the date in both."
+    },
+    {
+      "id": "style-3",
+      "era": "Dash style, before 2001, year only",
+      "pattern": "^\\d{7}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "98-90558",
+          "expectedYear": 1998
+        }
+      ],
+      "notes": "PickHVAC Style 3 example 98-90558 = 1998, month not encoded. Pattern is the normalized form: the builder strips dashes, so the documented 8-character 98-90558 becomes 7 digits; no undashed 7-digit Amana style is documented, so collision risk is noted but low."
+    }
+  ]
+}
