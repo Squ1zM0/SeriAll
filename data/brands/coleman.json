@@ -1,0 +1,33 @@
+{
+  "brand": "Coleman",
+  "slug": "coleman",
+  "aliases": ["Coleman-Evcon"],
+  "parent": "York",
+  "sisters": ["York"],
+  "sourceUrl": "https://www.building-center.org/coleman-hvac-age/",
+  "notes": "Coleman does NOT use usesStylesOf york: styles 1-2 match York's systems verbatim (same sample serials, same letter tables, same October 2004 boundary, charts note York UPG manufacturing), but styles 3-4 are Coleman-only numeric systems and the builder forbids styles alongside usesStylesOf. The month/year order swap is documented as a 1991/1992 boundary, not April 1992: style 4 (month first) ended 1991, style 3 (year first) began 1992. Dual-brand Coleman-Evcon history 1999-2005 is documented on the page. HELD, NOT SHIPPED (schema blockers, see below): style-1 (after October 2004, 10-character serials, sample W0K5896070 = September 2005) splits its year digits around the month letter (2nd and 4th characters), which the locked schema cannot express with a single contiguous slice; style-2 (1971 to October 2004, 4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) repeats its year letters on a 21-year cycle (A-N map to two years each) with no documented disambiguator. Shipping a first-cycle-only year table would silently mis-decode 1992-2004 units, so neither style is shipped until the schema gains multi-range positions and dual-candidate year handling.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-3",
+      "era": "From 1992 (9-digit numeric serials)",
+      "pattern": "^\\d{9}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "yearFloor": 1992,
+      "examples": [{"serial": "990697368", "expectedYear": 1999, "expectedMonth": 6}],
+      "notes": "Year first, month second. yearFloor 1992 reflects the documented start year; with this floor, trying style-3 before style-4 resolves the numeric overlap: a 9-digit serial whose style-3 month field is invalid falls through to style-4, and a serial matching style-3 with year 1992 or later cannot be a style-4 serial (style-4 ended 1991)."
+    },
+    {
+      "id": "style-4",
+      "era": "Prior to 1992, ended 1991 (numeric serials)",
+      "pattern": "^\\d{9,10}$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": {"kind": "digits", "positions": [0, 2]},
+      "week": null,
+      "examples": [{"serial": "0188123456", "expectedYear": 1988, "expectedMonth": 1}],
+      "notes": "Month first, year second: the reverse of style-3. DOCUMENTED-LENGTH DISCREPANCY: the page's style list shows a 9-digit sample (018812345) but the style-4 chart body shows 10 digits (0188123456, month 01, year 88, 6-digit sequence); the 10-digit body serial is used as the example and the pattern allows 9-10 digits. RESIDUAL EDGE, flagged not resolved: a 9-digit serial that fails style-3 month validation but passes style-4 with a year of 1992 or later would decode to a post-1991 year outside style-4's documented era; the schema has no era upper bound to reject it. No start date is documented for this style, so the default 1960 floor is kept."
+    }
+  ]
+}

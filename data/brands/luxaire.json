@@ -1,0 +1,31 @@
+{
+  "brand": "Luxaire",
+  "slug": "luxaire",
+  "parent": "York",
+  "sisters": ["York"],
+  "sourceUrl": "https://www.building-center.org/luxaire-hvac-age/",
+  "notes": "Luxaire does NOT use usesStylesOf york: it has extra numeric and 2-letter styles, and its style-1 month table conflicts with York's for September-December (see held-style note). HELD, NOT SHIPPED: style-1 (10-character serials, sample W0K5896070) splits its year digits around the month letter, which the locked schema cannot express with a single contiguous slice; it also carries a MONTH-TABLE CONFLICT: Luxaire's own style-1 chart maps K to October (J September, L November, M December, no N), while the York and Coleman charts map the same sample serial's K to September (K September, L October, M November, N December) — the same serial decodes to September 2005 on York/Coleman but October 2005 on Luxaire, and only a real data-plate check can settle it, so Luxaire's table must not be overwritten with York's on suspicion. Styles 4 (4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) and 5 (2 letters + 6-digit sequence, sample HM409295 = August 1982 or 2003) repeat their year letters on a 21-year cycle with no documented disambiguator and are likewise held; style-4's month table (K September) also contradicts Luxaire's own style-1 table (K October). Style-6 (11-digit numeric, year/month stated Unknown on the page) is intentionally omitted: no year can be extracted from it, and the page only gives a 1965-1981 company-name window and a contact-the-manufacturer instruction. Luxaire page last updated 2016, older than the York (2024) and Coleman (2023) pages.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-2",
+      "era": "8-digit numeric serials (no era dates stated on Luxaire page)",
+      "pattern": "^\\d{8}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "examples": [{"serial": "97104119", "expectedYear": 1997, "expectedMonth": 10}],
+      "notes": "Year first, month second. Same layout as Coleman style-3 but 8 digits and with no era dates stated on the Luxaire page, so no yearFloor override is set."
+    },
+    {
+      "id": "style-3",
+      "era": "Prior to 1992 (9-digit numeric serials)",
+      "pattern": "^\\d{9}$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": {"kind": "digits", "positions": [0, 2]},
+      "week": null,
+      "examples": [{"serial": "018812345", "expectedYear": 1988, "expectedMonth": 1}],
+      "notes": "Month first, year second. Same layout as Coleman style-4 (page text and chart agree on the 9-digit sample here, unlike Coleman's 9/10-digit discrepancy)."
+    }
+  ]
+}
