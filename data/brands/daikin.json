@@ -1,0 +1,43 @@
+{
+  "brand": "Daikin",
+  "slug": "daikin",
+  "parent": "Daikin Group",
+  "sourceUrl": "https://www.building-center.org/daikin-hvac-age/",
+  "notes": "Only 3 of the page's 10 styles encode as deterministic serial rules from the page text: page styles 2, 7 and 10. Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Page styles 3, 4, 5, 6, 8 and 9 decode through charts shown only as images on the page; the chart contents are not recoverable from the page text, so no tables are encoded for them and they are held as gaps pending a read of the chart images. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Page style 2: 4-letter prefix followed by 10 digits",
+      "pattern": "^[A-Z]{4}\\d{10}$",
+      "year": {"kind": "digits", "positions": [4, 6]},
+      "month": {"kind": "digits", "positions": [6, 8]},
+      "week": null,
+      "yearFloor": 1960,
+      "examples": [{"serial": "FBOU0905048200", "expectedYear": 2009, "expectedMonth": 5}],
+      "notes": "Page style 2: year is the 5th and 6th characters (first two digits after the 4-letter prefix), month is the 7th and 8th characters. Example decode derived from the documented positions: 09 -> 2009, 05 -> May."
+    },
+    {
+      "id": "style-2",
+      "era": "Page style 7: 1 letter followed by 9 digits",
+      "pattern": "^[A-Z]\\d{9}$",
+      "year": {"kind": "digits", "positions": [1, 3]},
+      "month": null,
+      "week": {"kind": "digits", "positions": [3, 5]},
+      "yearFloor": 1960,
+      "examples": [{"serial": "R881212345", "expectedYear": 1988, "expectedWeek": 12}],
+      "notes": "Page style 7: year is the 2nd and 3rd digits, week is the 4th and 5th digits. Example decode derived from the documented positions: 88 -> 1988, week 12."
+    },
+    {
+      "id": "style-3",
+      "era": "Page style 10: 10-digit numeric serials",
+      "pattern": "^\\d{10}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "yearFloor": 1960,
+      "examples": [{"serial": "1602393269", "expectedYear": 2016, "expectedMonth": 2}],
+      "notes": "Page style 10: year is the 1st and 2nd numbers, month is the 3rd and 4th numbers. Example decode derived from the documented positions: 16 -> 2016, 02 -> February."
+    }
+  ]
+}

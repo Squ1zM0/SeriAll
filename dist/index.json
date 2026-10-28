@@ -1,6 +1,104 @@
 {
-  "brandCount": 5,
+  "brandCount": 6,
   "brands": {
+    "daikin": {
+      "aliases": null,
+      "brand": "Daikin",
+      "notes": "Only 3 of the page's 10 styles encode as deterministic serial rules from the page text: page styles 2, 7 and 10. Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Page styles 3, 4, 5, 6, 8 and 9 decode through charts shown only as images on the page; the chart contents are not recoverable from the page text, so no tables are encoded for them and they are held as gaps pending a read of the chart images. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
+      "parent": "Daikin Group",
+      "sisters": null,
+      "slug": "daikin",
+      "sourceUrl": "https://www.building-center.org/daikin-hvac-age/",
+      "styles": [
+        {
+          "era": "Page style 2: 4-letter prefix followed by 10 digits",
+          "examples": [
+            {
+              "expectedMonth": 5,
+              "expectedYear": 2009,
+              "serial": "FBOU0905048200"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              6,
+              8
+            ]
+          },
+          "notes": "Page style 2: year is the 5th and 6th characters (first two digits after the 4-letter prefix), month is the 7th and 8th characters. Example decode derived from the documented positions: 09 -> 2009, 05 -> May.",
+          "pattern": "^[A-Z]{4}\\d{10}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              4,
+              6
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Page style 7: 1 letter followed by 9 digits",
+          "examples": [
+            {
+              "expectedWeek": 12,
+              "expectedYear": 1988,
+              "serial": "R881212345"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page style 7: year is the 2nd and 3rd digits, week is the 4th and 5th digits. Example decode derived from the documented positions: 88 -> 1988, week 12.",
+          "pattern": "^[A-Z]\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Page style 10: 10-digit numeric serials",
+          "examples": [
+            {
+              "expectedMonth": 2,
+              "expectedYear": 2016,
+              "serial": "1602393269"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "notes": "Page style 10: year is the 1st and 2nd numbers, month is the 3rd and 4th numbers. Example decode derived from the documented positions: 16 -> 2016, 02 -> February.",
+          "pattern": "^\\d{10}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
     "goodman": {
       "aliases": [
         "GmC"
