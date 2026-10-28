@@ -1,0 +1,25 @@
+{
+  "brand": "Goodman",
+  "slug": "goodman",
+  "aliases": ["GmC"],
+  "parent": "Daikin Group",
+  "sisters": ["Janitrol"],
+  "sourceUrl": "https://www.building-center.org/goodman-hvac-age/",
+  "notes": "Style 1 is the 10-digit numeric system (fully validated). Style 2 (select PTAC systems manufactured for Goodman by Daikin Industries, serials ending in P or D, ended shortly after the 2012 Daikin acquisition) is NOT encoded: the page documents its letter positions (year = 3rd position / 2nd letter, month = 2nd position / 1st letter) and its example serial 5FU5472618P, but gives no letter-to-year or letter-to-month mapping in retrievable text and no stated decode for that example, so no Style 2 table is shipped rather than guessed. Amana is a related brand but its page states no serial system, so it is not listed as a sister sharing this system and has no file (documented gap). The style list variant 9704 011000 shares Style 1's YYMM prefix but has no separately stated decode, so it is not added as an example.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "10-digit numeric serials",
+      "pattern": "^\\d{10}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "yearFloor": 1960,
+      "examples": [
+        {"serial": "9704811080", "expectedYear": 1997, "expectedMonth": 4}
+      ],
+      "notes": "Page positions 1-2 = year, 3-4 = month (1-based), converted to 0-based half-open ranges. Page example shown as 97 04811080."
+    }
+  ]
+}

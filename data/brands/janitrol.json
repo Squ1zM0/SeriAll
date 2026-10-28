@@ -1,0 +1,10 @@
+{
+  "brand": "Janitrol",
+  "slug": "janitrol",
+  "parent": "Goodman Manufacturing Company, L.P.",
+  "sisters": ["Goodman"],
+  "sourceUrl": "https://www.building-center.org/janitrol-hvac-age/",
+  "notes": "Legacy brand: acquired by Goodman circa 1982, brand name discontinued in 1992; kept as its own file per the legacy pass-through rule, not merged into Goodman. Reuse evidence is page-framing only: the Janitrol page is headed Janitrol-Goodman-GmC-Amana and frames age determination as Goodman Manufacturing brand systems, with Goodman Manufacturing Company, L.P. as parent. The page gives no Janitrol-specific positions, formats, or examples, so this reuse rests on that framing, not on position-level confirmation on the Janitrol page.",
+  "usesStylesOf": "goodman",
+  "styles": []
+}
