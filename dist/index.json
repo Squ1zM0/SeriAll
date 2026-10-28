@@ -2545,7 +2545,7 @@
     "reznor": {
       "aliases": null,
       "brand": "Reznor",
-      "notes": "PARTIAL YEAR TABLE for style-1: the page image states the year is coded in the first two or three letters and that year-letter sequences for 1949-2029 are shown in tables below, but those year tables are not present in the fetched page content (only the month table A-L and the single data point BK = 2011, from the Dec 2011 sample, are documented). Style-1 therefore encodes only BK -> 2011; all other style-1 year codes return cannot-determine until the full year table is sourced. The 2-letter key BK is a natural generalization of the letterTable kind to a 2-character slice (the builder looks the slice up exactly); the locked schema prose says single-letter keys, which a future clarification should address. The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
+      "notes": "PARTIAL YEAR TABLE for style-1, EXTENDED IN PHASE 2b (TEXT-SOURCED): year codes 1995-2029 from Reznor date-code tables in manufacturer documentation (Reznor parts-manual mirror, LDAP manual, date-code chart PDF), three sources agreeing on the sequential pattern (first two letters advance one step per year; third letter A-L is the month, already shipped); BK=2011 matches the Building Center page example. New examples use serials quoted in the source documents themselves, not invented: BLL00000X (manualsdir decoding example, BLL = December 2012) and BOG30600000 (parts-guide sample, BOG = July 2015). Two secondary copies contain obvious typos disregarded here (one duplicates the 2015 BO row for 2017; one prints 'BFID'/'Bill' for 2008 rows; one prints 'BIB' for a 2020 row) \u2014 the pattern itself is unaffected. NOT INCLUDED: codes before 1995. Found tables start at 1995 and the Building Center 1949-2029 tables remain unread via text fetch (chart image read still open); extending the sequence backwards arithmetically (1994=AT, ...) is unsourced arithmetic, not a fact, and the pre-1975 code form is unknown (the sequence cannot go below AA in the same form). Pre-1995 stays held pending the browser read. The 2-letter key is the ratified string-keyed table kind (Phase 2b schema). The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
       "parent": "Thomas & Betts Corporation",
       "sisters": null,
       "slug": "reznor",
@@ -2558,6 +2558,16 @@
               "expectedMonth": 12,
               "expectedYear": 2011,
               "serial": "BKL79Y2N35171X"
+            },
+            {
+              "expectedMonth": 12,
+              "expectedYear": 2012,
+              "serial": "BLL00000X"
+            },
+            {
+              "expectedMonth": 7,
+              "expectedYear": 2015,
+              "serial": "BOG30600000"
             }
           ],
           "id": "style-1",
@@ -2591,7 +2601,41 @@
               2
             ],
             "table": {
-              "BK": 2011
+              "AU": 1995,
+              "AV": 1996,
+              "AW": 1997,
+              "AX": 1998,
+              "AY": 1999,
+              "AZ": 2000,
+              "BA": 2001,
+              "BB": 2002,
+              "BC": 2003,
+              "BD": 2004,
+              "BE": 2005,
+              "BF": 2006,
+              "BG": 2007,
+              "BH": 2008,
+              "BI": 2009,
+              "BJ": 2010,
+              "BK": 2011,
+              "BL": 2012,
+              "BM": 2013,
+              "BN": 2014,
+              "BO": 2015,
+              "BP": 2016,
+              "BQ": 2017,
+              "BR": 2018,
+              "BS": 2019,
+              "BT": 2020,
+              "BU": 2021,
+              "BV": 2022,
+              "BW": 2023,
+              "BX": 2024,
+              "BY": 2025,
+              "BZ": 2026,
+              "CA": 2027,
+              "CB": 2028,
+              "CC": 2029
             }
           }
         },
