@@ -1,0 +1,38 @@
+{
+  "brand": "LG",
+  "slug": "lg",
+  "parent": "LG Electronics",
+  "sourceUrl": "https://www.building-center.org/lg-hvac-age/",
+  "notes": "Style 2 (EQ style) SHIPPABLE from the page diagram, which governs over the page body text: the body text positions (year 6th-10th, month 11th, day 12th-13th) give an impossible date (year 20013, month 5, day 00) for the diagram sample, while the diagram boxes give a valid date. Diagram (LG-2-Serial-Number.jpg): buyer code EQ (1-2), model code 11 (3-4), line number 2 (5), production year 2001 (6-9), production month 3 (10), day 15 (11-12), serial 0001 (13-16). The schema has no day field, so the day is recorded in notes only. The page section for this style is mislabelled Style 1 a second time; it is the EQ style listed as Style 2 at the top of the page. The page states this style is believed no longer in use. Style 1 (digit-led) is NOT shipped: year is a single digit with no page-stated decade bound \u2014 digit 4 is documented as 2004 (diagram sample 404KAPB00104), 2014 and 2024 (page text on 407HAVN79423, plate confirms 2024), and digit 2 as 2012 (plate 207KRMK0Y171, MANUFACTURED 2012.07) \u2014 so a two-candidate [2014, 2024] table for digit 4 is disproven, and an assumed 2000-2026 multi-candidate bound was rejected as assumed, not page-stated. Style 1 month (positions 2-3) is exact but year-decade-unknown; check the separate serial tag, which often carries the manufacture date on newer systems. Unresolved diagram anomaly, NOT encoded: the Style 1 diagram also claims 1201KAPB00104 = January 2012 with a 4-character date code, contradicting the current rule (positions 1 = year digit, 2-3 = month); such a serial correctly fails under the current rule.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-2",
+      "era": "EQ style, believed no longer in use (page diagram)",
+      "pattern": "^[A-Z0-9]{5}[0-9]{11}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          5,
+          9
+        ]
+      },
+      "month": {
+        "kind": "digits",
+        "positions": [
+          9,
+          10
+        ]
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "EQ11220013150001",
+          "expectedYear": 2001,
+          "expectedMonth": 3
+        }
+      ],
+      "notes": "Diagram sample EQ11220013150001 decodes to 2001-03-15 (year 2001, month 3, day 15). Page body-text positions are off by one and are NOT used; diagram governs."
+    }
+  ]
+}
