@@ -1,0 +1,52 @@
+{
+  "brand": "Carrier",
+  "slug": "carrier",
+  "parent": "Carrier Global Corporation",
+  "sisters": [
+    "Bryant",
+    "Payne"
+  ],
+  "sourceUrl": "https://brandportal.carrier.com/asset/be802f24-6b27-4e31-8040-a533a801fe86/38AXQ-16-25-01SI.pdf",
+  "notes": "Building Center Carrier page is history-only (https://www.building-center.org/carrier-hvac-age/, no serial system). Modern style is documented INDEPENDENTLY of Bryant/Payne files, in Carrier manufacturer documentation (brandportal product literature, serial-number nomenclature figure, repeated across 38AX, 38AU and 40RU documents): positions 1-2 = week of manufacture (fiscal calendar), 3-4 = year, 5 = manufacturing location, 6-10 = sequence number. Corroborated for residential equipment by Carrier Northwest (Carrier dealer site, example 5220 = 52nd week 2020) and SmartACSolutions (2714 = week 27 of 2014, mid-1990s to today). SCOPE CAVEAT: manufacturer documents cover commercial lines 38AX/38AU/40RU; the WWYY rule is corroborated, not manufacturer-proven, for residential lines. Older Carrier systems (1960s single-digit year, 1970s letter+digit, per inspector-training source only) are HELD, not drafted: incomplete and single-sourced. Week is a fiscal-calendar week per the manufacturer figure, not necessarily ISO week; recorded as week, as in Bryant/Payne files. Carrier derivation from Bryant/Payne was NOT used: no Bryant/Payne file content is cited as the source for this file.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Modern WWYY, mid-1990s to present",
+      "pattern": "^[0-9]{4}[A-Z0-9][0-9]{5}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          2,
+          4
+        ]
+      },
+      "month": null,
+      "week": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "examples": [
+        {
+          "serial": "0525912345",
+          "expectedYear": 2025,
+          "expectedWeek": 5
+        },
+        {
+          "serial": "2623G12345",
+          "expectedYear": 2023,
+          "expectedWeek": 26
+        },
+        {
+          "serial": "0524912345",
+          "expectedYear": 2024,
+          "expectedWeek": 5
+        }
+      ],
+      "notes": "Examples are the typical serials printed in the manufacturer nomenclature figures: 0525... = week 05, 2025 (38AXQ doc); 2623G12345 = week 26, 2023 (40RU doc); 0524... = week 05, 2024 (38AX doc). Position 5 is a location code (digit 9 in the 38AX typicals, letter G in the 40RU typical), hence [A-Z0-9]."
+    }
+  ]
+}
