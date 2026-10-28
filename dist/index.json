@@ -13,6 +13,40 @@
       "sourceUrl": "https://www.building-center.org/american-standard-hvac-age/",
       "styles": [
         {
+          "era": "2010-present, digit-led serials (page Style 1, later form)",
+          "examples": [
+            {
+              "expectedWeek": 16,
+              "expectedYear": 2010,
+              "serial": "10161KEDAA"
+            },
+            {
+              "expectedWeek": 3,
+              "expectedYear": 2013,
+              "serial": "130313596L"
+            }
+          ],
+          "id": "style-2",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. ORDERING: digit-led serials starting 20-26 match BOTH this style (2010+ reading) and style-1 (2002-2009 reading); this style is tried first, so the decoder returns the 2010+ reading. The page notes the styles overlap and directs techs to the data-plate MFR date to disambiguate; a 2002 serial in the overlap set will decode as a 2020s year.",
+          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
           "era": "2002-2009, digit-led serials (page Style 1, early form)",
           "examples": [
             {
@@ -24,7 +58,7 @@
           "id": "style-1",
           "inheritedFrom": "trane",
           "month": null,
-          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. Digit-led serials starting 20-26 are genuinely ambiguous with the 2010+ two-digit reading (page notes styles overlap); style-2 claims those, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate.",
+          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. ORDERING: digit-led serials starting 20-26 match BOTH this style (2002-2009 reading) and style-2 (2010+ reading); style-2 is tried first, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate per the page. A 2002 serial in the overlap set therefore decodes as a 2020s year; this is a documented page ambiguity, not a silent guess.",
           "pattern": "^[2-9][0-5][0-9][A-Z0-9]+$",
           "week": {
             "kind": "digits",
@@ -49,40 +83,6 @@
               "8": 2008,
               "9": 2009
             }
-          }
-        },
-        {
-          "era": "2010-present, digit-led serials (page Style 1, later form)",
-          "examples": [
-            {
-              "expectedWeek": 16,
-              "expectedYear": 2010,
-              "serial": "10161KEDAA"
-            },
-            {
-              "expectedWeek": 3,
-              "expectedYear": 2013,
-              "serial": "130313596L"
-            }
-          ],
-          "id": "style-2",
-          "inheritedFrom": "trane",
-          "month": null,
-          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. Digit-led serials starting 20-26 are genuinely ambiguous with the 2002-2009 single-digit reading (the page notes styles overlap); the decoder returns the 2010+ reading, so use the data-plate MFR date to disambiguate.",
-          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
-          "week": {
-            "kind": "digits",
-            "positions": [
-              2,
-              4
-            ]
-          },
-          "year": {
-            "kind": "digits",
-            "positions": [
-              0,
-              2
-            ]
           }
         },
         {
@@ -1509,6 +1509,39 @@
       "sourceUrl": "https://www.building-center.org/trane-hvac-age/",
       "styles": [
         {
+          "era": "2010-present, digit-led serials (page Style 1, later form)",
+          "examples": [
+            {
+              "expectedWeek": 16,
+              "expectedYear": 2010,
+              "serial": "10161KEDAA"
+            },
+            {
+              "expectedWeek": 3,
+              "expectedYear": 2013,
+              "serial": "130313596L"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. ORDERING: digit-led serials starting 20-26 match BOTH this style (2010+ reading) and style-1 (2002-2009 reading); this style is tried first, so the decoder returns the 2010+ reading. The page notes the styles overlap and directs techs to the data-plate MFR date to disambiguate; a 2002 serial in the overlap set will decode as a 2020s year.",
+          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
           "era": "2002-2009, digit-led serials (page Style 1, early form)",
           "examples": [
             {
@@ -1519,7 +1552,7 @@
           ],
           "id": "style-1",
           "month": null,
-          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. Digit-led serials starting 20-26 are genuinely ambiguous with the 2010+ two-digit reading (page notes styles overlap); style-2 claims those, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate.",
+          "notes": "Single-digit year encoded as a digit-keyed letterTable because the schema digits kind cannot express a 1-character year slice; the mapping (digit d = 2000+d for 2002-2009) is the page's stated rule. CAVEAT: the page notes some circa 1978-79 models may have used this shape, so a leading 8 or 9 could be 1978/1979 on a very old unit; condition and appearance disambiguate per the page. ORDERING: digit-led serials starting 20-26 match BOTH this style (2002-2009 reading) and style-2 (2010+ reading); style-2 is tried first, so the decoder returns the 2010+ reading and the data-plate MFR date must disambiguate per the page. A 2002 serial in the overlap set therefore decodes as a 2020s year; this is a documented page ambiguity, not a silent guess.",
           "pattern": "^[2-9][0-5][0-9][A-Z0-9]+$",
           "week": {
             "kind": "digits",
@@ -1544,39 +1577,6 @@
               "8": 2008,
               "9": 2009
             }
-          }
-        },
-        {
-          "era": "2010-present, digit-led serials (page Style 1, later form)",
-          "examples": [
-            {
-              "expectedWeek": 16,
-              "expectedYear": 2010,
-              "serial": "10161KEDAA"
-            },
-            {
-              "expectedWeek": 3,
-              "expectedYear": 2013,
-              "serial": "130313596L"
-            }
-          ],
-          "id": "style-2",
-          "month": null,
-          "notes": "Year-prefix range 10-26 in the pattern must be extended as the calendar advances; the century rule alone would misread pre-2010 digit-led serials. Digit-led serials starting 20-26 are genuinely ambiguous with the 2002-2009 single-digit reading (the page notes styles overlap); the decoder returns the 2010+ reading, so use the data-plate MFR date to disambiguate.",
-          "pattern": "^(1[0-9]|2[0-6])[0-9]{2}[A-Z0-9]+$",
-          "week": {
-            "kind": "digits",
-            "positions": [
-              2,
-              4
-            ]
-          },
-          "year": {
-            "kind": "digits",
-            "positions": [
-              0,
-              2
-            ]
           }
         },
         {
