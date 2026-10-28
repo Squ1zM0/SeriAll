@@ -1,0 +1,44 @@
+{
+  "brand": "Lennox",
+  "slug": "lennox",
+  "parent": "Lennox International",
+  "sourceUrl": "https://www.building-center.org/lennox-hvac-age/",
+  "notes": "Page lists related brands (AirEase, Airease-Johnson, Aire-flo, Allied-Commercial, Allied, Armstrong Air, Concord, Ducane, Magic-Pak, Advanced Distributor Products (ADP), Heatcraft) but does not document that any shares this serial system, so no sisters or usesStylesOf are set. Page presents pre-1973 serials as a single style with a 1- or 2-digit month; split here into two file styles because schema positions are fixed ranges. Two-digit years resolve by the schema century rule with the default 1960 floor, so pre-1960 pre-1973 serials return cannot-determine rather than a guessed year. The page documents only one month-letter system (A-M minus I, 1973+); there are no separate month-letter eras to encode.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "1973 and after, 10-character serials",
+      "pattern": "^\\d{4}[A-Z]\\d{5}$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": {"kind": "letterTable", "positions": [4, 5], "table": {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "J": 9, "K": 10, "L": 11, "M": 12}},
+      "week": null,
+      "examples": [
+        {"serial": "1606B13871", "expectedYear": 2006, "expectedMonth": 2},
+        {"serial": "5899L17212", "expectedYear": 1999, "expectedMonth": 11}
+      ]
+    },
+    {
+      "id": "style-2",
+      "era": "Prior to 1973, 3-character serials (1-digit month)",
+      "pattern": "^\\d{3}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 3]},
+      "week": null,
+      "examples": [
+        {"serial": "724", "expectedYear": 1972, "expectedMonth": 4}
+      ]
+    },
+    {
+      "id": "style-3",
+      "era": "Prior to 1973, 4-character serials (2-digit month)",
+      "pattern": "^\\d{4}$",
+      "year": {"kind": "digits", "positions": [0, 2]},
+      "month": {"kind": "digits", "positions": [2, 4]},
+      "week": null,
+      "examples": [
+        {"serial": "6512", "expectedYear": 1965, "expectedMonth": 12}
+      ]
+    }
+  ]
+}

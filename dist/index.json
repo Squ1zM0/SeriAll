@@ -1,5 +1,5 @@
 {
-  "brandCount": 14,
+  "brandCount": 16,
   "brands": {
     "american-standard": {
       "aliases": null,
@@ -849,6 +849,117 @@
         }
       ]
     },
+    "lennox": {
+      "aliases": null,
+      "brand": "Lennox",
+      "notes": "Page lists related brands (AirEase, Airease-Johnson, Aire-flo, Allied-Commercial, Allied, Armstrong Air, Concord, Ducane, Magic-Pak, Advanced Distributor Products (ADP), Heatcraft) but does not document that any shares this serial system, so no sisters or usesStylesOf are set. Page presents pre-1973 serials as a single style with a 1- or 2-digit month; split here into two file styles because schema positions are fixed ranges. Two-digit years resolve by the schema century rule with the default 1960 floor, so pre-1960 pre-1973 serials return cannot-determine rather than a guessed year. The page documents only one month-letter system (A-M minus I, 1973+); there are no separate month-letter eras to encode.",
+      "parent": "Lennox International",
+      "sisters": null,
+      "slug": "lennox",
+      "sourceUrl": "https://www.building-center.org/lennox-hvac-age/",
+      "styles": [
+        {
+          "era": "1973 and after, 10-character serials",
+          "examples": [
+            {
+              "expectedMonth": 2,
+              "expectedYear": 2006,
+              "serial": "1606B13871"
+            },
+            {
+              "expectedMonth": 11,
+              "expectedYear": 1999,
+              "serial": "5899L17212"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              4,
+              5
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "pattern": "^\\d{4}[A-Z]\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "era": "Prior to 1973, 3-character serials (1-digit month)",
+          "examples": [
+            {
+              "expectedMonth": 4,
+              "expectedYear": 1972,
+              "serial": "724"
+            }
+          ],
+          "id": "style-2",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              3
+            ]
+          },
+          "pattern": "^\\d{3}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "era": "Prior to 1973, 4-character serials (2-digit month)",
+          "examples": [
+            {
+              "expectedMonth": 12,
+              "expectedYear": 1965,
+              "serial": "6512"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "pattern": "^\\d{4}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        }
+      ]
+    },
     "luxaire": {
       "aliases": null,
       "brand": "Luxaire",
@@ -1155,6 +1266,88 @@
               "8": 1978,
               "9": 1979
             }
+          }
+        }
+      ]
+    },
+    "reznor": {
+      "aliases": null,
+      "brand": "Reznor",
+      "notes": "PARTIAL YEAR TABLE for style-1: the page image states the year is coded in the first two or three letters and that year-letter sequences for 1949-2029 are shown in tables below, but those year tables are not present in the fetched page content (only the month table A-L and the single data point BK = 2011, from the Dec 2011 sample, are documented). Style-1 therefore encodes only BK -> 2011; all other style-1 year codes return cannot-determine until the full year table is sourced. The 2-letter key BK is a natural generalization of the letterTable kind to a 2-character slice (the builder looks the slice up exactly); the locked schema prose says single-letter keys, which a future clarification should address. The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
+      "parent": "Thomas & Betts Corporation",
+      "sisters": null,
+      "slug": "reznor",
+      "sourceUrl": "https://www.building-center.org/reznor-hvac-age/",
+      "styles": [
+        {
+          "era": "Letter-prefix serials starting with three letters: year is the first two letters, month is the third letter",
+          "examples": [
+            {
+              "expectedMonth": 12,
+              "expectedYear": 2011,
+              "serial": "BKL79Y2N35171X"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "I": 9,
+              "J": 10,
+              "K": 11,
+              "L": 12
+            }
+          },
+          "pattern": "^[A-Z]{3}[A-Z0-9]+$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              2
+            ],
+            "table": {
+              "BK": 2011
+            }
+          }
+        },
+        {
+          "era": "9-character serials: month is the 1st and 2nd digits, year is the 3rd and 4th digits",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 2008,
+              "serial": "09087238A"
+            }
+          ],
+          "id": "style-2",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "pattern": "^\\d{8}[A-Z]$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
           }
         }
       ]

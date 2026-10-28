@@ -1,0 +1,32 @@
+{
+  "brand": "Reznor",
+  "slug": "reznor",
+  "parent": "Thomas & Betts Corporation",
+  "sourceUrl": "https://www.building-center.org/reznor-hvac-age/",
+  "notes": "PARTIAL YEAR TABLE for style-1: the page image states the year is coded in the first two or three letters and that year-letter sequences for 1949-2029 are shown in tables below, but those year tables are not present in the fetched page content (only the month table A-L and the single data point BK = 2011, from the Dec 2011 sample, are documented). Style-1 therefore encodes only BK -> 2011; all other style-1 year codes return cannot-determine until the full year table is sourced. The 2-letter key BK is a natural generalization of the letterTable kind to a 2-character slice (the builder looks the slice up exactly); the locked schema prose says single-letter keys, which a future clarification should address. The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Letter-prefix serials starting with three letters: year is the first two letters, month is the third letter",
+      "pattern": "^[A-Z]{3}[A-Z0-9]+$",
+      "year": {"kind": "letterTable", "positions": [0, 2], "table": {"BK": 2011}},
+      "month": {"kind": "letterTable", "positions": [2, 3], "table": {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9, "J": 10, "K": 11, "L": 12}},
+      "week": null,
+      "examples": [
+        {"serial": "BKL79Y2N35171X", "expectedYear": 2011, "expectedMonth": 12}
+      ]
+    },
+    {
+      "id": "style-2",
+      "era": "9-character serials: month is the 1st and 2nd digits, year is the 3rd and 4th digits",
+      "pattern": "^\\d{8}[A-Z]$",
+      "year": {"kind": "digits", "positions": [2, 4]},
+      "month": {"kind": "digits", "positions": [0, 2]},
+      "week": null,
+      "examples": [
+        {"serial": "09087238A", "expectedYear": 2008, "expectedMonth": 9}
+      ]
+    }
+  ]
+}
