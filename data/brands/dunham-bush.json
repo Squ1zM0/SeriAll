@@ -1,0 +1,32 @@
+{
+  "brand": "Dunham-Bush",
+  "notes": "Legacy brand kept as its own entry; no successor/acquirer chain is stated on the Building Center page, so none is asserted here (successor chain is a gap, not an invention). Year-only ship: the month letter is chart/image-only. Page intro text mentions 'Data Aire' equipment, evidently a template error on a Dunham-Bush page; ignored, brand taken from the page title.",
+  "parent": "Dunham-Bush Holding",
+  "slug": "dunham-bush",
+  "sourceUrl": "https://www.building-center.org/dunham-bush-hvac-age/",
+  "styles": [
+    {
+      "era": "Serials with dash, 5 digits + dash + 2 digits + letter + 2 digits + letter",
+      "examples": [
+        {
+          "expectedYear": 1985,
+          "serial": "5034701A85F"
+        }
+      ],
+      "id": "style-1",
+      "month": null,
+      "notes": "Page form '50347-01A85F' normalized (dash stripped). Page states year = 4th & 5th numerical digits after the dash and month = 3rd alpha digit after the dash. Digit-only counting after the dash yields only four digits (0,1,8,5) and cannot supply a 5th, so that reading is falsified; character counting after the dash gives year digits 8,5 at normalized [8,10] = 1985, and month letter A at normalized [7,8]. The month letter mapping is image-only, so month is omitted pending the image pass.",
+      "pattern": "^\\d{7}[A-Z]\\d{2}[A-Z]$",
+      "week": null,
+      "year": {
+        "kind": "digits",
+        "positions": [
+          8,
+          10
+        ]
+      },
+      "yearFloor": 1960
+    }
+  ],
+  "usesStylesOf": null
+}
