@@ -1,1 +1,32 @@
-{"brand":"Koppel","notes":"Page states these are Fedders-Airwell serial styles being used for Koppel, adding 'although unconfirmed it is believed that all Fedders-Airwell units use these styles' — that unconfirmed-belief caveat is recorded here and flagged for the coordinator (cf. the Emerson unconfirmed-belief precedent: text-stated rules ship with the caveat on file, not silently). NOTHING is imported from any Fedders page: both shipped styles are transcribed from Koppel's own page text alone. HELD, NOT SHIPPED: page Style 3 (month = 1st letter, year = 2nd characters, both chart), page Style 4 (month = 1st letter, year = 2nd characters, both chart), page Style 5 (month = 2nd-to-last letter, year = last letter, both chart) — no text-verified year, so no year-only file for them. Style 2 ships year-only (its month is a chart-only letter).","parent":"Fedders-Airwell","slug":"koppel","sourceUrl":"https://www.building-center.org/koppel-hvac-age/","styles":[{"era":"12-character serials, 2 letters + 9 digits + letter, year + week","examples":[{"expectedWeek":2,"expectedYear":2001,"serial":"EW020144126H"}],"id":"style-1","month":null,"notes":"Week = 3rd-4th characters [2,4], year = 5th-6th characters [4,6] (1-based converted). The page highlights segment 0201, consistent with week 02 / year 01.","pattern":"^[A-Z]{2}\\d{9}[A-Z]$","week":{"kind":"digits","positions":[2,4]},"year":{"kind":"digits","positions":[4,6]},"yearFloor":1960},{"era":"8-character serials, 2 digits + letter + 5 digits, year only","examples":[{"expectedYear":2002,"serial":"02J60002"}],"id":"style-2","month":null,"notes":"Page example shown as 02J-60002; dash stripped by normalization. Year = 1st-2nd characters [0,2]. Month = 3rd character (letter), chart-only, so year-only.","pattern":"^\\d{2}[A-Z]\\d{5}$","week":null,"year":{"kind":"digits","positions":[0,2]},"yearFloor":1960}],"usesStylesOf":null}
+{
+  "brand": "Koppel",
+  "notes": "Page states these are Fedders-Airwell serial styles being used for Koppel, adding 'although unconfirmed it is believed that all Fedders-Airwell units use these styles' \u2014 that unconfirmed-belief caveat is recorded here and flagged for the coordinator (cf. the Emerson unconfirmed-belief precedent: text-stated rules ship with the caveat on file, not silently). NOTHING is imported from any Fedders page: the shipped style is transcribed from Koppel's own page text alone. CORRECTION (post-Wave-8, coordinator): page Style 1 (week = 3rd-4th characters, year = 5th-6th characters, example EW020144126H) was shipped in Wave 8 and has been REMOVED \u2014 it shares its shape (2 letters + 9 digits + 1 letter) with held page Style 3 (AS298488006X, month = 1st character and year = 2nd characters, both chart-only), so a Style 3 serial would mis-decode under Style 1 with a wrong week/year. Same hold as the Emerson, Melcor, and Airwell files; the collision was caught from the Melcor curator's Wave 9 flag. HELD, NOT SHIPPED: page Style 1 (shape collision, see above), page Style 3 (month = 1st letter, year = 2nd characters, both chart), page Style 4 (month = 1st letter, year = 2nd characters, both chart), page Style 5 (month = 2nd-to-last letter, year = last letter, both chart) \u2014 no text-verified year, so no year-only file for them. Style 2 ships year-only (its month is a chart-only letter).",
+  "parent": "Fedders-Airwell",
+  "slug": "koppel",
+  "sourceUrl": "https://www.building-center.org/koppel-hvac-age/",
+  "styles": [
+    {
+      "era": "8-character serials, 2 digits + letter + 5 digits, year only",
+      "examples": [
+        {
+          "expectedYear": 2002,
+          "serial": "02J60002"
+        }
+      ],
+      "id": "style-2",
+      "month": null,
+      "notes": "Page example shown as 02J-60002; dash stripped by normalization. Year = 1st-2nd characters [0,2]. Month = 3rd character (letter), chart-only, so year-only.",
+      "pattern": "^\\d{2}[A-Z]\\d{5}$",
+      "week": null,
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "yearFloor": 1960
+    }
+  ],
+  "usesStylesOf": null
+}
