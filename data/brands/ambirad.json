@@ -1,0 +1,78 @@
+{
+ "brand": "Ambirad",
+ "notes": "Page is headed AMBIRAD-Nordyne and lists Nordyne among sister/similar brands, but its documented styles are NOT identical to the Nordyne file's styles: style-1 here matches Nordyne style-1 (same shape, positions, and example GBB030708229), while the page's styles 2-5 have no counterpart in the Nordyne file (whose style-2 is a 16-character system absent from this page). usesStylesOf is therefore not used; all styles below are transcribed from this page. Page styles 3, 4 (first), and 4 (second) collapse to ONE normalized style (letter-digit-letter + 9 digits, year [3,5], month [5,7]). COORDINATOR HOLD (Wave 2 verification): page style 2 (F3891 4228) is NOT shipped \u2014 its year is genuinely ambiguous between overall-character counting (3rd & 4th characters = 89 \u2192 1989) and numerical-digit counting (3rd & 4th numerical digits = 91 \u2192 1991, the reading corroborated by the Nordyne 16-character style's decode of the same digit run). The same style is held on the Airbloc page for the same reason. Unblocker: the NORDYNE-2.jpg / NORDYNE-2a diagrams showing which positions are year-coded. The full-string-counting reading (1989) is the leading hypothesis for that read, not a shipped rule.",
+ "parent": "Nortek (formerly Nordyne Manufacturing)",
+ "slug": "ambirad",
+ "sourceUrl": "https://www.building-center.org/ambirad-hvac-age/",
+ "styles": [
+  {
+   "era": "12-character serials, 3 letters followed by 9 digits",
+   "examples": [
+    {
+     "expectedMonth": 7,
+     "expectedYear": 2003,
+     "serial": "GBB030708229"
+    }
+   ],
+   "id": "style-1",
+   "month": {
+    "kind": "digits",
+    "positions": [
+     5,
+     7
+    ]
+   },
+   "notes": "Page positions 4-5 = year, 6-7 = month (1-based), converted to 0-based half-open ranges. Page example shown as GBB030708229.",
+   "pattern": "^[A-Z]{3}\\d{9}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     3,
+     5
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "12-character serials, letter-digit-letter followed by 9 digits (page styles 3, 4, and second 4 merged)",
+   "examples": [
+    {
+     "expectedMonth": 5,
+     "expectedYear": 1999,
+     "serial": "G6R990505028"
+    },
+    {
+     "expectedMonth": 7,
+     "expectedYear": 1998,
+     "serial": "M1G980705432"
+    },
+    {
+     "expectedMonth": 5,
+     "expectedYear": 1997,
+     "serial": "E2E970501234"
+    }
+   ],
+   "id": "style-3",
+   "month": {
+    "kind": "digits",
+    "positions": [
+     5,
+     7
+    ]
+   },
+   "notes": "Page style 3 example shown as G6R9905-05028; page style 4 example shown with spaces as M 1 G 9807 - 05432; second page style 4 example shown as E2E-9705 01234. All three normalize to letter-digit-letter plus 9 digits and decode under the same ranges: year = 4th-5th characters, month = 6th-7th characters (1-based) on the normalized serial. For the E2E example the page's stated 5th-6th/7th-8th positions count the dash on the raw serial; after normalization they are the same [3,5]/[5,7] ranges used here.",
+   "pattern": "^[A-Z]\\d[A-Z]\\d{9}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     3,
+     5
+    ]
+   },
+   "yearFloor": 1960
+  }
+ ],
+ "usesStylesOf": null
+}

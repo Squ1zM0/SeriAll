@@ -1,5 +1,5 @@
 {
-  "brandCount": 42,
+  "brandCount": 56,
   "brands": {
     "aaf": {
       "aliases": null,
@@ -1280,6 +1280,125 @@
         }
       ]
     },
+    "ambirad": {
+      "aliases": null,
+      "brand": "Ambirad",
+      "notes": "Page is headed AMBIRAD-Nordyne and lists Nordyne among sister/similar brands, but its documented styles are NOT identical to the Nordyne file's styles: style-1 here matches Nordyne style-1 (same shape, positions, and example GBB030708229), while the page's styles 2-5 have no counterpart in the Nordyne file (whose style-2 is a 16-character system absent from this page). usesStylesOf is therefore not used; all styles below are transcribed from this page. Page styles 3, 4 (first), and 4 (second) collapse to ONE normalized style (letter-digit-letter + 9 digits, year [3,5], month [5,7]). COORDINATOR HOLD (Wave 2 verification): page style 2 (F3891 4228) is NOT shipped \u2014 its year is genuinely ambiguous between overall-character counting (3rd & 4th characters = 89 \u2192 1989) and numerical-digit counting (3rd & 4th numerical digits = 91 \u2192 1991, the reading corroborated by the Nordyne 16-character style's decode of the same digit run). The same style is held on the Airbloc page for the same reason. Unblocker: the NORDYNE-2.jpg / NORDYNE-2a diagrams showing which positions are year-coded. The full-string-counting reading (1989) is the leading hypothesis for that read, not a shipped rule.",
+      "parent": "Nortek (formerly Nordyne Manufacturing)",
+      "sisters": null,
+      "slug": "ambirad",
+      "sourceUrl": "https://www.building-center.org/ambirad-hvac-age/",
+      "styles": [
+        {
+          "era": "12-character serials, 3 letters followed by 9 digits",
+          "examples": [
+            {
+              "expectedMonth": 7,
+              "expectedYear": 2003,
+              "serial": "GBB030708229"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "notes": "Page positions 4-5 = year, 6-7 = month (1-based), converted to 0-based half-open ranges. Page example shown as GBB030708229.",
+          "pattern": "^[A-Z]{3}\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "12-character serials, letter-digit-letter followed by 9 digits (page styles 3, 4, and second 4 merged)",
+          "examples": [
+            {
+              "expectedMonth": 5,
+              "expectedYear": 1999,
+              "serial": "G6R990505028"
+            },
+            {
+              "expectedMonth": 7,
+              "expectedYear": 1998,
+              "serial": "M1G980705432"
+            },
+            {
+              "expectedMonth": 5,
+              "expectedYear": 1997,
+              "serial": "E2E970501234"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "notes": "Page style 3 example shown as G6R9905-05028; page style 4 example shown with spaces as M 1 G 9807 - 05432; second page style 4 example shown as E2E-9705 01234. All three normalize to letter-digit-letter plus 9 digits and decode under the same ranges: year = 4th-5th characters, month = 6th-7th characters (1-based) on the normalized serial. For the E2E example the page's stated 5th-6th/7th-8th positions count the dash on the raw serial; after normalization they are the same [3,5]/[5,7] ranges used here.",
+          "pattern": "^[A-Z]\\d[A-Z]\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "american-best": {
+      "aliases": null,
+      "brand": "American Best",
+      "notes": "Parent chain as stated on the page: Consolidated Industries, whose assets were sold in the 1990s to Texas Furnace, LLC, a subsidiary company of AllStyle Coil Company, L.P. Page-related brands (Air Star, Consolidated, Franklin Electric, Hamilton Electric, Johnstone, Liberty, Premier, Sunburst) are listed on the page but no shared serial system is established for them, so no sisters are claimed and no usesStylesOf is set; this style is transcribed directly from this page. The 9-digit shape and example coincide with Bryant style-2, but the page does not establish a Bryant relationship, so this file stands on its own page evidence.",
+      "parent": "Texas Furnace, LLC (subsidiary of AllStyle Coil Company, L.P.)",
+      "sisters": null,
+      "slug": "american-best",
+      "sourceUrl": "https://www.building-center.org/american-best-hvac-age/",
+      "styles": [
+        {
+          "era": "9-character numeric serials",
+          "examples": [
+            {
+              "expectedMonth": 3,
+              "expectedYear": 1985,
+              "serial": "850304091"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "notes": "Page positions 1-2 = year, 3-4 = month (1-based), converted to 0-based half-open ranges. Page example shown as 850304091.",
+          "pattern": "^\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
     "american-standard": {
       "aliases": null,
       "brand": "American Standard",
@@ -1449,6 +1568,944 @@
               1,
               3
             ]
+          }
+        }
+      ]
+    },
+    "aqua-star": {
+      "aliases": null,
+      "brand": "Aqua Star",
+      "notes": "YEAR-ONLY style: the year rule is stated in retrievable text, but the month rule is chart-image-only and is HELD, not guessed. Page states the year comes from the combined 2nd and 3rd characters (the page highlights the example as A04 07142, grouping the letter with digits 04) and the month comes from the 1st letter via a chart shown only as an image (Aqua-Star_Benjamin-Serial-Number-Nomenclature.png), which text fetch cannot read. The month letter table is therefore not encoded here; it is an image-pass item. The page lists Benjamin as a related brand and the chart filename pairs Aqua Star with Benjamin, but the chart itself was not read, so no shared-system sister claim is made. No era dates are documented on the page; the era below describes serial shape only.",
+      "parent": "W.R. Benjamin Products, Ltd., dba Benjamin Heating Products",
+      "sisters": null,
+      "slug": "aqua-star",
+      "sourceUrl": "https://www.building-center.org/aqua-star-hvac-age/",
+      "styles": [
+        {
+          "era": "8-character serials, 1 letter followed by 7 digits (year only; month chart held for image pass)",
+          "examples": [
+            {
+              "expectedYear": 2004,
+              "serial": "A0407142"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 2-3 = year (1-based characters), converted to [1,3]; the example's 04 resolves to 2004 under the 1960 floor (1904 is below floor). Page example shown as A04 07142, normalized to A0407142. Month (1st letter, chart-only) deliberately omitted: a month value here would be a guess, and a year-only result is exact under the schema.",
+          "pattern": "^[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "aquas": {
+      "aliases": null,
+      "brand": "Aquas",
+      "notes": "Page is the Lochinvar commercial pool heater page; it states the serial styles shown are utilized with all Lochinvar brand systems (Aquas, Armor, Cadet, Copper-Fin, Copper-Fin II, Crest, EnergyRite, FTXL, Knight, Knight XL, Lochinvar, Noble, Power-fin, Shield, Squire, SYNC and others). Styles are written here from this page's own text, not inherited, so no usesStylesOf is claimed. SHIPPED styles are those whose year (and week/month where present) is stated in retrievable text: style-2 (year/week digits), style-4 year-only, style-6 year-only, style-8 (year/month digits). HELD, NOT SHIPPED: style-1 (KJ-1000130: year = 1st letter, month = 2nd letter, both letter tables image-only, Lochinvar-Style-1_Serial-Number.png); style-3 (month letter table image-only, Lochinvar-Style-3 slides, and the page's two example forms disagree in length: header J-93001 vs detail J-93 0001, so the normalized shape is doubtful); style-5 (month letter table image-only, Lochinvar-Style-5_Serial-Number.png, and the page's two example forms disagree: header J93-1030F vs detail J93 12030F); style-7 (5Y013: month digit 5 is text-stated but year is the 2nd letter, whose table is image-only, Lochinvar-Style-7_Serial-Number.png, and a style cannot ship without a year field). Year-only shipped styles omit month deliberately: the month letter tables are image-only and are not guessed; a later image pass can upgrade them to year+month.",
+      "parent": "Lochinvar",
+      "sisters": null,
+      "slug": "aquas",
+      "sourceUrl": "https://www.building-center.org/aquas-hvac-age/",
+      "styles": [
+        {
+          "era": "11-character serials, 4 digits + letter + 6 digits",
+          "examples": [
+            {
+              "expectedWeek": 42,
+              "expectedYear": 2011,
+              "serial": "1142N012345"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page positions 1-2 = year, 3-4 = week (1-based), converted to 0-based half-open ranges. Page example 1142N012345.",
+          "pattern": "^\\d{4}[A-Z]\\d{6}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "era": "13-character serials, letter + 2 digits + letter + 8 digits (year only shipped)",
+          "examples": [
+            {
+              "expectedYear": 2007,
+              "serial": "A07H00123456"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Page positions 2-3 = year digits (1-based); month is the 1st letter whose table is image-only (Lochinvar-Style-4 slides) and is not shipped. Page example A07H00123456.",
+          "pattern": "^[A-Z]\\d{2}[A-Z]\\d{8}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "6-character serials, letter + 5 digits (year only shipped)",
+          "examples": [
+            {
+              "expectedYear": 1978,
+              "serial": "M78013"
+            }
+          ],
+          "id": "style-6",
+          "month": null,
+          "notes": "Page positions 2-3 = year digits (1-based); month is the 1st letter whose table is image-only (Lochinvar-Style-6_Serial-Number.png) and is not shipped. Page example M78013.",
+          "pattern": "^[A-Z]\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "10-digit numeric serials, last four digits = year and month",
+          "examples": [
+            {
+              "expectedMonth": 8,
+              "expectedYear": 1997,
+              "serial": "1234569708"
+            }
+          ],
+          "id": "style-8",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "notes": "Page states the last four digits represent the year and month. Order is year-then-month: the page example's last four digits are 9708, which only reads as year 97, month 08 (month 97 would be invalid). No other style in this file uses the all-digit 10-character shape, so there is no collision with style-2 (which contains a letter).",
+          "pattern": "^\\d{10}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              6,
+              8
+            ]
+          }
+        }
+      ]
+    },
+    "aquazone": {
+      "aliases": null,
+      "brand": "Aquazone",
+      "notes": "Page states parent as Carrier Corporation, part of UTC Climate, Controls & Security, a subsidiary of United Technologies Corp. Page lists sister or similar brands AquaSnap, Aquazone, BDP, Bryant, Carrier, Payne, Weathermaster, but no shared-system claim is made here: the style below is written from Aquazone's own page text, not inherited. Shape matches Bryant style-1 in positions and meaning, but that cross-brand identity is not used as the basis for this file.",
+      "parent": "Carrier Corporation",
+      "sisters": null,
+      "slug": "aquazone",
+      "sourceUrl": "https://www.building-center.org/aquazone-hvac-age/",
+      "styles": [
+        {
+          "era": "10-character format, week-year in first four digits",
+          "examples": [
+            {
+              "expectedWeek": 40,
+              "expectedYear": 2006,
+              "serial": "4006A17330"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 1-2 = week, 3-4 = year (1-based), converted to 0-based half-open ranges. Page example 4006A17330.",
+          "pattern": "^\\d{4}[A-Z]\\d{5}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    "arcoaire": {
+      "aliases": null,
+      "brand": "Arcoaire",
+      "notes": "STYLE-1 MONTH/WEEK CONFLICT, RESOLVED FROM THE PAGE'S OWN EXAMPLE: the page text labels style-1 positions 4-5 'month', but its own example serial E072514528 yields 25 in those positions, which is not a month; it decodes as week 25, year 2007. Style-1 is therefore shipped as year+week, identical in decode to style-2 (same pattern and positions, Tempstar-file precedent for duplicate ICP letter+9-digit styles). If a distinct month-based Arcoaire system is ever documented, style-1 must be revisited; as shipped, no style in this file mis-decodes another shipped style's serials because styles 1 and 2 decode identically. No parent or sister claim is made: the fetched page states none.",
+      "parent": null,
+      "sisters": null,
+      "slug": "arcoaire",
+      "sourceUrl": "https://www.building-center.org/arcoaire-hvac-age/",
+      "styles": [
+        {
+          "era": "Letter followed by 9 digits (page labels positions 4-5 month; example decodes as week)",
+          "examples": [
+            {
+              "expectedWeek": 25,
+              "expectedYear": 2007,
+              "serial": "E072514528"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 2-3 = year digits (1-based); positions 4-5 are shipped as week because the page example's value there is 25. Page example E072514528.",
+          "pattern": "^[A-Z]\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "Letter (normally L or G) followed by 9 digits",
+          "examples": [
+            {
+              "expectedWeek": 6,
+              "expectedYear": 1992,
+              "serial": "L920671787"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page positions 2-3 = year, 4-5 = week (1-based). Identical pattern and positions to style-1, so it never wins first-match, but its decode is identical. Page example L920671787.",
+          "pattern": "^[A-Z]\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "10-character format, week-year in first four digits",
+          "examples": [
+            {
+              "expectedWeek": 41,
+              "expectedYear": 2002,
+              "serial": "4102G12345"
+            }
+          ],
+          "id": "style-3",
+          "month": null,
+          "notes": "Page positions 1-2 = week, 3-4 = year (1-based). Page example 4102G12345.",
+          "pattern": "^\\d{4}[A-Z]\\d{5}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    "arctic-circle": {
+      "aliases": null,
+      "brand": "Arctic Circle",
+      "notes": "Page is the Champion Cooler page (header lists Artic Circle [sic], Champion, Champion Cooler, Essick Air, MasterCool, MoistAir, Spec-Air, UltraCool); parent stated as Champion Cooler, a subsidiary of Essick Air Products, Inc. Only style-1 year is shipped: month is the 1st letter whose table is image-only (Champion_Essick-Air_Spec-Air-Serial-Number-Style-1_How-to-determine-the-date-of-manufacture-or-age.png) and is not guessed; a later image pass can upgrade this style to year+month. No shared-system claim is made for the other header brands.",
+      "parent": "Champion Cooler",
+      "sisters": null,
+      "slug": "arctic-circle",
+      "sourceUrl": "https://www.building-center.org/arctic-circle-hvac-age/",
+      "styles": [
+        {
+          "era": "9-character serials, letter + 8 digits (year only shipped)",
+          "examples": [
+            {
+              "expectedYear": 2007,
+              "serial": "E07141664"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 2-3 = year digits (1-based); month is the 1st letter, table image-only, not shipped. Page example E07141664.",
+          "pattern": "^[A-Z]\\d{8}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        }
+      ]
+    },
+    "argo": {
+      "aliases": null,
+      "brand": "Argo",
+      "notes": "Only the year is shipped: month is the 9th-character letter whose chart is image-only (Style-1_Argo-Date-of-Manufacture_Serial-Number-Nomenclature.png) and is not guessed; a later image pass can upgrade this style to year+month. Page also embeds an ECR brands-and-styles quick reference image (ECR-Brands-and-Serial-Number-Styles.png); no other ECR brand system is claimed from it here. Page lists sister or similar brands AIRCO, ARGO, Dunkirk, ECR, EMI, E-verter, Olsen, Oneida Royal, Pennco, RetroAire, Ultimate, Utica, but no shared-system claim is made for them.",
+      "parent": "ECR",
+      "sisters": null,
+      "slug": "argo",
+      "sourceUrl": "https://www.building-center.org/argo-hvac-age/",
+      "styles": [
+        {
+          "era": "9-character serials, 5 digits + dash + 2 digits + letter (year only shipped)",
+          "examples": [
+            {
+              "expectedYear": 2004,
+              "serial": "21584-04B"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 7-8 = year digits (1-based, counting the dash as position 6); after normalization strips the dash, those digits sit at 0-based [5,7]. Month is the 9th-character letter, chart image-only, not shipped. Page example 21584-04B.",
+          "pattern": "^\\d{7}[A-Z]$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          }
+        }
+      ]
+    },
+    "arkla": {
+      "aliases": null,
+      "brand": "Arkla",
+      "notes": "Legacy brand kept as its own file, not merged away. Page-stated chain: parent company Consolidated Industries, whose assets were sold (1990s) to Texas Furnace, LLC, a subsidiary of AllStyle Coil Company, L.P. Page lists sister or similar brands Air Star, American Best, ARKLA, Franklin Electric, Hamilton Electric, Heatmaster, Johnstone, Liberty, P.F.C., Premier, Sunburst, but no shared-system claim is made for them: the style below is written from Arkla's own page text, not inherited, even though its shape and positions match Bryant style-2.",
+      "parent": "Texas Furnace, LLC",
+      "sisters": null,
+      "slug": "arkla",
+      "sourceUrl": "https://www.building-center.org/arkla-hvac-age/",
+      "styles": [
+        {
+          "era": "9-digit all-numeric serials",
+          "examples": [
+            {
+              "expectedMonth": 3,
+              "expectedYear": 1985,
+              "serial": "850304091"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "notes": "Page positions 1-2 = year, 3-4 = month (1-based), converted to 0-based half-open ranges. Page example 850304091.",
+          "pattern": "^\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    "armstrong-air": {
+      "aliases": null,
+      "brand": "Armstrong Air",
+      "notes": "Parent stated as Armstrong Air Conditioning, Inc., part of the Allied Air Division of Lennox. Page lists related brands AirEase, AirEase-Johnson, Aire-Flo, Allied Commercial, Armstrong, Armstrong Air, Concord, Ducane, Lennox, Magic-PAK, but no shared-system claim is made for them. Only style-1 year is shipped: month is the 5th-position letter whose chart is image-only (ARMSTRONGAIR1-HVAC-Age.png) and is not guessed; a later image pass can upgrade it to year+month. HELD, NOT SHIPPED: the second style (page example list Style 2: A14019E LA; the detail block mislabels it Style 1): month is the 7th-position letter and year is the 8th-position letter, both letter tables image-only (ARMSTRONGAIR2-HVAC-Age.png), so the entire style is image-only and no year field can be encoded.",
+      "parent": "Armstrong Air Conditioning, Inc.",
+      "sisters": null,
+      "slug": "armstrong-air",
+      "sourceUrl": "https://www.building-center.org/armstrong-air-hvac-age/",
+      "styles": [
+        {
+          "era": "10-character serials, 4 digits + letter + 5 digits (year only shipped)",
+          "examples": [
+            {
+              "expectedYear": 2007,
+              "serial": "4607 B20058"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page positions 3-4 = year digits (1-based); the example's space is stripped by normalization. Month is the 5th-position letter, chart image-only, not shipped. Page example 4607 B20058.",
+          "pattern": "^\\d{4}[A-Z]\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          }
+        }
+      ]
+    },
+    "aspen": {
+      "aliases": null,
+      "brand": "Aspen",
+      "notes": "Year-only file: the page states the year rule in text (positions 2-3, digits after the leading letter) but the month-letter mapping lives only in the nomenclature chart image, which text fetch cannot read, so no month is encoded rather than guessed. Month mapping is an image-pass item (see report). Related brands Aspen Pro and AirMark are listed on the page as related brands; sharing of this serial system is NOT verified, so they are listed as sisters in the page-fact sense only and no usesStylesOf is claimed. Company founded 1975 per page history.",
+      "parent": "Aspen Manufacturing",
+      "sisters": [
+        "Aspen Pro",
+        "AirMark"
+      ],
+      "slug": "aspen",
+      "sourceUrl": "https://www.building-center.org/aspen-hvac-age/",
+      "styles": [
+        {
+          "era": "Letter + 2 year digits + sequence (page Style 1)",
+          "examples": [
+            {
+              "expectedYear": 2004,
+              "serial": "J040001762"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page example shown as 'J 04-0001762'; normalized (spaces/dashes stripped) it is J040001762. Page positions 2-3 (1-based) = year digits, converted to 0-based half-open [1,3]. Page position 1 (letter) = month, but the letter-to-month mapping is chart-image-only, so month is null here. Expected year 2004 is derived from the year digits under the century rule (1904 is below the 1960 floor), not page-stated.",
+          "pattern": "^[A-Z]\\d{9,}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "atherion": {
+      "aliases": null,
+      "brand": "Atherion",
+      "notes": "Parent MODINE per page; related brands Airedale, Effinityy 93, Hot Dawg, Modine, Valedictorian are listed on the page but sharing of these serial systems is NOT verified, so no sisters or usesStylesOf are claimed. Caveat: the page's three nomenclature diagrams carry AAON filenames (Style-1/2/3_AAON-Date-of-Manufacture_Serial-Number-Nomenclature.png); the rules below are the text rules stated on the Atherion page itself, not the diagrams. Style 2 is year-only: its month-letter chart is image-only. Style 2 example discrepancy on the page: the style list shows '97 JKGK153' while the section header shows '97 JKGJ153'; the month letter (3rd position, J) is the same in both, and the file uses the list version.",
+      "parent": "MODINE",
+      "sisters": null,
+      "slug": "atherion",
+      "sourceUrl": "https://www.building-center.org/atherion-hvac-age/",
+      "styles": [
+        {
+          "era": "4-digit year + 2-digit month prefix (page Style 1)",
+          "examples": [
+            {
+              "expectedMonth": 8,
+              "expectedYear": 2001,
+              "serial": "200108AKG26241"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              4,
+              6
+            ]
+          },
+          "notes": "Page example shown as '2001 08AKG26241'; normalized it is 200108AKG26241. Page positions 1-4 (1-based) = year, 5-6 = month, converted to 0-based half-open [0,4] and [4,6].",
+          "pattern": "^\\d{6}[A-Z]{3}\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              4
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "2-digit year + month letter (page Style 2, year-only)",
+          "examples": [
+            {
+              "expectedYear": 1997,
+              "serial": "97JKGK153"
+            }
+          ],
+          "id": "style-2",
+          "month": null,
+          "notes": "Page example shown as '97 JKGK153'; normalized it is 97JKGK153. Page positions 1-2 (1-based) = year digits, converted to [0,2]. Page position 3 (letter) = month via a chart that is image-only (Style-2_AAON diagram), so month is null here rather than guessed; month mapping is an image-pass item.",
+          "pattern": "^\\d{2}[A-Z]{4}\\d{3}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "4 letters + digits, year/month in positions 6-9 (page Style 3)",
+          "examples": [
+            {
+              "expectedMonth": 1,
+              "expectedYear": 1987,
+              "serial": "AKEC08701"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              7,
+              9
+            ]
+          },
+          "notes": "Page example shown as 'AKEC087 01'; normalized it is AKEC08701. Page positions 6-7 (1-based) = year digits, 8-9 = month digits, converted to 0-based half-open [5,7] and [7,9].",
+          "pattern": "^[A-Z]{4}\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              5,
+              7
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "bard": {
+      "aliases": null,
+      "brand": "Bard",
+      "notes": "Year-only file: page Styles 1, 4, and 5 state their year rules in text and are shipped; their month-letter mappings (Styles 1 and 4) live only in chart images, so no month is encoded rather than guessed. Page Styles 2 (April-May 1980 only) and 3 (1962 into early 1980) are HELD, NOT SHIPPED: both encode year and month as letters whose mappings are chart-image-only, so no table can be transcribed from text. Held styles are image-pass items (see report). Parent value is the page's stated parent line verbatim. Style ids keep the page's style numbers so held styles map unambiguously.",
+      "parent": "UTC Climate Controls of ICP",
+      "sisters": null,
+      "slug": "bard",
+      "sourceUrl": "https://www.building-center.org/bard-hvac-age/",
+      "styles": [
+        {
+          "era": "Current style since June 1980 (page Style 1, year-only)",
+          "examples": [
+            {
+              "expectedYear": 1995,
+              "serial": "000F9509260661"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page example shown as '000F 950926066-1'; normalized it is 000F9509260661. Page positions 5-6 (1-based) = year digits, converted to 0-based half-open [4,6]. Page position 4 (letter) = month, but the letter-to-month mapping is chart-image-only (BARD-Date-of-Manufacture-Serial-Number-Style-1.jpg), so month is null here. Expected year 1995 is derived from the year digits under the century rule, not page-stated.",
+          "pattern": "^\\d{3}[A-Z]\\d+$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              4,
+              6
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "Year as last 2 digits (page Style 4, year-only)",
+          "examples": [
+            {
+              "expectedYear": 1983,
+              "serial": "36284M83"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Page example shown as '36284 M 83'; normalized it is 36284M83. Page rule: year = last 2 digits, converted to [6,8] for this 8-character example shape. The letter preceding the last 2 digits = month, but its mapping is chart-image-only (BARD-Date-of-Manufacture-Serial-Number-Style-4.jpg), so month is null here. Expected year 1983 is derived from the year digits under the century rule, not page-stated.",
+          "pattern": "^\\d{5}[A-Z]\\d{2}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              6,
+              8
+            ]
+          },
+          "yearFloor": 1960
+        },
+        {
+          "era": "9-digit numeric, year in first 2 digits (page Style 5, year-only)",
+          "examples": [
+            {
+              "expectedYear": 1994,
+              "serial": "940128116"
+            }
+          ],
+          "id": "style-5",
+          "month": null,
+          "notes": "Page example '940128116'. Page positions 1-2 (1-based) = year digits, converted to [0,2]. The page states no month rule for this style. Expected year 1994 is derived from the year digits under the century rule, not page-stated.",
+          "pattern": "^\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "yearFloor": 1960
+        }
+      ]
+    },
+    "bdp": {
+      "aliases": null,
+      "brand": "BDP",
+      "notes": "Defunct brand kept as its own file: per the page, BDP Company was created by Carrier in 1974 uniting Bryant, Day & Night, and Payne, and BDP as a stand-alone brand/company is no longer in use circa 2006-2009 (Day & Night revived under ICP circa 2006; Bryant and Payne remain under Carrier). Styles are transcribed from the BDP page's own full text rules, not borrowed via usesStylesOf: the BDP page states every position rule and the Style 5 letter-year table in text, and its example serials match Bryant's system shape-for-shape. Single-digit years in styles 3, 3-Canada, and 4 are encoded as digit-keyed letterTable maps because the schema digits kind does not support 1-character year slices; the mappings are fully documented on the page, and the Style 3/4 eras (1980-1984, 1970-1979) bound them as the single-digit-year policy requires. Style 5 week/year table is stated in full text on the page (L 1960 through H 1979, skipping O, Q, Z).",
+      "parent": "Carrier Corporation",
+      "sisters": [
+        "Bryant",
+        "Day & Night",
+        "Payne"
+      ],
+      "slug": "bdp",
+      "sourceUrl": "https://www.building-center.org/bdp-hvac-age/",
+      "styles": [
+        {
+          "era": "10-character format, week-year in first four digits",
+          "examples": [
+            {
+              "expectedWeek": 7,
+              "expectedYear": 2009,
+              "serial": "0709G10932"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Page example shown as '07 09G10932'; normalized it is 0709G10932. Week is 1st-2nd positions, year is 3rd-4th positions.",
+          "pattern": "^\\d{4}[A-Z]\\d{5}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "year": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "era": "Primarily 1980s, 9-digit all-numeric",
+          "examples": [
+            {
+              "expectedMonth": 3,
+              "expectedYear": 1985,
+              "serial": "850304091"
+            }
+          ],
+          "id": "style-2",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "notes": "Page example shown as '85 0304091'; normalized it is 850304091. Year is 1st-2nd positions, month is 3rd-4th positions.",
+          "pattern": "^\\d{9}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "era": "1980-1984, US systems",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 1984,
+              "serial": "W4D14008"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "M": 1,
+              "N": 2,
+              "P": 3,
+              "Q": 4,
+              "R": 5,
+              "S": 6,
+              "T": 7,
+              "V": 8,
+              "W": 9,
+              "X": 10,
+              "Y": 11,
+              "Z": 12
+            }
+          },
+          "notes": "Page example shown as 'W 4D14008'; normalized it is W4D14008. Month letter is 1st position, M-Z skipping O and U for January-December. Year digit is 2nd position, 0-4 for 1980-1984. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
+          "pattern": "^[A-Z]\\d[A-Z]\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "0": 1980,
+              "1": 1981,
+              "2": 1982,
+              "3": 1983,
+              "4": 1984
+            }
+          }
+        },
+        {
+          "era": "1980-1984, Canadian systems (positions reversed vs US)",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 1984,
+              "serial": "4WD14008"
+            }
+          ],
+          "id": "style-3-ca",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "M": 1,
+              "N": 2,
+              "P": 3,
+              "Q": 4,
+              "R": 5,
+              "S": 6,
+              "T": 7,
+              "V": 8,
+              "W": 9,
+              "X": 10,
+              "Y": 11,
+              "Z": 12
+            }
+          },
+          "notes": "Page example shown as '4 WD14008'; normalized it is 4WD14008. Canadian variant only: year digit is 1st position, month letter is 2nd position, same tables as US style 3. Split from style 3 because one style cannot carry two position assignments.",
+          "pattern": "^\\d[A-Z][A-Z]\\d{5}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "0": 1980,
+              "1": 1981,
+              "2": 1982,
+              "3": 1983,
+              "4": 1984
+            }
+          }
+        },
+        {
+          "era": "1970-1979",
+          "examples": [
+            {
+              "expectedMonth": 1,
+              "expectedYear": 1971,
+              "serial": "A167890"
+            }
+          ],
+          "id": "style-4",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "I": 9,
+              "J": 10,
+              "K": 11,
+              "L": 12
+            }
+          },
+          "notes": "Page example shown as 'A 167890'; normalized it is A167890. Month letter is 1st position, A-L with no letters skipped. Year digit is 2nd position, 0-9 for 1970-1979. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
+          "pattern": "^[A-Z]\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "0": 1970,
+              "1": 1971,
+              "2": 1972,
+              "3": 1973,
+              "4": 1974,
+              "5": 1975,
+              "6": 1976,
+              "7": 1977,
+              "8": 1978,
+              "9": 1979
+            }
+          }
+        },
+        {
+          "era": "1960-1979, two-digit week prefix",
+          "examples": [
+            {
+              "expectedWeek": 46,
+              "expectedYear": 1967,
+              "serial": "46U152456"
+            }
+          ],
+          "id": "style-5a",
+          "month": null,
+          "notes": "Page example shown as '46 U152456'; normalized it is 46U152456. Year letter begins with L for 1960 and cycles to H for 1979, skipping O, Q, and Z. Week is the 1st-2nd positions; the page states this example is the 46th week of 1967. Split from the one-digit-week variant because fixed position ranges cannot express both.",
+          "pattern": "^\\d{2}[A-Z]\\d{6}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              0,
+              2
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1972,
+              "B": 1973,
+              "C": 1974,
+              "D": 1975,
+              "E": 1976,
+              "F": 1977,
+              "G": 1978,
+              "H": 1979,
+              "L": 1960,
+              "M": 1961,
+              "N": 1962,
+              "P": 1963,
+              "R": 1964,
+              "S": 1965,
+              "T": 1966,
+              "U": 1967,
+              "V": 1968,
+              "W": 1969,
+              "X": 1970,
+              "Y": 1971
+            }
+          }
+        },
+        {
+          "era": "1960-1979, one-digit week prefix",
+          "examples": [
+            {
+              "expectedWeek": 2,
+              "expectedYear": 1969,
+              "serial": "2W13270"
+            }
+          ],
+          "id": "style-5b",
+          "month": null,
+          "notes": "Page example shown as '2 W13270'; normalized it is 2W13270. Same year-letter table as style 5a. Week is the 1st position only; the page states this example is the 2nd week of 1969.",
+          "pattern": "^\\d[A-Z]\\d{5}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              0,
+              1
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1972,
+              "B": 1973,
+              "C": 1974,
+              "D": 1975,
+              "E": 1976,
+              "F": 1977,
+              "G": 1978,
+              "H": 1979,
+              "L": 1960,
+              "M": 1961,
+              "N": 1962,
+              "P": 1963,
+              "R": 1964,
+              "S": 1965,
+              "T": 1966,
+              "U": 1967,
+              "V": 1968,
+              "W": 1969,
+              "X": 1970,
+              "Y": 1971
+            }
           }
         }
       ]
