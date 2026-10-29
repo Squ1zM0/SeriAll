@@ -1,0 +1,54 @@
+{
+ "brand": "WaterFurnace",
+ "notes": "Independent subsidiary of NIBE (acquired 2014, per page history). Style 1 (Building Center Style 1) ships YEAR-ONLY: year positions are text-verified (2018), but its month is HELD by coordinator decision \u2014 the spaced example '18 0100228' yields October under normalized counting but January under space-counted positions, with no page-stated decode to falsify either; doubtful stays held, pending image-pass confirmation on WaterFurnace-HVAC-style-1.jpg. Style 2 (Building Center Style 2, 1985-2012) is HELD entirely: year (1st character) and month (2nd character) are chart-only. The shipped file style-2 is Building Center Style 3 (pre-1985), year-only: its month (1st character) is chart-only.",
+ "parent": "NIBE",
+ "slug": "waterfurnace",
+ "sourceUrl": "https://www.building-center.org/waterfurnace-hvac-age/",
+ "styles": [
+  {
+   "era": "Current as of at least 2012, 9-digit numeric serials (Building Center Style 1)",
+   "examples": [
+    {
+     "expectedYear": 2018,
+     "serial": "180100228"
+    }
+   ],
+   "id": "style-1",
+   "month": null,
+   "notes": "Page positions 1-based: year = 1st & 2nd positions, month = 4th & 5th positions. COORDINATOR HOLD (supersedes slice report): month HELD, file ships year-only for this style. The page example is shown spaced as '18 0100228': normalized counting gives month '10' (October) but space-counted positions 4-5 give '01' (January), and no page-stated decode falsifies either reading, so the month is doubtful and stays held per program rule (image-pass check on WaterFurnace-HVAC-style-1.jpg may confirm the green month segment; if it shows '01', the hold stands, since the schema cannot express space-counted positions). Year is unaffected (2018 under both readings). Year value derived from the stated positions, not page-stated for this example.",
+   "pattern": "^\\d{9}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     0,
+     2
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "Used prior to 1985 (Building Center Style 3)",
+   "examples": [
+    {
+     "expectedYear": 1983,
+     "serial": "D8367019"
+    }
+   ],
+   "id": "style-2",
+   "month": null,
+   "notes": "Page positions 1-based: year = 2nd & 3rd positions, month = 1st position (letter chart image WaterFurnace-HVAC-style-3.jpg only, held), so this style ships year-only. Year value derived from the stated positions, not page-stated for this example; 1983 is consistent with the pre-1985 era.",
+   "pattern": "^[A-Z]\\d{7}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     1,
+     3
+    ]
+   },
+   "yearFloor": 1960
+  }
+ ],
+ "usesStylesOf": null
+}

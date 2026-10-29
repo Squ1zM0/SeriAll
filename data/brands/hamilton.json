@@ -1,1 +1,38 @@
-{"aliases":["Winchester"],"brand":"Hamilton","notes":"Encoded ONLY from Hamilton's own page. Page covers Hamilton and Winchester brand systems; no system imported from any other page. Single style: all-digit serial, so character counting and numerical-digit counting coincide and there is no counting ambiguity.","parent":"Hamilton Home Products","slug":"hamilton","sourceUrl":"https://www.building-center.org/hamilton-hvac-age/","styles":[{"era":"15-digit numeric serials, year + week","examples":[{"expectedWeek":26,"expectedYear":1997,"serial":"01 01 101 2697 1000"}],"id":"style-1","month":null,"notes":"Page positions (1-based): week = 8th & 9th numerical digits, year = 10th & 11th numerical digits, converted to 0-based half-open ranges. Normalized serial 010110126971000: week digits '26', year digits '97' -> 1997.","pattern":"^\\d{15}$","week":{"kind":"digits","positions":[7,9]},"year":{"kind":"digits","positions":[9,11]}}],"usesStylesOf":null}
+{
+ "brand": "Hamilton",
+ "notes": "Encoded ONLY from Hamilton's own page. Page covers Hamilton and Winchester brand systems; no system imported from any other page. Single style: all-digit serial, so character counting and numerical-digit counting coincide and there is no counting ambiguity. COORDINATOR CORRECTION (Wave 13): alias 'Winchester' removed \u2014 Winchester now ships as its own brand file (winchester.json, same system, own Building Center page), so the alias would create a duplicate 'Winchester' match; typing 'Winchester' resolves via the dedicated file, typing 'Hamilton' is unaffected.",
+ "parent": "Hamilton Home Products",
+ "slug": "hamilton",
+ "sourceUrl": "https://www.building-center.org/hamilton-hvac-age/",
+ "styles": [
+  {
+   "era": "15-digit numeric serials, year + week",
+   "examples": [
+    {
+     "expectedWeek": 26,
+     "expectedYear": 1997,
+     "serial": "01 01 101 2697 1000"
+    }
+   ],
+   "id": "style-1",
+   "month": null,
+   "notes": "Page positions (1-based): week = 8th & 9th numerical digits, year = 10th & 11th numerical digits, converted to 0-based half-open ranges. Normalized serial 010110126971000: week digits '26', year digits '97' -> 1997.",
+   "pattern": "^\\d{15}$",
+   "week": {
+    "kind": "digits",
+    "positions": [
+     7,
+     9
+    ]
+   },
+   "year": {
+    "kind": "digits",
+    "positions": [
+     9,
+     11
+    ]
+   }
+  }
+ ],
+ "usesStylesOf": null
+}
