@@ -1,0 +1,38 @@
+{
+  "brand": "AirTemp",
+  "slug": "airtemp",
+  "parent": "Nortek Global HVAC",
+  "sourceUrl": "https://www.building-center.org/airtemp-hvac-age/",
+  "notes": "Lineage from the page: Chrysler Airtemp (pre-1976), Fedders subsidiary from 1976, then the AirTemp name revived in 2012 by Nordyne (Nortek Global HVAC); the parent field reflects the reviving owner, the full chain is recorded here. Only page style 5 ships. Page styles 1-4 are held for the image pass (see report): style 1 (1960s-1970s single year digit, no text table), style 2 (1976-1977, year/month letters chart-only), style 3 (presumed 1950s-1974, single year digit, no text table), style 4 (Jan 1975-Dec 1984, two-letter month/year chart-only; only the single pair DS = February 1981 is stated in text, and a partial table must never ship as if complete). No usesStylesOf: the page states style 5 is a Nordyne/Nortek format, but only this one style is documented for AirTemp, so it is written out in full rather than inheriting all of Nordyne's styles.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-5",
+      "era": "Current Nordyne/Nortek style, 2012 and after (page style 5)",
+      "pattern": "^[A-Z]{3}\\d{9}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          3,
+          5
+        ]
+      },
+      "month": {
+        "kind": "digits",
+        "positions": [
+          5,
+          7
+        ]
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "VSG181150070",
+          "expectedYear": 2018,
+          "expectedMonth": 11
+        }
+      ],
+      "notes": "Page example shown as 'VSG18 1150070' (space stripped by normalization). The page states year = 3rd & 4th positions and month = 5th & 6th positions; those only decode if read as 0-based indices [3,5] and [5,7] (giving 18 = 2018 and 11 = November), which also matches the Nordyne style-1 positions the page names as this format's source. The year/month values are therefore derived from the page example under those positions, not page-stated decodes. Style id keeps the page's style-5 numbering."
+    }
+  ]
+}

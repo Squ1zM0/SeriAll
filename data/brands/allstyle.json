@@ -1,0 +1,63 @@
+{
+  "brand": "AllStyle",
+  "slug": "allstyle",
+  "sourceUrl": "https://www.building-center.org/allstyle-hvac-age/",
+  "notes": "No parent company is stated on the retrievable page text, so no parent is claimed. Page note: AllStyle commenced operations in May 1990; early systems used style 1 (manual numbering), most later units style 2 (computer generated). Page style 1 is HELD, not shipped: its year is the 4th-5th characters REVERSED (page example: '29' reversed to '92' = 1992), and reversed digit slices are not expressible in the locked schema; its month letter chart is also not in retrievable text. Style 2 ships year-only in both variants: the month letter chart ('see chart below') did not surface in the text fetch (no chart image URL was returned for this page), so month is held pending a chart/image read. Style 2a table judgment call, flagged for coordinator review: the page states only that a single digit was used during the 1990s; the 0-9 to 1990-1999 table below is the mechanical reading of that bound (digit = ones digit of a 199x year), not a page-printed per-digit table.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-2a",
+      "era": "1990s, single-digit year + letter + 5 digits + letter (page style 2, single-digit variant)",
+      "pattern": "^\\d[A-Z]\\d{5}[A-Z]$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "0": 1990,
+          "1": 1991,
+          "2": 1992,
+          "3": 1993,
+          "4": 1994,
+          "5": 1995,
+          "6": 1996,
+          "7": 1997,
+          "8": 1998,
+          "9": 1999
+        }
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "3C48549S",
+          "expectedYear": 1993
+        }
+      ],
+      "notes": "Page example 3C48549S. Year = 1st digit preceding the letter; page states a single digit was used during the 1990s, which bounds the era for this explicit digit-keyed table (see file notes for the judgment-call flag). Month = letter after the year code, chart not available in retrievable text, so year-only. Digit-keyed table is used because the locked schema's year 'digits' kind requires a 2- or 4-character slice."
+    },
+    {
+      "id": "style-2b",
+      "era": "2000 and after, two-digit year + letter + 5 digits + letter (page style 2, two-digit variant)",
+      "pattern": "^\\d{2}[A-Z]\\d{5}[A-Z]$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "09J03234S",
+          "expectedYear": 2009
+        }
+      ],
+      "notes": "Page example shown as '09 J03234S' (space stripped by normalization). Year = 1st two digits preceding the letter; page states two digits after 1999, the first being '0' prior to 2010, '1' prior to 2020, etc. Month = letter after the year code, chart not available in retrievable text, so year-only."
+    }
+  ]
+}

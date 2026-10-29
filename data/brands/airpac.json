@@ -1,0 +1,36 @@
+{
+  "brand": "AirPac",
+  "slug": "airpac",
+  "parent": "AirPac, Inc.",
+  "sisters": [
+    "COOLIT",
+    "PortaPac",
+    "ScavPac"
+  ],
+  "sourceUrl": "https://www.building-center.org/airpac-hvac-age/",
+  "notes": "Sisters: page header lists AirPac, COOLIT, PortaPac and ScavPac as related brands, and the style-1 chart image is titled as the serial-number guide for all four brands, so the shared system is page-evidenced. Month mapping lives only in that chart image (AirPac-Serial-Number-Nomenclature-Style-1.jpg), not in retrievable text, so the style ships year-only pending the image pass.",
+  "usesStylesOf": null,
+  "styles": [
+    {
+      "id": "style-1",
+      "era": "Month letter + 2-digit year prefix",
+      "pattern": "^[A-Z]\\d{6}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          1,
+          3
+        ]
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "E042555",
+          "expectedYear": 2004
+        }
+      ],
+      "notes": "Page example E042555. Month = 1st position letter per chart image, held for the image pass, so year-only. Year = 2nd & 3rd positions (digits), 0-based [1,3]."
+    }
+  ]
+}
