@@ -1,0 +1,185 @@
+{
+ "brand": "Knight XL",
+ "notes": "Encoded in full from this brand's own page; no usesStylesOf and no cross-import from Knight, Knight XL, or any other Lochinvar page, even though the Lochinvar pages carry identical text \u2014 this is a separate entry with its own page, per the slice brief (cf. the copper-fin / copper-fin-2 precedent). The page states these styles were utilized with all Lochinvar brand systems, but that shared-use statement is not used as a reuse claim. HELD, NOT SHIPPED: page Style 1 (year = 1st letter, month = 2nd letter, both chart-only \u2014 no text-verified field, so no year-only file for it) and page Style 7 (year = 2nd or 2nd & 3rd letters, chart-only; month numbers alone cannot carry a file without a year). Styles 3-6 ship YEAR-ONLY because their month is a chart-only 1st letter. All shipped style patterns are disjoint by shape/length.",
+ "parent": "Lochinvar",
+ "slug": "knight-xl",
+ "sourceUrl": "https://www.building-center.org/knight-xl-hvac-age/",
+ "styles": [
+  {
+   "era": "11-character serials, year + week (2011-present)",
+   "examples": [
+    {
+     "expectedWeek": 42,
+     "expectedYear": 2011,
+     "serial": "1142N012345"
+    }
+   ],
+   "id": "style-2",
+   "month": null,
+   "notes": "Page example shown as '11 42N012345'; spaces stripped by normalization. Year = 1st & 2nd positions [0,2], week = 3rd & 4th positions [2,4] (1-based converted).",
+   "pattern": "^\\d{4}[A-Z]\\d{6}$",
+   "week": {
+    "kind": "digits",
+    "positions": [
+     2,
+     4
+    ]
+   },
+   "year": {
+    "kind": "digits",
+    "positions": [
+     0,
+     2
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "7-character serials, year only",
+   "examples": [
+    {
+     "expectedYear": 1993,
+     "serial": "J930001"
+    }
+   ],
+   "id": "style-3",
+   "month": null,
+   "notes": "Page example shown as J-930001; dash stripped by normalization. Year = 1st & 2nd digits [1,3] on the normalized serial. Month = 1st letter, chart-only, so year-only.",
+   "pattern": "^[A-Z]\\d{6}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     1,
+     3
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "12-character serials, year only",
+   "examples": [
+    {
+     "expectedYear": 2007,
+     "serial": "A07H00123456"
+    }
+   ],
+   "id": "style-4",
+   "month": null,
+   "notes": "Page example shown as 'A 07H00123456'; spaces stripped by normalization. Year = 1st & 2nd digits [1,3]. Month = 1st letter, chart-only, so year-only.",
+   "pattern": "^[A-Z]\\d{2}[A-Z]\\d{8}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     1,
+     3
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "8-character serials, letter + digits + letter, year only",
+   "examples": [
+    {
+     "expectedYear": 1993,
+     "serial": "J931030F"
+    }
+   ],
+   "id": "style-5",
+   "month": null,
+   "notes": "Page example shown as 'J 93-1030F'; spaces/dash stripped by normalization. Year = 1st & 2nd digits [1,3]. Month = 1st letter, chart-only, so year-only. Only the 8-character form attested on this page is encoded; no 9-character detail form is imported from any other Lochinvar page.",
+   "pattern": "^[A-Z]\\d{6}[A-Z]$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     1,
+     3
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "6-character serials, year only",
+   "examples": [
+    {
+     "expectedYear": 1978,
+     "serial": "M78013"
+    }
+   ],
+   "id": "style-6",
+   "month": null,
+   "notes": "Page example shown as 'M 78013'; space stripped by normalization. Year = 1st & 2nd digits [1,3]. Month = 1st letter, chart-only, so year-only.",
+   "pattern": "^[A-Z]\\d{5}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     1,
+     3
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "10-digit serials, year + month",
+   "examples": [
+    {
+     "expectedMonth": 8,
+     "expectedYear": 1997,
+     "serial": "1234569708"
+    }
+   ],
+   "id": "style-8",
+   "month": {
+    "kind": "digits",
+    "positions": [
+     8,
+     10
+    ]
+   },
+   "notes": "Page example shown as '12345697 08'; space stripped by normalization. Year = 7th & 8th digits [6,8], month = 9th & 10th digits [8,10], as stated on this page.",
+   "pattern": "^\\d{10}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     6,
+     8
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "8-digit serials, year + month",
+   "examples": [
+    {
+     "expectedMonth": 4,
+     "expectedYear": 1985,
+     "serial": "85041234"
+    }
+   ],
+   "id": "style-9",
+   "month": {
+    "kind": "digits",
+    "positions": [
+     2,
+     4
+    ]
+   },
+   "notes": "Page example shown as '85 041234'; space stripped by normalization. Year = 1st & 2nd digits [0,2], month = 3rd & 4th digits [2,4], as stated on this page. This style appears in text on this page (2023 revision), so it ships from this page; no style is imported from, or withheld because of, any other Lochinvar page.",
+   "pattern": "^\\d{8}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     0,
+     2
+    ]
+   },
+   "yearFloor": 1960
+  }
+ ],
+ "usesStylesOf": null
+}
