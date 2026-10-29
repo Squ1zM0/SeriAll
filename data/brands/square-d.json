@@ -1,0 +1,41 @@
+{
+  "brand": "Square D",
+  "notes": "JUDGMENT CALL (flagged): the page's list form gives 'N3D104 F0481 2518' but its detail form gives 'CN3D104 F*0481* 2518' (asterisks marking the date code). Only the detail form decodes under the stated positions: 1-based character counting on the detail form gives month 9th-10th = '04' and year 11th-12th = '81' -> April 1981, and the asterisked block '0481' confirms the date-code location. Digit-only counting fails (month 25). The list form does NOT decode identically (normalized character counting gives month '48', invalid), so no dual-form encoding is claimed; this file ships the detail form only, with a fixed-prefix-length pattern, so a list-form serial yields 'cannot determine' rather than a wrong year. No parent company is stated on the page (the Parent Company line is blank). The plate photo SQUARE-D-1-Serial-Number.jpg could confirm the leading character in a future image pass but is not a chart and no field depends on it.",
+  "slug": "square-d",
+  "sourceUrl": "https://www.building-center.org/square-d-hvac-age/",
+  "styles": [
+    {
+      "era": "Style 1: 16 characters, date code at normalized positions 9-12",
+      "examples": [
+        {
+          "expectedMonth": 4,
+          "expectedYear": 1981,
+          "serial": "CN3D104 F0481 2518"
+        },
+        {
+          "expectedMonth": 5,
+          "expectedYear": 1999,
+          "serial": "AB1C234D05991234"
+        }
+      ],
+      "id": "style-1",
+      "month": {
+        "kind": "digits",
+        "positions": [
+          8,
+          10
+        ]
+      },
+      "notes": "Source-page detail example CN3D104 F0481 2518 (normalizes to CN3D104F04812518): page 1-based month 9th-10th and year 11th-12th characters, converted to 0-based half-open [8,10] and [10,12] -> month '04', year '81' -> 1981 (candidates 1981 and 2081; 2081 is future, so 1981 is unique). Second example is constructed (labeled here) and decodes under this file's own rules. Pattern fixes the prefix length (8 alphanumeric characters) so the fixed positions hold; it does not match the page's shorter list form, which is held as inconsistent (see file notes).",
+      "pattern": "^[A-Z0-9]{8}\\d{8}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          10,
+          12
+        ]
+      }
+    }
+  ],
+  "usesStylesOf": null
+}
