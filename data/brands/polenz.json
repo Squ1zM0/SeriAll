@@ -1,0 +1,32 @@
+{
+  "brand": "Polenz",
+  "notes": "Encoded ONLY from this page's own text; no usesStylesOf. Page states Parent: Fedders-Airwell, and carries the page's own applicability caveat verbatim in substance: the serial styles found for Fedders-Airwell are being used here and, although unconfirmed, it is believed all Fedders-Airwell units use these styles. That is a brand-applicability-scope caveat, so the shipped style ships WITH the caveat recorded here, per standing rule. CORRECTION (pre-push, coordinator): page Style 1 (week = 3rd-4th characters, year = 5th-6th characters, example EW020144126H) was HELD, not shipped \u2014 it shares its shape (2 letters + 9 digits + 1 letter) with held page Style 3 (AS298488006X, month = 1st character and year = 2nd characters, both chart-only), so a Style 3 serial would mis-decode under Style 1. Same hold as the Emerson, Melcor, Airwell, and quiet-kool files, and the same correction applied post-push to Koppel after Wave 8. The slice-B curator shipped Style 1; the coordinator removed it before the Wave 10 push. Page Styles 3, 4 and 5 are HELD entirely: every date field in each is a chart letter with no text table. File ids preserve page numbering (style-2 only shipped).",
+  "parent": "Fedders-Airwell",
+  "slug": "polenz",
+  "sourceUrl": "https://www.building-center.org/polenz-hvac-age/",
+  "styles": [
+    {
+      "era": "8-character serials, 2 digits + letter + 5 digits (page Style 2)",
+      "examples": [
+        {
+          "expectedYear": 2002,
+          "serial": "02J60002"
+        }
+      ],
+      "id": "style-2",
+      "month": null,
+      "notes": "Page positions: year = 1st-2nd characters = '02' resolving to 2002 (converted to [0,2]); month = 3rd character 'J', chart image only, held. Ships year-only. Page example shown as 02J-60002; dash stripped by normalization.",
+      "pattern": "^\\d{2}[A-Z]\\d{5}$",
+      "week": null,
+      "year": {
+        "kind": "digits",
+        "positions": [
+          0,
+          2
+        ]
+      },
+      "yearFloor": 1960
+    }
+  ],
+  "usesStylesOf": null
+}
