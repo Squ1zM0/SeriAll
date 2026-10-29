@@ -1,6 +1,6 @@
 {
  "brand": "Ambirad",
- "notes": "Page is headed AMBIRAD-Nordyne and lists Nordyne among sister/similar brands, but its documented styles are NOT identical to the Nordyne file's styles: style-1 here matches Nordyne style-1 (same shape, positions, and example GBB030708229), while the page's styles 2-5 have no counterpart in the Nordyne file (whose style-2 is a 16-character system absent from this page). usesStylesOf is therefore not used; all styles below are transcribed from this page. Page styles 3, 4 (first), and 4 (second) collapse to ONE normalized style (letter-digit-letter + 9 digits, year [3,5], month [5,7]). COORDINATOR HOLD (Wave 2 verification): page style 2 (F3891 4228) is NOT shipped \u2014 its year is genuinely ambiguous between overall-character counting (3rd & 4th characters = 89 \u2192 1989) and numerical-digit counting (3rd & 4th numerical digits = 91 \u2192 1991, the reading corroborated by the Nordyne 16-character style's decode of the same digit run). The same style is held on the Airbloc page for the same reason. Unblocker: the NORDYNE-2.jpg / NORDYNE-2a diagrams showing which positions are year-coded. The full-string-counting reading (1989) is the leading hypothesis for that read, not a shipped rule.",
+ "notes": "Page is headed AMBIRAD-Nordyne and lists Nordyne among sister/similar brands, but its documented styles are NOT identical to the Nordyne file's styles: style-1 here matches Nordyne style-1 (same shape, positions, and example GBB030708229), while the page's styles 2-5 have no counterpart in the Nordyne file (whose style-2 is a 16-character system absent from this page). usesStylesOf is therefore not used; all styles below are transcribed from this page. Page styles 3, 4 (first), and 4 (second) collapse to ONE normalized style (letter-digit-letter + 9 digits, year [3,5], month [5,7]). COORDINATOR CORRECTION (Wave 3): page Style 2 (F3891 4228) NOW SHIPPED as 1989, superseding the Wave 1/2 hold. The digit-counting reading (91 -> 1991) is falsified by this page's own examples: under digit-only counting, style 1's example GBB030708229 would give year 70 and month 82 (not a month), and the E2E style example would give year 50 (1950, below the 1960 floor). Character counting is therefore this page's unique coherent convention, and it decodes every example on the page. The Nordyne file's 16-character style is a different system on a different page and does not govern this page's convention. The NORDYNE-2 diagram read is no longer the unblocker for this style (it remains a welcome confirmation). The same correction ships on the Benson, Ambirad, and Airbloc pages.",
  "parent": "Nortek (formerly Nordyne Manufacturing)",
  "slug": "ambirad",
  "sourceUrl": "https://www.building-center.org/ambirad-hvac-age/",
@@ -30,6 +30,28 @@
     "positions": [
      3,
      5
+    ]
+   },
+   "yearFloor": 1960
+  },
+  {
+   "era": "9-character serials, 1 letter followed by 8 digits (page Style 2)",
+   "examples": [
+    {
+     "expectedYear": 1989,
+     "serial": "F38914228"
+    }
+   ],
+   "id": "style-2",
+   "month": null,
+   "notes": "Page Style 2 example shown as F3891 4228 (space not counted). Year = 3rd & 4th characters (1-based) = [2,4] on the normalized serial -> 1989. See file notes for why character counting is this page's convention: digit-only counting is falsified by the page's own style-1 and E2E-style examples.",
+   "pattern": "^[A-Z]\\d{8}$",
+   "week": null,
+   "year": {
+    "kind": "digits",
+    "positions": [
+     2,
+     4
     ]
    },
    "yearFloor": 1960
