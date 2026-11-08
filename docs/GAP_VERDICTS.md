@@ -75,21 +75,5 @@ file and record Amana as a gap — one move, no other file affected.
 ### Other held styles (image reads still open)
 Text fetch cannot OCR chart images, so these remain held pending a
 live-browser image read (full URL list in the Phase 2b report):
-Goodman Style 2 (PTAC letter tables); Daikin styles 1 (label-only, not
-encodable), 3, 4, 5 (Daikin-vs-McQuay description conflict must be
-resolved by the chart read), 6, 8, 9; Payne style 5 (pre-1970, decade
-mapping chart-only) — Payne styles 3–4 remain Bryant-transcribed, not
-Payne-page-confirmed; Tempstar styles 4–6; Keeprite styles 4–5;
-Coleman style 1 (schema blocker gone; chart read pending); Luxaire
-style 1 (genuine K-month conflict: Luxaire chart K=October vs
-York/Coleman K=September — needs the two style-1 images read side by
-side), style 5 (no text table; must not be assumed identical to
-style 4); Trane page styles 4–8 (style 4 has conflicting text values
-plus a first-vs-last position ambiguity); Reznor style-1 before 1995
-(backward arithmetic from the 1995–2029 sequence is unsourced);
-Bosch Styles 2–3 (page states the year cannot be determined);
-Weil-McLain 6-digit CP numbers (early-1980s and prior, contact
-manufacturer); York parenthetical-prefix serials (e.g. (S)EBHM062202 —
-normalization strips spaces/dashes only, so the literal input does not
-match; a normalization decision is needed before this becomes an
-example).
+RESOLVED BY THE IMAGE PASS (Nov 8) -- now shipped: Goodman Style 2 (PTAC letter tables); Daikin styles 3, 4, 5, 6, 8, 9 (style 5's Daikin-vs-McQuay description conflict resolved in favor of the chart: 3rd character is month, not week); Tempstar styles 4-6; Keeprite styles 4-5; Coleman style 1; Luxaire style 1 (the K-month conflict is real, chart-vs-chart: Luxaire K=October vs York/Coleman K=September, and each brand file follows its own chart) and style 5 (its tables are identical to style 4's, as the chart itself shows); Trane page styles 4-7 (style 4's first-vs-last position ambiguity resolved by shipping two styles; style 6's L/M/N table is in the chart); Reznor style-1 1975-1994 (chart-sourced, not backward arithmetic); York parenthetical-prefix serials (e.g. (S)EBHM062202 -- shipped as a literal-parenthesis pattern under a coordinator ruling, since the locked normalization strips spaces/dashes only and the parentheses survive). Payne styles 3-4 are now Payne-page-confirmed (their charts match the Bryant-transcribed tables exactly). WaterFurnace month (January, chart-confirmed) and AllStyle Style 1 (year-only, reversed-split) also shipped in the image pass; Water Heater Index is a separate v2 program, not started.
+STILL HELD: Daikin style 1 (label-only, not encodable); Payne style 5 (pre-1970 -- the chart was read and contains NO digit-to-year mapping; the year comes from an unpublished sequence-number lookup); Trane page Style 8 (European; page states it cannot be decoded); Reznor style-1 1949-1974 single-letter codes (chart-verified but no real example serial exists); Bosch Styles 2-3 (page states the year cannot be determined); Weil-McLain 6-digit CP numbers (early-1980s and prior, contact manufacturer); Zoneline (year codes unbounded 1944-2013, no zoneline.json).

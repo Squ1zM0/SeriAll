@@ -2,9 +2,36 @@
   "brand": "AllStyle",
   "slug": "allstyle",
   "sourceUrl": "https://www.building-center.org/allstyle-hvac-age/",
-  "notes": "No parent company is stated on the retrievable page text, so no parent is claimed. Page note: AllStyle commenced operations in May 1990; early systems used style 1 (manual numbering), most later units style 2 (computer generated). Page style 1 is HELD, not shipped: its year is the 4th-5th characters REVERSED (page example: '29' reversed to '92' = 1992), and reversed digit slices are not expressible in the locked schema; its month letter chart is also not in retrievable text. Style 2 ships year-only in both variants: the month letter chart ('see chart below') did not surface in the text fetch (no chart image URL was returned for this page), so month is held pending a chart/image read. Style 2a table judgment call, flagged for coordinator review: the page states only that a single digit was used during the 1990s; the 0-9 to 1990-1999 table below is the mechanical reading of that bound (digit = ones digit of a 199x year), not a page-printed per-digit table.",
+  "notes": "No parent company is stated on the retrievable page text, so no parent is claimed. Page note: AllStyle commenced operations in May 1990; early systems used style 1 (manual numbering), most later units style 2 (computer generated). Page style 1 ships year-only (image-pass Nov 8): its year is the 4th-5th characters REVERSED (page example: '29' reversed to '92' = 1992), encoded as split positions [[4,5],[3,4]] -- the same reversed-split technique Lendell style-1 already ships with the identical serial and rule, so the old 'not expressible' rationale is stale; its month letter has no chart on the page (only the data-plate photo), so month stays held. Style 2 ships year-only in both variants: the month letter chart ('see chart below') does not exist on the page (image-pass Nov 8: the only images are the logo and a data-plate photo), so month stays held. Style 2a table judgment call, flagged for coordinator review: the page states only that a single digit was used during the 1990s; the 0-9 to 1990-1999 table below is the mechanical reading of that bound (digit = ones digit of a 199x year), not a page-printed per-digit table.",
   "usesStylesOf": null,
   "styles": [
+    {
+      "id": "style-1",
+      "era": "Manual numbering, 9-character serials (page style 1)",
+      "pattern": "^\\d[A-Z]\\d{7}$",
+      "year": {
+        "kind": "digits",
+        "positions": [
+          [
+            4,
+            5
+          ],
+          [
+            3,
+            4
+          ]
+        ]
+      },
+      "month": null,
+      "week": null,
+      "examples": [
+        {
+          "serial": "3C2298461",
+          "expectedYear": 1992
+        }
+      ],
+      "notes": "Year = 4th-5th characters REVERSED, page-stated verbatim: 'the 4th and 5th digits are \"29\". When you reverse the number to \"92\" you can determine that your unit was manufactured in 1992.' Encoded as split positions [[4,5],[3,4]] concatenating to '92' -> 1992 -- the same reversed-split technique as Lendell style-1 (identical serial and rule, already shipped) and Magic-Pak style-3. Character counting is page-verified. Month = 2nd letter, but no month chart exists on the page (only the data-plate photo), so month stays held and this style ships year-only."
+    },
     {
       "id": "style-2a",
       "era": "1990s, single-digit year + letter + 5 digits + letter (page style 2, single-digit variant)",

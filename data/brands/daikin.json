@@ -3,7 +3,7 @@
   "slug": "daikin",
   "parent": "Daikin Group",
   "sourceUrl": "https://www.building-center.org/daikin-hvac-age/",
-  "notes": "Only 3 of the page's 10 styles encode as deterministic serial rules from the page text: page styles 2, 7 and 10. Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Page styles 3, 4, 5, 6, 8 and 9 decode through charts shown only as images on the page; the chart contents are not recoverable from the page text, so no tables are encoded for them and they are held as gaps pending a read of the chart images. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
+  "notes": "Nine of the page's 10 styles are encoded: page styles 2, 7 and 10 from the page text (file styles 1-3) and page styles 3, 4, 5, 6, 8 and 9 from the page's charts, verified in the image pass Nov 8 (file styles 4-9). Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
   "usesStylesOf": null,
   "styles": [
     {
@@ -38,6 +38,288 @@
       "yearFloor": 1960,
       "examples": [{"serial": "1602393269", "expectedYear": 2016, "expectedMonth": 2}],
       "notes": "Page style 10: year is the 1st and 2nd numbers, month is the 3rd and 4th numbers. Example decode derived from the documented positions: 16 -> 2016, 02 -> February."
+    },
+    {
+      "id": "style-4",
+      "era": "Page style 3: Daikin-McQuay ductless split system units, 14-digit numeric serials",
+      "pattern": "^\\d{14}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          4
+        ],
+        "table": {
+          "2043": 2000,
+          "2044": 2001,
+          "2045": 2002,
+          "2046": 2003,
+          "2047": 2004
+        }
+      },
+      "month": null,
+      "week": {
+        "kind": "digits",
+        "positions": [
+          4,
+          6
+        ]
+      },
+      "examples": [
+        {
+          "serial": "20444501000138",
+          "expectedYear": 2001,
+          "expectedWeek": 45
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the first four digits, week the next two. The chart prints only five year rows (2043-2047); the '*'/'Etc.' arrow is not extrapolated to 2048-2005. Daikin-McQuay ductless split system units."
+    },
+    {
+      "id": "style-5",
+      "era": "Page style 4: Daikin-McQuay incremental and heat pump units (Auburn), 9-digit numeric serials",
+      "pattern": "^\\d{9}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          2,
+          3
+        ],
+        "table": {
+          "9": 1979,
+          "0": 1980,
+          "1": 1981,
+          "2": 1982
+        }
+      },
+      "month": null,
+      "week": {
+        "kind": "digits",
+        "positions": [
+          3,
+          5
+        ]
+      },
+      "examples": [
+        {
+          "serial": "049270032",
+          "expectedYear": 1979,
+          "expectedWeek": 27
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the 3rd digit, week the 4th-5th digits. The chart prints only four year rows with '*'/'Etc.' arrows both ways; only the four printed rows are encoded."
+    },
+    {
+      "id": "style-6",
+      "era": "Page style 5: 10-character serials, year digit + month letter",
+      "pattern": "^\\d{2}[A-Z]\\d{7}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "5": 1995,
+          "6": 1996,
+          "7": 1997,
+          "8": 1998,
+          "9": 1999
+        }
+      },
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          2,
+          3
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "55A1234501",
+          "expectedYear": 1995,
+          "expectedMonth": 1
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, month is the 3rd character. The page text says the 3rd character gives the week; the chart labels it Month with a JAN-DEC table, so the chart governs and the page text is in error on this point."
+    },
+    {
+      "id": "style-7",
+      "era": "Page style 6: 10-character serials, digit + two letters + 7 digits",
+      "pattern": "^\\d[A-Z]{2}\\d{7}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          1,
+          2
+        ],
+        "table": {
+          "A": 1971,
+          "B": 1972,
+          "C": 1973,
+          "D": 1974,
+          "E": 1975,
+          "F": 1976,
+          "G": 1977,
+          "H": 1978,
+          "J": 1979,
+          "K": 1980,
+          "L": 1981,
+          "M": 1982,
+          "N": 1983,
+          "P": 1984,
+          "Q": 1985,
+          "R": 1986,
+          "S": 1987,
+          "T": 1988,
+          "U": 1989,
+          "V": 1990,
+          "W": 1991,
+          "X": 1992,
+          "Y": 1993,
+          "Z": 1994
+        }
+      },
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          2,
+          3
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "5PB1234503",
+          "expectedYear": 1984,
+          "expectedMonth": 2
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the 2nd character, month is the 3rd character. Year letters skip I and O; month letters skip I."
+    },
+    {
+      "id": "style-8",
+      "era": "Page style 8: Daikin-McQuay condensing units prior to 1988, 17-character serials",
+      "pattern": "^\\d{10}[A-Z]\\d{6}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          10,
+          11
+        ],
+        "table": {
+          "A": 1974,
+          "B": 1975,
+          "C": 1976,
+          "D": 1977,
+          "E": 1978,
+          "F": 1979,
+          "G": 1980,
+          "H": 1981,
+          "J": 1982,
+          "K": 1983,
+          "L": 1984,
+          "M": 1985,
+          "N": 1986,
+          "P": 1987,
+          "R": 1988
+        }
+      },
+      "month": null,
+      "week": {
+        "kind": "digits",
+        "positions": [
+          11,
+          13
+        ]
+      },
+      "examples": [
+        {
+          "serial": "1230456789M151234",
+          "expectedYear": 1985,
+          "expectedWeek": 15
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the 11th character, week the 12th-13th. The image serial has a 10-digit prefix, which is self-consistent with the stated 11th-character position; the page-text list's 12-digit variant contradicts its own position and is not used. The tip says 'prior to 1988' yet the table includes R=1988; transcribed as printed."
+    },
+    {
+      "id": "style-9",
+      "era": "Page style 9: 8-character serials, two letters + 6 digits",
+      "pattern": "^[A-Z]{2}\\d{6}$",
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "T": 1964,
+          "U": 1965,
+          "V": 1966,
+          "W": 1967,
+          "X": 1968,
+          "Y": 1969,
+          "Z": 1970
+        }
+      },
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          1,
+          2
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "week": null,
+      "examples": [
+        {
+          "serial": "YA123456",
+          "expectedYear": 1969,
+          "expectedMonth": 1
+        }
+      ],
+      "notes": "Chart-verified (image-pass Nov 8): year is the 1st letter, month is the 2nd letter. No continuation marker on the chart, so codes outside T-Z return cannot-determine; no extrapolation."
     }
   ]
 }

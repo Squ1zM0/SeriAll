@@ -4,7 +4,7 @@
   "parent": "Carrier Corporation",
   "sisters": ["Bryant"],
   "sourceUrl": "https://www.building-center.org/payne-hvac-age/",
-  "notes": "BDP system. Styles 1-4 match Bryant styles 1-4 in shape, positions, era, and example serials (style 2, style 3 and style 4 examples are identical serials on both pages). Payne is NOT usesStylesOf Bryant because Payne style 5 differs from Bryant style 5 and Payne lists no Canada variant for style 3. Styles 3-4 letter/digit tables are transcribed from Bryant page text because Payne's own charts are image-only in text fetch; confirm against Payne chart images before treating those tables as Payne-page-confirmed. HELD GAP — style 5 (prior to 1970, 7-digit all-numeric, year = 1st digit): the page shows only the placeholder 6######, which is not a real serial, and the decade mapping lives only in the chart image; no style 5 is shipped rather than guessed. Carrier is a related brand but its page states no serial system, so it is not claimed as sharing this system.",
+  "notes": "BDP system. Styles 1-4 match Bryant styles 1-4 in shape, positions, era, and example serials (style 2, style 3 and style 4 examples are identical serials on both pages). Payne is NOT usesStylesOf Bryant because Payne style 5 differs from Bryant style 5 and Payne lists no Canada variant for style 3. Styles 3-4 tables are now Payne-page-confirmed (image-pass Nov 8): Payne's own charts match the Bryant-transcribed tables exactly. HELD GAP -- style 5 (prior to 1970, 7-digit all-numeric, year = 1st digit): the chart image was read (image-pass Nov 8) and contains NO digit-to-year mapping at all -- the sample is '6######' with '6' boxed as Year and the rest as Sequence, and the Quick Tip states Carrier used the sequence number to determine the year; no style 5 is shipped because no mapping exists anywhere on the page. Carrier is a related brand but its page states no serial system, so it is not claimed as sharing this system.",
   "usesStylesOf": null,
   "styles": [
     {
@@ -35,7 +35,7 @@
       "month": {"kind": "letterTable", "positions": [0, 1], "table": {"M": 1, "N": 2, "P": 3, "Q": 4, "R": 5, "S": 6, "T": 7, "V": 8, "W": 9, "X": 10, "Y": 11, "Z": 12}},
       "week": null,
       "examples": [{"serial": "W4D14008", "expectedYear": 1984, "expectedMonth": 9}],
-      "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
+      "notes": "Month is 1st position, year digit is 2nd position. Tables confirmed against Payne's own chart (image-pass Nov 8): identical to the Bryant-transcribed tables. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
     },
     {
       "id": "style-4",
@@ -45,7 +45,7 @@
       "month": {"kind": "letterTable", "positions": [0, 1], "table": {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "H": 8, "I": 9, "J": 10, "K": 11, "L": 12}},
       "week": null,
       "examples": [{"serial": "A167890", "expectedYear": 1971, "expectedMonth": 1}],
-      "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
+      "notes": "Month is 1st position, year digit is 2nd position. Tables confirmed against Payne's own chart (image-pass Nov 8): identical to the Bryant-transcribed tables. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year."
     }
   ]
 }

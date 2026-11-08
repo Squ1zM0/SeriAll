@@ -1,6 +1,6 @@
 {
  "brand": "WaterFurnace",
- "notes": "Independent subsidiary of NIBE (acquired 2014, per page history). Style 1 (Building Center Style 1) ships YEAR-ONLY: year positions are text-verified (2018), but its month is HELD by coordinator decision \u2014 the spaced example '18 0100228' yields October under normalized counting but January under space-counted positions, with no page-stated decode to falsify either; doubtful stays held, pending image-pass confirmation on WaterFurnace-HVAC-style-1.jpg. Style 2 (Building Center Style 2, 1985-2012) is HELD entirely: year (1st character) and month (2nd character) are chart-only. The shipped file style-2 is Building Center Style 3 (pre-1985), year-only: its month (1st character) is chart-only.",
+ "notes": "Independent subsidiary of NIBE (acquired 2014, per page history). Style 1 (Building Center Style 1) now ships with month (image-pass Nov 8): the chart image boxes '01' as MONTH, confirming January and falsifying the October reading. Style 2 (Building Center Style 2, 1985-2012) ships as new file style-3 (image-pass Nov 8), with the dual-candidate year table and the F=[1990,2015] era caveat recorded in its notes. The shipped file style-2 is Building Center Style 3 (pre-1985), which now also carries its month (image-pass Nov 8).",
  "parent": "NIBE",
  "slug": "waterfurnace",
  "sourceUrl": "https://www.building-center.org/waterfurnace-hvac-age/",
@@ -9,13 +9,20 @@
    "era": "Current as of at least 2012, 9-digit numeric serials (Building Center Style 1)",
    "examples": [
     {
+     "expectedMonth": 1,
      "expectedYear": 2018,
      "serial": "180100228"
     }
    ],
    "id": "style-1",
-   "month": null,
-   "notes": "Page positions 1-based: year = 1st & 2nd positions, month = 4th & 5th positions. COORDINATOR HOLD (supersedes slice report): month HELD, file ships year-only for this style. The page example is shown spaced as '18 0100228': normalized counting gives month '10' (October) but space-counted positions 4-5 give '01' (January), and no page-stated decode falsifies either reading, so the month is doubtful and stays held per program rule (image-pass check on WaterFurnace-HVAC-style-1.jpg may confirm the green month segment; if it shows '01', the hold stands, since the schema cannot express space-counted positions). Year is unaffected (2018 under both readings). Year value derived from the stated positions, not page-stated for this example.",
+   "month": {
+    "kind": "digits",
+    "positions": [
+     2,
+     4
+    ]
+   },
+   "notes": "Page positions 1-based: year = 1st & 2nd positions, month = 4th & 5th positions. MONTH CONFIRMED JANUARY (image-pass Nov 8): the style-1 chart image boxes '18' as YEAR and '01' as MONTH on serial 180100228, so the month is positions [2,4] = '01' = January; the October reading (normalized positions 4-5 = '10') is falsified by the image, which governs over the page text's space-counted positions. Year is 2018 under both readings. Year value derived from the stated positions, not page-stated for this example.",
    "pattern": "^\\d{9}$",
    "week": null,
    "year": {
@@ -31,13 +38,34 @@
    "era": "Used prior to 1985 (Building Center Style 3)",
    "examples": [
     {
+     "expectedMonth": 4,
      "expectedYear": 1983,
      "serial": "D8367019"
     }
    ],
    "id": "style-2",
-   "month": null,
-   "notes": "Page positions 1-based: year = 2nd & 3rd positions, month = 1st position (letter chart image WaterFurnace-HVAC-style-3.jpg only, held), so this style ships year-only. Year value derived from the stated positions, not page-stated for this example; 1983 is consistent with the pre-1985 era.",
+   "month": {
+    "kind": "letterTable",
+    "positions": [
+     0,
+     1
+    ],
+    "table": {
+     "A": 1,
+     "B": 2,
+     "C": 3,
+     "D": 4,
+     "E": 5,
+     "F": 6,
+     "G": 7,
+     "H": 8,
+     "J": 9,
+     "K": 10,
+     "L": 11,
+     "M": 12
+    }
+   },
+   "notes": "Page positions 1-based: year = 2nd & 3rd positions, month = 1st position. MONTH ADDED (image-pass Nov 8): the style-3 chart image shows the month table (A January through M December, I skipped) and the example D8367019 decodes as April 1983. Year value derived from the stated positions, not page-stated for this example; 1983 is consistent with the pre-1985 era.",
    "pattern": "^[A-Z]\\d{7}$",
    "week": null,
    "year": {
@@ -48,6 +76,101 @@
     ]
    },
    "yearFloor": 1960
+  },
+  {
+   "era": "1985-2012 (Building Center Style 2)",
+   "examples": [
+    {
+     "expectedMonth": 9,
+     "expectedYear": 2004,
+     "serial": "UJ1087"
+    },
+    {
+     "expectedMonth": 9,
+     "expectedYear": [
+      1985,
+      2010
+     ],
+     "serial": "AJ1087"
+    }
+   ],
+   "id": "style-3",
+   "month": {
+    "kind": "letterTable",
+    "positions": [
+     1,
+     2
+    ],
+    "table": {
+     "A": 1,
+     "B": 2,
+     "C": 3,
+     "D": 4,
+     "E": 5,
+     "F": 6,
+     "G": 7,
+     "H": 8,
+     "J": 9,
+     "K": 10,
+     "L": 11,
+     "M": 12
+    }
+   },
+   "notes": "Chart-verified (image-pass Nov 8): year is the 1st letter, month is the 2nd letter. Year letters A-F are dual-candidate (1985/2010 through 1989/2014); G-Z are single years 1991-2009. CAVEAT: F maps to 1990 or 2015, which puts 2015 outside the stated 1985-2012 usage era; the chart is explicit, flagged not hidden. Month letters skip I.",
+   "pattern": "^[A-Z]{2}\\d{4}$",
+   "week": null,
+   "year": {
+    "kind": "letterTable",
+    "positions": [
+     0,
+     1
+    ],
+    "table": {
+     "A": [
+      1985,
+      2010
+     ],
+     "B": [
+      1986,
+      2011
+     ],
+     "C": [
+      1987,
+      2012
+     ],
+     "D": [
+      1988,
+      2013
+     ],
+     "E": [
+      1989,
+      2014
+     ],
+     "F": [
+      1990,
+      2015
+     ],
+     "G": 1991,
+     "H": 1992,
+     "J": 1993,
+     "K": 1994,
+     "L": 1995,
+     "M": 1996,
+     "N": 1997,
+     "O": 1998,
+     "P": 1999,
+     "Q": 2000,
+     "R": 2001,
+     "S": 2002,
+     "T": 2003,
+     "U": 2004,
+     "V": 2005,
+     "W": 2006,
+     "X": 2007,
+     "Y": 2008,
+     "Z": 2009
+    }
+   }
   }
  ],
  "usesStylesOf": null

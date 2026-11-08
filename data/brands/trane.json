@@ -1,6 +1,6 @@
 {
   "brand": "Trane",
-  "notes": "Multiple overlapping serial systems; the page advises using data-plate MFR date, ANSI standard date, condition and appearance to disambiguate overlapping styles. Page Style 1 (2002 onward) is documented as used under the Trane, American Standard, Ameristar and Ingersoll Rand names; the page also names GE among brands under which these styles appear. Known-context correction: the page documents the letter-year system from 1983 (not from 1987) through 2001, then the year-first digit system from 2002. Parent per the page header is Ingersoll Rand; the page history notes the 2020 rename to Trane Technologies. HELD, NOT SHIPPED: page Style 7 (8-character serials, documented serial F9190391 with no stated decode; year positions inferred only from similarity to page Style 3) and page Styles 4 (1981-1983, year letter in first or last position depending on product type, ambiguous letter wording), 5 (single-digit year + month letter with no table, decade ambiguous 1970s vs early 1980s), 6 (third-to-last letter year, last two digits week, 1980-1982, no L/M/N letter table), 8 (European; page states it cannot be decoded from any known chart).",
+  "notes": "Multiple overlapping serial systems; the page advises using data-plate MFR date, ANSI standard date, condition and appearance to disambiguate overlapping styles. Page Style 1 (2002 onward) is documented as used under the Trane, American Standard, Ameristar and Ingersoll Rand names; the page also names GE among brands under which these styles appear. Known-context correction: the page documents the letter-year system from 1983 (not from 1987) through 2001, then the year-first digit system from 2002. Parent per the page header is Ingersoll Rand; the page history notes the 2020 rename to Trane Technologies. SHIPPED (image-pass Nov 8): page Styles 4, 5, 6 and 7 (file styles 5-9). HELD, NOT SHIPPED: page Style 8 (European; page states it cannot be decoded from any known chart).",
   "parent": "Ingersoll Rand",
   "sisters": [
     "American Standard",
@@ -10,6 +10,64 @@
   "slug": "trane",
   "sourceUrl": "https://www.building-center.org/trane-hvac-age/",
   "styles": [
+    {
+      "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+      "examples": [
+        {
+          "expectedYear": 1981,
+          "serial": "B123456"
+        }
+      ],
+      "id": "style-5",
+      "month": null,
+      "notes": "Chart-verified (image-pass Nov 8): the year letter may occur at the beginning or the end of the serial; this is the letter-first form. Table: A or O = 1980, B or T = 1981, C or U = 1982. The image says 1980-1982; the page text says 1981-1983 -- the chart table governs. ORDERING: these two exact 7-character styles sit first in the file, ahead of the open-ended digit-led style-2, so a 7-character digit-led serial with a trailing letter decodes as this 1980-1982 system rather than as a 2010+ digit-led serial; a 2010+ serial in exactly this shape would decode here instead, a documented page ambiguity the data plate must disambiguate.",
+      "pattern": "^[A-Z]\\d{6}$",
+      "week": null,
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "A": 1980,
+          "O": 1980,
+          "B": 1981,
+          "T": 1981,
+          "C": 1982,
+          "U": 1982
+        }
+      }
+    },
+    {
+      "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+      "examples": [
+        {
+          "expectedYear": 1981,
+          "serial": "123456T"
+        }
+      ],
+      "id": "style-6",
+      "month": null,
+      "notes": "Chart-verified (image-pass Nov 8): letter-last form of page Style 4. See style-5 notes for the table and the ordering rationale.",
+      "pattern": "^\\d{6}[A-Z]$",
+      "week": null,
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          6,
+          7
+        ],
+        "table": {
+          "A": 1980,
+          "O": 1980,
+          "B": 1981,
+          "T": 1981,
+          "C": 1982,
+          "U": 1982
+        }
+      }
+    },
     {
       "era": "2010-present, digit-led serials (page Style 1, later form)",
       "examples": [
@@ -107,7 +165,7 @@
       ],
       "id": "style-3",
       "month": null,
-      "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. DISCREPANCY FLAGGED: page text says letters A, I, L, O and Q were not used, yet the standard chart reading (corroborated by three independent sources) gives L = 1996; L = 1996 is included pending visual chart verification. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
+      "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. CHART-VERIFIED (image-pass Nov 8): the page's own year chart lists L = 1996, so the page text's claim that A, I, L, O and Q were not used is wrong about L; A genuinely has no entry. L = 1996 stays. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
       "pattern": "^[A-Z][0-9]{2}[A-Z0-9]{6}$",
       "week": {
         "kind": "digits",
@@ -149,14 +207,169 @@
       "era": "1970s onward, factory letter + 2-digit year + month letter, 9 characters (page Style 3)",
       "examples": [
         {
+          "expectedMonth": 12,
           "expectedYear": 1992,
           "serial": "A92M07217"
         }
       ],
       "id": "style-4",
-      "month": null,
-      "notes": "Page states the 4th position encodes month but gives no letter-to-month table (the documented example's 4th character is M), so month is not encoded. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          3,
+          4
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "notes": "Chart-verified (image-pass Nov 8): the page's chart supplies the month table (A January through M December, I skipped), so month is now encoded; the example decodes as December 1992. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
       "pattern": "^[A-Z][0-9]{2}[A-Z][A-Z0-9]{5}$",
+      "week": null,
+      "year": {
+        "kind": "digits",
+        "positions": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "era": "1971-1979, digit + month letter + 4 digits (page Style 5)",
+      "examples": [
+        {
+          "expectedMonth": 4,
+          "expectedYear": 1972,
+          "serial": "2D1234"
+        }
+      ],
+      "id": "style-7",
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          1,
+          2
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, month is the 2nd letter. Single-digit year encoded as an explicit digit-keyed table because the schema digits kind cannot express a 1-character year slice; the chart bounds the era to 1971-1979. The page text mentions possible early-1980s reuse for limited products, but no mapping is given for it.",
+      "pattern": "^\\d[A-Z]\\d{4}$",
+      "week": null,
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "1": 1971,
+          "2": 1972,
+          "3": 1973,
+          "4": 1974,
+          "5": 1975,
+          "6": 1976,
+          "7": 1977,
+          "8": 1978,
+          "9": 1979
+        }
+      }
+    },
+    {
+      "era": "1980s, letter + 6 digits + year letter + 2-digit week (page Style 6)",
+      "examples": [
+        {
+          "expectedWeek": 3,
+          "expectedYear": 1981,
+          "serial": "H011870M03"
+        }
+      ],
+      "id": "style-8",
+      "month": null,
+      "notes": "Chart-verified (image-pass Nov 8): year is the third-to-last character, week is the last two digits. The L/M/N letters the file note said were unmapped are in this chart (A, L, or O = 1980; B, M, or T = 1981; C, N, or U = 1982). NOTE: this 10-character pattern does not overlap shipped style-3's 9-character pattern, so no ordering trade-off applies; it sits after style-3 in file order.",
+      "pattern": "^[A-Z]\\d{6}[A-Z]\\d{2}$",
+      "week": {
+        "kind": "digits",
+        "positions": [
+          8,
+          10
+        ]
+      },
+      "year": {
+        "kind": "letterTable",
+        "positions": [
+          7,
+          8
+        ],
+        "table": {
+          "A": 1980,
+          "L": 1980,
+          "O": 1980,
+          "B": 1981,
+          "M": 1981,
+          "T": 1981,
+          "C": 1982,
+          "N": 1982,
+          "U": 1982
+        }
+      }
+    },
+    {
+      "era": "1970s into the 1990s, month letter + 2-digit year + 5 digits (page Style 7)",
+      "examples": [
+        {
+          "expectedMonth": 6,
+          "expectedYear": 1991,
+          "serial": "F9190391"
+        }
+      ],
+      "id": "style-9",
+      "month": {
+        "kind": "letterTable",
+        "positions": [
+          0,
+          1
+        ],
+        "table": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6,
+          "G": 7,
+          "H": 8,
+          "J": 9,
+          "K": 10,
+          "L": 11,
+          "M": 12
+        }
+      },
+      "notes": "Chart-verified (image-pass Nov 8): month is the 1st letter, year is the 2nd-3rd digits. 'Generally used from the 70's into the 90's' per the page.",
+      "pattern": "^[A-Z]\\d{7}$",
       "week": null,
       "year": {
         "kind": "digits",

@@ -1142,12 +1142,39 @@
     "allstyle": {
       "aliases": null,
       "brand": "AllStyle",
-      "notes": "No parent company is stated on the retrievable page text, so no parent is claimed. Page note: AllStyle commenced operations in May 1990; early systems used style 1 (manual numbering), most later units style 2 (computer generated). Page style 1 is HELD, not shipped: its year is the 4th-5th characters REVERSED (page example: '29' reversed to '92' = 1992), and reversed digit slices are not expressible in the locked schema; its month letter chart is also not in retrievable text. Style 2 ships year-only in both variants: the month letter chart ('see chart below') did not surface in the text fetch (no chart image URL was returned for this page), so month is held pending a chart/image read. Style 2a table judgment call, flagged for coordinator review: the page states only that a single digit was used during the 1990s; the 0-9 to 1990-1999 table below is the mechanical reading of that bound (digit = ones digit of a 199x year), not a page-printed per-digit table.",
+      "notes": "No parent company is stated on the retrievable page text, so no parent is claimed. Page note: AllStyle commenced operations in May 1990; early systems used style 1 (manual numbering), most later units style 2 (computer generated). Page style 1 ships year-only (image-pass Nov 8): its year is the 4th-5th characters REVERSED (page example: '29' reversed to '92' = 1992), encoded as split positions [[4,5],[3,4]] -- the same reversed-split technique Lendell style-1 already ships with the identical serial and rule, so the old 'not expressible' rationale is stale; its month letter has no chart on the page (only the data-plate photo), so month stays held. Style 2 ships year-only in both variants: the month letter chart ('see chart below') does not exist on the page (image-pass Nov 8: the only images are the logo and a data-plate photo), so month stays held. Style 2a table judgment call, flagged for coordinator review: the page states only that a single digit was used during the 1990s; the 0-9 to 1990-1999 table below is the mechanical reading of that bound (digit = ones digit of a 199x year), not a page-printed per-digit table.",
       "parent": null,
       "sisters": null,
       "slug": "allstyle",
       "sourceUrl": "https://www.building-center.org/allstyle-hvac-age/",
       "styles": [
+        {
+          "era": "Manual numbering, 9-character serials (page style 1)",
+          "examples": [
+            {
+              "expectedYear": 1992,
+              "serial": "3C2298461"
+            }
+          ],
+          "id": "style-1",
+          "month": null,
+          "notes": "Year = 4th-5th characters REVERSED, page-stated verbatim: 'the 4th and 5th digits are \"29\". When you reverse the number to \"92\" you can determine that your unit was manufactured in 1992.' Encoded as split positions [[4,5],[3,4]] concatenating to '92' -> 1992 -- the same reversed-split technique as Lendell style-1 (identical serial and rule, already shipped) and Magic-Pak style-3. Character counting is page-verified. Month = 2nd letter, but no month chart exists on the page (only the data-plate photo), so month stays held and this style ships year-only.",
+          "pattern": "^\\d[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              [
+                4,
+                5
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          }
+        },
         {
           "era": "1990s, single-digit year + letter + 5 digits + letter (page style 2, single-digit variant)",
           "examples": [
@@ -1455,6 +1482,66 @@
       "sourceUrl": "https://www.building-center.org/american-standard-hvac-age/",
       "styles": [
         {
+          "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+          "examples": [
+            {
+              "expectedYear": 1981,
+              "serial": "B123456"
+            }
+          ],
+          "id": "style-5",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): the year letter may occur at the beginning or the end of the serial; this is the letter-first form. Table: A or O = 1980, B or T = 1981, C or U = 1982. The image says 1980-1982; the page text says 1981-1983 -- the chart table governs. ORDERING: these two exact 7-character styles sit first in the file, ahead of the open-ended digit-led style-2, so a 7-character digit-led serial with a trailing letter decodes as this 1980-1982 system rather than as a 2010+ digit-led serial; a 2010+ serial in exactly this shape would decode here instead, a documented page ambiguity the data plate must disambiguate.",
+          "pattern": "^[A-Z]\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
+        {
+          "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+          "examples": [
+            {
+              "expectedYear": 1981,
+              "serial": "123456T"
+            }
+          ],
+          "id": "style-6",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): letter-last form of page Style 4. See style-5 notes for the table and the ordering rationale.",
+          "pattern": "^\\d{6}[A-Z]$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              6,
+              7
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
+        {
           "era": "2010-present, digit-led serials (page Style 1, later form)",
           "examples": [
             {
@@ -1554,7 +1641,7 @@
           "id": "style-3",
           "inheritedFrom": "trane",
           "month": null,
-          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. DISCREPANCY FLAGGED: page text says letters A, I, L, O and Q were not used, yet the standard chart reading (corroborated by three independent sources) gives L = 1996; L = 1996 is included pending visual chart verification. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
+          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. CHART-VERIFIED (image-pass Nov 8): the page's own year chart lists L = 1996, so the page text's claim that A, I, L, O and Q were not used is wrong about L; A genuinely has no entry. L = 1996 stays. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
           "pattern": "^[A-Z][0-9]{2}[A-Z0-9]{6}$",
           "week": {
             "kind": "digits",
@@ -1596,15 +1683,173 @@
           "era": "1970s onward, factory letter + 2-digit year + month letter, 9 characters (page Style 3)",
           "examples": [
             {
+              "expectedMonth": 12,
               "expectedYear": 1992,
               "serial": "A92M07217"
             }
           ],
           "id": "style-4",
           "inheritedFrom": "trane",
-          "month": null,
-          "notes": "Page states the 4th position encodes month but gives no letter-to-month table (the documented example's 4th character is M), so month is not encoded. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              3,
+              4
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): the page's chart supplies the month table (A January through M December, I skipped), so month is now encoded; the example decodes as December 1992. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
           "pattern": "^[A-Z][0-9]{2}[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "1971-1979, digit + month letter + 4 digits (page Style 5)",
+          "examples": [
+            {
+              "expectedMonth": 4,
+              "expectedYear": 1972,
+              "serial": "2D1234"
+            }
+          ],
+          "id": "style-7",
+          "inheritedFrom": "trane",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, month is the 2nd letter. Single-digit year encoded as an explicit digit-keyed table because the schema digits kind cannot express a 1-character year slice; the chart bounds the era to 1971-1979. The page text mentions possible early-1980s reuse for limited products, but no mapping is given for it.",
+          "pattern": "^\\d[A-Z]\\d{4}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "1": 1971,
+              "2": 1972,
+              "3": 1973,
+              "4": 1974,
+              "5": 1975,
+              "6": 1976,
+              "7": 1977,
+              "8": 1978,
+              "9": 1979
+            }
+          }
+        },
+        {
+          "era": "1980s, letter + 6 digits + year letter + 2-digit week (page Style 6)",
+          "examples": [
+            {
+              "expectedWeek": 3,
+              "expectedYear": 1981,
+              "serial": "H011870M03"
+            }
+          ],
+          "id": "style-8",
+          "inheritedFrom": "trane",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the third-to-last character, week is the last two digits. The L/M/N letters the file note said were unmapped are in this chart (A, L, or O = 1980; B, M, or T = 1981; C, N, or U = 1982). NOTE: this 10-character pattern does not overlap shipped style-3's 9-character pattern, so no ordering trade-off applies; it sits after style-3 in file order.",
+          "pattern": "^[A-Z]\\d{6}[A-Z]\\d{2}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              7,
+              8
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "L": 1980,
+              "M": 1981,
+              "N": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
+        {
+          "era": "1970s into the 1990s, month letter + 2-digit year + 5 digits (page Style 7)",
+          "examples": [
+            {
+              "expectedMonth": 6,
+              "expectedYear": 1991,
+              "serial": "F9190391"
+            }
+          ],
+          "id": "style-9",
+          "inheritedFrom": "trane",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): month is the 1st letter, year is the 2nd-3rd digits. 'Generally used from the 70's into the 90's' per the page.",
+          "pattern": "^[A-Z]\\d{7}$",
           "week": null,
           "year": {
             "kind": "digits",
@@ -4685,7 +4930,7 @@
         "Coleman-Evcon"
       ],
       "brand": "Coleman",
-      "notes": "Coleman does NOT use usesStylesOf york: styles 1-2 match York's systems verbatim (same sample serials, same letter tables, same October 2004 boundary, charts note York UPG manufacturing), but styles 3-4 are Coleman-only numeric systems and the builder forbids styles alongside usesStylesOf. The month/year order swap is documented as a 1991/1992 boundary, not April 1992: style 4 (month first) ended 1991, style 3 (year first) began 1992. Dual-brand Coleman-Evcon history 1999-2005 is documented on the page. SHIPPED IN PHASE 2b: style-2 (1971 to October 2004, 4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) via the dual-candidate schema extension; TEXT-SOURCED (see style-2 notes), Building Center chart image read still open. STILL HELD: style-1 (after October 2004, 10-character serials, sample W0K5896070 = September 2005) \u2014 the split-year schema blocker is gone in Phase 2b, but the style is held pending the Coleman chart image read (see image-pass report); it is NOT extrapolated from York here.",
+      "notes": "Coleman does NOT use usesStylesOf york: styles 1-2 match York's systems verbatim (same sample serials, same letter tables, same October 2004 boundary, charts note York UPG manufacturing), but styles 3-4 are Coleman-only numeric systems and the builder forbids styles alongside usesStylesOf. The month/year order swap is documented as a 1991/1992 boundary, not April 1992: style 4 (month first) ended 1991, style 3 (year first) began 1992. Dual-brand Coleman-Evcon history 1999-2005 is documented on the page. SHIPPED IN PHASE 2b: style-2 (1971 to October 2004, 4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) via the dual-candidate schema extension; now IMAGE-CONFIRMED (image-pass Nov 8, see style-2 notes). Style-1 (after October 2004, 10-character serials, sample W0K5896070 = September 2005) is chart-verified and shipped (image-pass Nov 8); it is encoded from Coleman's own chart, not extrapolated from York.",
       "parent": "York",
       "sisters": [
         "York"
@@ -4693,6 +4938,55 @@
       "slug": "coleman",
       "sourceUrl": "https://www.building-center.org/coleman-hvac-age/",
       "styles": [
+        {
+          "era": "Since October 2004 (10-character serials)",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 2005,
+              "serial": "W0K5896070"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "K": 9,
+              "L": 10,
+              "M": 11,
+              "N": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): 2nd and 4th digits combine for the year ('0'+'5'='05' = 2005), 3rd character is the month letter (K = September on this chart). Plant table: A Apodaca, N Norman, S Source One, W Wichita. Began October 2004, York UPG manufacturing. The style-2 note's warning not to carry K=September into style 1 is moot: this chart also maps K to September.",
+          "pattern": "^[A-Z]\\d[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          },
+          "yearFloor": 2004
+        },
         {
           "era": "Prior to October 2004 (4-letter system)",
           "examples": [
@@ -4727,7 +5021,7 @@
               "N": 12
             }
           },
-          "notes": "TEXT-SOURCED (Phase 2b, not Coleman-page image-verified): tables from York-family text decoders (PickHVAC, InterNACHI, Coleman decoder PDF), all agreeing, and identical to the shipped York style-2 tables; example serial is the Coleman page's own example. Month is 2nd letter, year is 3rd letter; I, O, Q, U, Z not used. Year codes repeat on a 21-year cycle, hence dual candidates. N=2004 is January-September 2004 only (post-2004 system from October 2004) \u2014 recorded here, not expressible in the table. K=September here is the OLD-system value and must not be carried into post-2004 style 1. Building Center chart image read still open for image confirmation.",
+          "notes": "IMAGE-CONFIRMED (image-pass Nov 8): Coleman's own style-2 chart matches these tables exactly (same sample WAKM011379, same dual-candidate year table, same month table). Month is 2nd letter, year is 3rd letter; I, O, Q, U, Z not used. Year codes repeat on a 21-year cycle, hence dual candidates. N=2004 is January-September 2004 only (post-2004 system from October 2004) -- recorded here, not expressible in the table. The style-1 chart also maps K to September, so the old warning against carrying K=September into style 1 is moot.",
           "pattern": "^[A-Z]{4}\\d{6}$",
           "week": null,
           "year": {
@@ -5574,7 +5868,7 @@
     "daikin": {
       "aliases": null,
       "brand": "Daikin",
-      "notes": "Only 3 of the page's 10 styles encode as deterministic serial rules from the page text: page styles 2, 7 and 10. Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Page styles 3, 4, 5, 6, 8 and 9 decode through charts shown only as images on the page; the chart contents are not recoverable from the page text, so no tables are encoded for them and they are held as gaps pending a read of the chart images. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
+      "notes": "Nine of the page's 10 styles are encoded: page styles 2, 7 and 10 from the page text (file styles 1-3) and page styles 3, 4, 5, 6, 8 and 9 from the page's charts, verified in the image pass Nov 8 (file styles 4-9). Page style 1 carries no serial encoding (year and month read only from the printed manufacture-date label) and is not encoded. Related brands Goodman, Amana and Janitrol are listed on the page but use their own serial systems; no styles are copied from them and usesStylesOf is null. Two-digit years resolve by the schema century rule with floor 1960. Example decodes are derived mechanically from the page's documented positions (the page states positions, not manufactured-in sentences, for these three styles).",
       "parent": "Daikin Group",
       "sisters": null,
       "slug": "daikin",
@@ -5666,6 +5960,288 @@
             ]
           },
           "yearFloor": 1960
+        },
+        {
+          "era": "Page style 3: Daikin-McQuay ductless split system units, 14-digit numeric serials",
+          "examples": [
+            {
+              "expectedWeek": 45,
+              "expectedYear": 2001,
+              "serial": "20444501000138"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the first four digits, week the next two. The chart prints only five year rows (2043-2047); the '*'/'Etc.' arrow is not extrapolated to 2048-2005. Daikin-McQuay ductless split system units.",
+          "pattern": "^\\d{14}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              4,
+              6
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              4
+            ],
+            "table": {
+              "2043": 2000,
+              "2044": 2001,
+              "2045": 2002,
+              "2046": 2003,
+              "2047": 2004
+            }
+          }
+        },
+        {
+          "era": "Page style 4: Daikin-McQuay incremental and heat pump units (Auburn), 9-digit numeric serials",
+          "examples": [
+            {
+              "expectedWeek": 27,
+              "expectedYear": 1979,
+              "serial": "049270032"
+            }
+          ],
+          "id": "style-5",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 3rd digit, week the 4th-5th digits. The chart prints only four year rows with '*'/'Etc.' arrows both ways; only the four printed rows are encoded.",
+          "pattern": "^\\d{9}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              3,
+              5
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "0": 1980,
+              "1": 1981,
+              "2": 1982,
+              "9": 1979
+            }
+          }
+        },
+        {
+          "era": "Page style 5: 10-character serials, year digit + month letter",
+          "examples": [
+            {
+              "expectedMonth": 1,
+              "expectedYear": 1995,
+              "serial": "55A1234501"
+            }
+          ],
+          "id": "style-6",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, month is the 3rd character. The page text says the 3rd character gives the week; the chart labels it Month with a JAN-DEC table, so the chart governs and the page text is in error on this point.",
+          "pattern": "^\\d{2}[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "5": 1995,
+              "6": 1996,
+              "7": 1997,
+              "8": 1998,
+              "9": 1999
+            }
+          }
+        },
+        {
+          "era": "Page style 6: 10-character serials, digit + two letters + 7 digits",
+          "examples": [
+            {
+              "expectedMonth": 2,
+              "expectedYear": 1984,
+              "serial": "5PB1234503"
+            }
+          ],
+          "id": "style-7",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 2nd character, month is the 3rd character. Year letters skip I and O; month letters skip I.",
+          "pattern": "^\\d[A-Z]{2}\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1971,
+              "B": 1972,
+              "C": 1973,
+              "D": 1974,
+              "E": 1975,
+              "F": 1976,
+              "G": 1977,
+              "H": 1978,
+              "J": 1979,
+              "K": 1980,
+              "L": 1981,
+              "M": 1982,
+              "N": 1983,
+              "P": 1984,
+              "Q": 1985,
+              "R": 1986,
+              "S": 1987,
+              "T": 1988,
+              "U": 1989,
+              "V": 1990,
+              "W": 1991,
+              "X": 1992,
+              "Y": 1993,
+              "Z": 1994
+            }
+          }
+        },
+        {
+          "era": "Page style 8: Daikin-McQuay condensing units prior to 1988, 17-character serials",
+          "examples": [
+            {
+              "expectedWeek": 15,
+              "expectedYear": 1985,
+              "serial": "1230456789M151234"
+            }
+          ],
+          "id": "style-8",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 11th character, week the 12th-13th. The image serial has a 10-digit prefix, which is self-consistent with the stated 11th-character position; the page-text list's 12-digit variant contradicts its own position and is not used. The tip says 'prior to 1988' yet the table includes R=1988; transcribed as printed.",
+          "pattern": "^\\d{10}[A-Z]\\d{6}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              11,
+              13
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              10,
+              11
+            ],
+            "table": {
+              "A": 1974,
+              "B": 1975,
+              "C": 1976,
+              "D": 1977,
+              "E": 1978,
+              "F": 1979,
+              "G": 1980,
+              "H": 1981,
+              "J": 1982,
+              "K": 1983,
+              "L": 1984,
+              "M": 1985,
+              "N": 1986,
+              "P": 1987,
+              "R": 1988
+            }
+          }
+        },
+        {
+          "era": "Page style 9: 8-character serials, two letters + 6 digits",
+          "examples": [
+            {
+              "expectedMonth": 1,
+              "expectedYear": 1969,
+              "serial": "YA123456"
+            }
+          ],
+          "id": "style-9",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st letter, month is the 2nd letter. No continuation marker on the chart, so codes outside T-Z return cannot-determine; no extrapolation.",
+          "pattern": "^[A-Z]{2}\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "T": 1964,
+              "U": 1965,
+              "V": 1966,
+              "W": 1967,
+              "X": 1968,
+              "Y": 1969,
+              "Z": 1970
+            }
+          }
         }
       ]
     },
@@ -7337,7 +7913,7 @@
     "fraser_johnson": {
       "aliases": null,
       "brand": "Fraser-Johnson",
-      "notes": "SLUG RESOLUTION: worklist slug and page URL both use fraser_johnson (underscore), so that form is used; the builder keys files by their slug field and imposes no hyphen-only rule, so the underscore form validates (see scratch-build result in report). Page header spells the brand 'Fraser-Johnston' but the sister list and the URL use 'Fraser-Johnson'; the latter form is used as the display name. REUSE BASIS (page itself, not imported): the page header states 'Serial Number styles are the same as Coleman', and the page's four listed examples are exactly Coleman's four examples (W0K5896070, WAKM011379, 990697368, 0188123456). usesStylesOf coleman therefore inherits exactly Coleman's shipped styles 2, 3 and 4, which decode the page's style 2, 3 and 4 examples. Page Style 1 (W0K5896070) is NOT shipped, for the same reason it is held on Coleman: its month letter and split year digits are chart-only pending the Coleman chart-image read; it is not extrapolated here. No styles are duplicated in this file, per the usesStylesOf contract.",
+      "notes": "SLUG RESOLUTION: worklist slug and page URL both use fraser_johnson (underscore), so that form is used; the builder keys files by their slug field and imposes no hyphen-only rule, so the underscore form validates (see scratch-build result in report). Page header spells the brand 'Fraser-Johnston' but the sister list and the URL use 'Fraser-Johnson'; the latter form is used as the display name. REUSE BASIS (page itself, not imported): the page header states 'Serial Number styles are the same as Coleman', and the page's four listed examples are exactly Coleman's four examples (W0K5896070, WAKM011379, 990697368, 0188123456). usesStylesOf coleman therefore inherits exactly Coleman's shipped styles 1, 2, 3 and 4, which decode the page's four examples. Page Style 1 (W0K5896070) now ships via inheritance: Coleman's style-1 chart was verified in the image pass Nov 8, so the hold that blocked it is gone. No styles are duplicated in this file, per the usesStylesOf contract.",
       "parent": "York",
       "sisters": [
         "Coleman"
@@ -7345,6 +7921,56 @@
       "slug": "fraser_johnson",
       "sourceUrl": "https://www.building-center.org/fraser_johnson-hvac-age/",
       "styles": [
+        {
+          "era": "Since October 2004 (10-character serials)",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 2005,
+              "serial": "W0K5896070"
+            }
+          ],
+          "id": "style-1",
+          "inheritedFrom": "coleman",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "K": 9,
+              "L": 10,
+              "M": 11,
+              "N": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): 2nd and 4th digits combine for the year ('0'+'5'='05' = 2005), 3rd character is the month letter (K = September on this chart). Plant table: A Apodaca, N Norman, S Source One, W Wichita. Began October 2004, York UPG manufacturing. The style-2 note's warning not to carry K=September into style 1 is moot: this chart also maps K to September.",
+          "pattern": "^[A-Z]\\d[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          },
+          "yearFloor": 2004
+        },
         {
           "era": "Prior to October 2004 (4-letter system)",
           "examples": [
@@ -7380,7 +8006,7 @@
               "N": 12
             }
           },
-          "notes": "TEXT-SOURCED (Phase 2b, not Coleman-page image-verified): tables from York-family text decoders (PickHVAC, InterNACHI, Coleman decoder PDF), all agreeing, and identical to the shipped York style-2 tables; example serial is the Coleman page's own example. Month is 2nd letter, year is 3rd letter; I, O, Q, U, Z not used. Year codes repeat on a 21-year cycle, hence dual candidates. N=2004 is January-September 2004 only (post-2004 system from October 2004) \u2014 recorded here, not expressible in the table. K=September here is the OLD-system value and must not be carried into post-2004 style 1. Building Center chart image read still open for image confirmation.",
+          "notes": "IMAGE-CONFIRMED (image-pass Nov 8): Coleman's own style-2 chart matches these tables exactly (same sample WAKM011379, same dual-candidate year table, same month table). Month is 2nd letter, year is 3rd letter; I, O, Q, U, Z not used. Year codes repeat on a 21-year cycle, hence dual candidates. N=2004 is January-September 2004 only (post-2004 system from October 2004) -- recorded here, not expressible in the table. The style-1 chart also maps K to September, so the old warning against carrying K=September into style 1 is moot.",
           "pattern": "^[A-Z]{4}\\d{6}$",
           "week": null,
           "year": {
@@ -7932,7 +8558,7 @@
         "GmC"
       ],
       "brand": "Goodman",
-      "notes": "Style 1 is the 10-digit numeric system (fully validated). Style 2 (select PTAC systems manufactured for Goodman by Daikin Industries, serials ending in P or D, ended shortly after the 2012 Daikin acquisition) is NOT encoded: the page documents its letter positions (year = 3rd position / 2nd letter, month = 2nd position / 1st letter) and its example serial 5FU5472618P, but gives no letter-to-year or letter-to-month mapping in retrievable text and no stated decode for that example, so no Style 2 table is shipped rather than guessed. Amana is a related brand but its page states no serial system, so it is not listed as a sister sharing this system and has no file (documented gap). The style list variant 9704 011000 shares Style 1's YYMM prefix but has no separately stated decode, so it is not added as an example.",
+      "notes": "Style 1 is the 10-digit numeric system (fully validated). Style 2 (select PTAC systems manufactured for Goodman by Daikin Industries, serials ending in P or D, ended shortly after the 2012 Daikin acquisition) is chart-verified and shipped (image-pass Nov 8): the chart gives the full month and year letter tables, and the example serial 5FU5472618P decodes as June 2008. Amana is a related brand but its page states no serial system, so it is not listed as a sister sharing this system and has no file (documented gap). The style list variant 9704 011000 shares Style 1's YYMM prefix but has no separately stated decode, so it is not added as an example.",
       "parent": "Daikin Group",
       "sisters": [
         "Janitrol"
@@ -7968,6 +8594,74 @@
             ]
           },
           "yearFloor": 1960
+        },
+        {
+          "era": "Select PTAC systems manufactured for Goodman by Daikin Industries (serials ending in P or D)",
+          "examples": [
+            {
+              "expectedMonth": 6,
+              "expectedYear": 2008,
+              "serial": "5FU5472618P"
+            }
+          ],
+          "id": "style-2",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): 1st character is the factory code (single example '5'; the pattern uses a digit class because only a digit is evidenced), 2nd character is the month letter, 3rd character is the year letter. Month and year letters skip I and O. PTAC units only; ended shortly after the 2012 Daikin acquisition.",
+          "pattern": "^\\d[A-Z]{2}\\d{7}[PD]$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1990,
+              "B": 1991,
+              "C": 1992,
+              "D": 1993,
+              "E": 1994,
+              "F": 1995,
+              "G": 1996,
+              "H": 1997,
+              "J": 1998,
+              "K": 1999,
+              "L": 2000,
+              "M": 2001,
+              "N": 2002,
+              "P": 2003,
+              "Q": 2004,
+              "R": 2005,
+              "S": 2006,
+              "T": 2007,
+              "U": 2008,
+              "V": 2009,
+              "W": 2010,
+              "X": 2011,
+              "Y": 2012,
+              "Z": 2013
+            }
+          }
         }
       ]
     },
@@ -8945,6 +9639,75 @@
             ]
           },
           "yearFloor": 1960
+        },
+        {
+          "era": "Select PTAC systems manufactured for Goodman by Daikin Industries (serials ending in P or D)",
+          "examples": [
+            {
+              "expectedMonth": 6,
+              "expectedYear": 2008,
+              "serial": "5FU5472618P"
+            }
+          ],
+          "id": "style-2",
+          "inheritedFrom": "goodman",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): 1st character is the factory code (single example '5'; the pattern uses a digit class because only a digit is evidenced), 2nd character is the month letter, 3rd character is the year letter. Month and year letters skip I and O. PTAC units only; ended shortly after the 2012 Daikin acquisition.",
+          "pattern": "^\\d[A-Z]{2}\\d{7}[PD]$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1990,
+              "B": 1991,
+              "C": 1992,
+              "D": 1993,
+              "E": 1994,
+              "F": 1995,
+              "G": 1996,
+              "H": 1997,
+              "J": 1998,
+              "K": 1999,
+              "L": 2000,
+              "M": 2001,
+              "N": 2002,
+              "P": 2003,
+              "Q": 2004,
+              "R": 2005,
+              "S": 2006,
+              "T": 2007,
+              "U": 2008,
+              "V": 2009,
+              "W": 2010,
+              "X": 2011,
+              "Y": 2012,
+              "Z": 2013
+            }
+          }
         }
       ]
     },
@@ -8991,7 +9754,7 @@
     "keeprite": {
       "aliases": null,
       "brand": "Keeprite",
-      "notes": "ICP system. Styles 1-3 are identical to Tempstar styles 1-3 in example serials, shapes, and positions. NOT usesStylesOf Tempstar because Tempstar lists an additional style 6 that the Keeprite page does not list; verbatim reuse would add an unverified style to Keeprite. HELD GAPS \u2014 style 4 (8-digit numeric, year = 1st digit, week = 2nd-3rd digits): format example only, year mapping chart-image-only; style 5 (letter-digit-letter prefix, year = 3rd letter): placeholder only, year-letter chart image-only, tail shape undocumented. Neither is shipped rather than guessed.",
+      "notes": "ICP system. Styles 1-3 are identical to Tempstar styles 1-3 in example serials, shapes, and positions. NOT usesStylesOf Tempstar because Tempstar lists an additional style 6 that the Keeprite page does not list; verbatim reuse would add an unverified style to Keeprite. Styles 4-5 are chart-verified and shipped (image-pass Nov 8): style 4 from the 8-digit chart (dual-candidate years), style 5 from the year-letter chart; same tail caveat as Tempstar (see style notes). Keeprite's charts are identical in content to Tempstar's.",
       "parent": "ICP",
       "sisters": [
         "Tempstar"
@@ -9081,6 +9844,109 @@
               0,
               2
             ]
+          }
+        },
+        {
+          "era": "1980-1993, 8-digit numeric serials",
+          "examples": [
+            {
+              "expectedWeek": 5,
+              "expectedYear": [
+                1983,
+                1993
+              ],
+              "serial": "30512345"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, week is the 2nd-3rd digits. The chart itself states the unit was manufactured in the 5th week of either 1983/1993, so the year is an explicit dual candidate, not a guess. Era 1980-1993 is chart-stated. Keeprite's chart is identical in content to Tempstar's.",
+          "pattern": "^\\d{8}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "0": [
+                1980,
+                1990
+              ],
+              "1": [
+                1981,
+                1991
+              ],
+              "2": [
+                1982,
+                1992
+              ],
+              "3": [
+                1983,
+                1993
+              ],
+              "4": 1984,
+              "5": 1985,
+              "6": 1986,
+              "7": 1987,
+              "8": 1988,
+              "9": 1989
+            }
+          }
+        },
+        {
+          "era": "1970-1994, letter-digit-letter prefix + 5-character tail",
+          "examples": [
+            {
+              "expectedYear": 1977,
+              "serial": "Z3ZXXXXX"
+            }
+          ],
+          "id": "style-5",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 3rd character. The page shows only the placeholder sample Z3Z xxxxx, used here as the example (the page's own placeholder, not an invented serial). The 5-character tail is shown only as undifferentiated XXXXX on the chart; the pattern uses [A-Z0-9]{5} because no tail shape is evidenced (digit-only would be an unevidenced narrowing). Year letters skip I. Era 1970-1994 is chart-stated. Keeprite's chart is identical in content to Tempstar's.",
+          "pattern": "^[A-Z]\\d[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1978,
+              "B": 1979,
+              "C": 1980,
+              "D": 1981,
+              "E": 1982,
+              "F": 1983,
+              "G": 1984,
+              "H": 1985,
+              "J": 1986,
+              "K": 1987,
+              "L": 1988,
+              "M": 1989,
+              "N": 1990,
+              "O": 1991,
+              "P": 1992,
+              "Q": 1993,
+              "R": 1994,
+              "S": 1970,
+              "T": 1971,
+              "U": 1972,
+              "V": 1973,
+              "W": 1974,
+              "X": 1975,
+              "Y": 1976,
+              "Z": 1977
+            }
           }
         }
       ]
@@ -10449,7 +11315,7 @@
     "luxaire": {
       "aliases": null,
       "brand": "Luxaire",
-      "notes": "Luxaire does NOT use usesStylesOf york: it has extra numeric and 2-letter styles, and its style-1 month table conflicts with York's for September-December (see held-style note). SHIPPED IN PHASE 2b: style-4 (4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) via the dual-candidate schema extension; TEXT-SOURCED (see style-4 notes), Building Center chart image read still open. STILL HELD: style-1 (10-character serials, sample W0K5896070) \u2014 the split-year schema blocker is gone in Phase 2b, but the MONTH-TABLE CONFLICT blocks it: Luxaire's own style-1 chart maps K to October (J September, L November, M December, no N), while the York and Coleman charts map the same sample serial's K to September (K September, L October, M November, N December) \u2014 the same serial decodes to September 2005 on York/Coleman but October 2005 on Luxaire, and only a real data-plate/chart read can settle it, so Luxaire's table must not be overwritten with York's on suspicion. Style-4's month table (K September) also contradicts Luxaire's own style-1 table (K October); the plausible reading is two different systems' tables, not one contradiction \u2014 but style 1 itself stays held. Style-5 (2 letters + 6-digit sequence, sample HM409295 = August 1982 or 2003) is likewise held: no text table found for this 2-letter system and it must not be assumed identical to style 4's tables. Style-6 (11-digit numeric, year/month stated Unknown on the page) is intentionally omitted: no year can be extracted from it, and the page only gives a 1965-1981 company-name window and a contact-the-manufacturer instruction. Luxaire page last updated 2016, older than the York (2024) and Coleman (2023) pages.",
+      "notes": "Luxaire does NOT use usesStylesOf york: it has extra numeric and 2-letter styles, and its style-1 month table conflicts with York's for September-December (see style-1 notes). SHIPPED IN PHASE 2b: style-4 (4 letters + 6-digit sequence, sample WAKM011379 = January 1980 or 2001) via the dual-candidate schema extension; now IMAGE-CONFIRMED (image-pass Nov 8, see style-4 notes). Style-1 (10-character serials, sample W0K5896070 = October 2005) is chart-verified and shipped (image-pass Nov 8) from Luxaire's own chart: the K-month conflict is real, chart-vs-chart -- Luxaire's chart maps K to October while York's and Coleman's map the same serial's K to September; each brand file follows its own chart, and Luxaire's table is not overwritten with York's. Style-4's month table (K September) and style-1's table (K October) are two different systems' tables, not one contradiction. Style-5 (2 letters + 6-digit sequence, sample HM409295 = August 1982 or 2003) is chart-verified and shipped (image-pass Nov 8); its tables are identical to style-4's, as the chart itself shows. Style-6 (11-digit numeric, year/month stated Unknown on the page) is intentionally omitted: no year can be extracted from it, and the page only gives a 1965-1981 company-name window and a contact-the-manufacturer instruction. Luxaire page last updated 2016, older than the York (2024) and Coleman (2023) pages.",
       "parent": "York",
       "sisters": [
         "York"
@@ -10457,6 +11323,55 @@
       "slug": "luxaire",
       "sourceUrl": "https://www.building-center.org/luxaire-hvac-age/",
       "styles": [
+        {
+          "era": "Since October 2004 (10-character serials)",
+          "examples": [
+            {
+              "expectedMonth": 10,
+              "expectedYear": 2005,
+              "serial": "W0K5896070"
+            }
+          ],
+          "id": "style-1",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): 2nd and 4th digits combine for the year ('0'+'5'='05' = 2005), 3rd character is the month letter. Luxaire's own chart maps K to October (J September, L November, M December, no N) -- a genuine chart-vs-chart conflict with York/Coleman, which map the same sample serial's K to September; each brand file follows its own chart. yearFloor 2004 is per the York chart's October 2004 start (the Luxaire page states no era); cited, not assumed from Luxaire text.",
+          "pattern": "^[A-Z]\\d[A-Z]\\d{7}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                4
+              ]
+            ]
+          },
+          "yearFloor": 2004
+        },
         {
           "era": "8-digit numeric serials (no era dates stated on Luxaire page)",
           "examples": [
@@ -10547,7 +11462,7 @@
               "N": 12
             }
           },
-          "notes": "TEXT-SOURCED (Phase 2b, not Luxaire-page image-verified): same 4-letter system as Coleman style-2 and York style-2; tables from York-family text decoders, all agreeing; example serial is the Luxaire page's own example. Era '1971-September 2004' is sourced from the sister-system decoders, not from Luxaire page text (which states no era for style 4) \u2014 flagged, not hidden. N=2004 is January-September 2004 only. K=September here is the OLD-system value and must not be carried into post-2004 style 1. Building Center chart image read still open for image confirmation.",
+          "notes": "IMAGE-CONFIRMED (image-pass Nov 8): Luxaire's own style-4 chart matches these tables exactly (same sample WAKM011379, same dual-candidate year table, same month table). Era '1971-September 2004' is sourced from the sister-system decoders, not from Luxaire page text (which states no era for style 4) -- flagged, not hidden. N=2004 is January-September 2004 only. K=September is this system's own value; style-1's chart maps K to October, a different system on a different chart -- two systems' tables, not one contradiction.",
           "pattern": "^[A-Z]{4}\\d{6}$",
           "week": null,
           "year": {
@@ -10555,6 +11470,113 @@
             "positions": [
               2,
               3
+            ],
+            "table": {
+              "A": [
+                1971,
+                1992
+              ],
+              "B": [
+                1972,
+                1993
+              ],
+              "C": [
+                1973,
+                1994
+              ],
+              "D": [
+                1974,
+                1995
+              ],
+              "E": [
+                1975,
+                1996
+              ],
+              "F": [
+                1976,
+                1997
+              ],
+              "G": [
+                1977,
+                1998
+              ],
+              "H": [
+                1978,
+                1999
+              ],
+              "J": [
+                1979,
+                2000
+              ],
+              "K": [
+                1980,
+                2001
+              ],
+              "L": [
+                1981,
+                2002
+              ],
+              "M": [
+                1982,
+                2003
+              ],
+              "N": [
+                1983,
+                2004
+              ],
+              "P": 1984,
+              "R": 1985,
+              "S": 1986,
+              "T": 1987,
+              "V": 1988,
+              "W": 1989,
+              "X": 1990,
+              "Y": 1991
+            }
+          }
+        },
+        {
+          "era": "2 letters + 6-digit sequence",
+          "examples": [
+            {
+              "expectedMonth": 8,
+              "expectedYear": [
+                1982,
+                2003
+              ],
+              "serial": "HM409295"
+            }
+          ],
+          "id": "style-5",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "K": 9,
+              "L": 10,
+              "M": 11,
+              "N": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): month is the 1st letter, year is the 2nd letter. Both tables are identical to style-4's, as the chart itself shows -- the file note's caution against assuming identity is resolved in the affirmative by the chart.",
+          "pattern": "^[A-Z]{2}\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
             ],
             "table": {
               "A": [
@@ -12581,7 +13603,7 @@
     "payne": {
       "aliases": null,
       "brand": "Payne",
-      "notes": "BDP system. Styles 1-4 match Bryant styles 1-4 in shape, positions, era, and example serials (style 2, style 3 and style 4 examples are identical serials on both pages). Payne is NOT usesStylesOf Bryant because Payne style 5 differs from Bryant style 5 and Payne lists no Canada variant for style 3. Styles 3-4 letter/digit tables are transcribed from Bryant page text because Payne's own charts are image-only in text fetch; confirm against Payne chart images before treating those tables as Payne-page-confirmed. HELD GAP \u2014 style 5 (prior to 1970, 7-digit all-numeric, year = 1st digit): the page shows only the placeholder 6######, which is not a real serial, and the decade mapping lives only in the chart image; no style 5 is shipped rather than guessed. Carrier is a related brand but its page states no serial system, so it is not claimed as sharing this system.",
+      "notes": "BDP system. Styles 1-4 match Bryant styles 1-4 in shape, positions, era, and example serials (style 2, style 3 and style 4 examples are identical serials on both pages). Payne is NOT usesStylesOf Bryant because Payne style 5 differs from Bryant style 5 and Payne lists no Canada variant for style 3. Styles 3-4 tables are now Payne-page-confirmed (image-pass Nov 8): Payne's own charts match the Bryant-transcribed tables exactly. HELD GAP -- style 5 (prior to 1970, 7-digit all-numeric, year = 1st digit): the chart image was read (image-pass Nov 8) and contains NO digit-to-year mapping at all -- the sample is '6######' with '6' boxed as Year and the rest as Sequence, and the Quick Tip states Carrier used the sequence number to determine the year; no style 5 is shipped because no mapping exists anywhere on the page. Carrier is a related brand but its page states no serial system, so it is not claimed as sharing this system.",
       "parent": "Carrier Corporation",
       "sisters": [
         "Bryant"
@@ -12676,7 +13698,7 @@
               "Z": 12
             }
           },
-          "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
+          "notes": "Month is 1st position, year digit is 2nd position. Tables confirmed against Payne's own chart (image-pass Nov 8): identical to the Bryant-transcribed tables. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
           "pattern": "^[A-Z]\\d[A-Z]\\d{5}$",
           "week": null,
           "year": {
@@ -12725,7 +13747,7 @@
               "L": 12
             }
           },
-          "notes": "Month is 1st position, year digit is 2nd position. Tables transcribed from Bryant page text for the identical BDP system; Payne's own chart is image-only in text fetch. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
+          "notes": "Month is 1st position, year digit is 2nd position. Tables confirmed against Payne's own chart (image-pass Nov 8): identical to the Bryant-transcribed tables. Year uses a digit-keyed table because the schema digits kind cannot express a 1-character year.",
           "pattern": "^[A-Z]\\d{6}$",
           "week": null,
           "year": {
@@ -13937,7 +14959,7 @@
     "reznor": {
       "aliases": null,
       "brand": "Reznor",
-      "notes": "PARTIAL YEAR TABLE for style-1, EXTENDED IN PHASE 2b (TEXT-SOURCED): year codes 1995-2029 from Reznor date-code tables in manufacturer documentation (Reznor parts-manual mirror, LDAP manual, date-code chart PDF), three sources agreeing on the sequential pattern (first two letters advance one step per year; third letter A-L is the month, already shipped); BK=2011 matches the Building Center page example. New examples use serials quoted in the source documents themselves, not invented: BLL00000X (manualsdir decoding example, BLL = December 2012) and BOG30600000 (parts-guide sample, BOG = July 2015). Two secondary copies contain obvious typos disregarded here (one duplicates the 2015 BO row for 2017; one prints 'BFID'/'Bill' for 2008 rows; one prints 'BIB' for a 2020 row) \u2014 the pattern itself is unaffected. NOT INCLUDED: codes before 1995. Found tables start at 1995 and the Building Center 1949-2029 tables remain unread via text fetch (chart image read still open); extending the sequence backwards arithmetically (1994=AT, ...) is unsourced arithmetic, not a fact, and the pre-1975 code form is unknown (the sequence cannot go below AA in the same form). Pre-1995 stays held pending the browser read. The 2-letter key is the ratified string-keyed table kind (Phase 2b schema). The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
+      "notes": "YEAR TABLE for style-1: year codes 1995-2029 from Reznor date-code tables in manufacturer documentation (Reznor parts-manual mirror, LDAP manual, date-code chart PDF), three sources agreeing on the sequential pattern (first two letters advance one step per year; third letter A-L is the month, already shipped); BK=2011 matches the Building Center page example. EXTENDED (image-pass Nov 8) to 1975-1994 from the Building Center 1949-1989 and 1990-2029 year charts, read cell-for-cell. New examples use serials quoted in the source documents themselves, not invented: BLL00000X (manualsdir decoding example, BLL = December 2012) and BOG30600000 (parts-guide sample, BOG = July 2015). Two secondary copies contain obvious typos disregarded here (one duplicates the 2015 BO row for 2017; one prints 'BFID'/'Bill' for 2008 rows; one prints 'BIB' for a 2020 row) \u2014 the pattern itself is unaffected. NOT INCLUDED: single-letter codes A-Z for 1949-1974 -- chart-verified but held for lack of a real example serial (the schema forbids invented examples). The 2-letter key is the ratified string-keyed table kind (Phase 2b schema). The 2-letter-prefix variant (1-letter year code, per the page tip) is not encoded at all: no year table and no disambiguation rule for it appear in the fetched content, and such serials do not match the style-1 pattern, so they return cannot-determine. Page last updated 2016; parent is as stated on the page.",
       "parent": "Thomas & Betts Corporation",
       "sisters": null,
       "slug": "reznor",
@@ -13993,6 +15015,26 @@
               2
             ],
             "table": {
+              "AA": 1975,
+              "AB": 1976,
+              "AC": 1977,
+              "AD": 1978,
+              "AE": 1979,
+              "AF": 1980,
+              "AG": 1981,
+              "AH": 1982,
+              "AI": 1983,
+              "AJ": 1984,
+              "AK": 1985,
+              "AL": 1986,
+              "AM": 1987,
+              "AN": 1988,
+              "AO": 1989,
+              "AP": 1990,
+              "AQ": 1991,
+              "AR": 1992,
+              "AS": 1993,
+              "AT": 1994,
               "AU": 1995,
               "AV": 1996,
               "AW": 1997,
@@ -15513,7 +16555,7 @@
     "tempstar": {
       "aliases": null,
       "brand": "Tempstar",
-      "notes": "ICP system. Sister Keeprite shares styles 1-5 with identical examples and positions, but Keeprite lists no style 6, so no verbatim reuse is claimed in either direction. Style 2 is the same system as style 1 with a printed MFG date on the tag. HELD GAPS \u2014 style 4 (8-digit numeric, year = 1st digit, week = 2nd-3rd digits): the format example 30512345 has no stated decode and its year-digit mapping is chart-image-only; styles 5 (letter-digit-letter prefix, year = 3rd letter) and 6 (two-letter prefix, year = 2nd letter): the page shows only placeholders Z3Zxxxxx / ZZxxxxx and the year-letter charts are image-only, and the xxxxx tail shapes are undocumented. None of styles 4-6 is shipped rather than guessed.",
+      "notes": "ICP system. Sister Keeprite shares styles 1-5 with identical examples and positions, but Keeprite lists no style 6, so no verbatim reuse is claimed in either direction. Style 2 is the same system as style 1 with a printed MFG date on the tag. Styles 4-6 are chart-verified and shipped (image-pass Nov 8): style 4 from the 8-digit chart (dual-candidate years), styles 5-6 from the year-letter chart; the tail shape remains [A-Z0-9]{5} because the chart shows only undifferentiated XXXXX (see style notes).",
       "parent": "ICP",
       "sisters": [
         "Keeprite"
@@ -15603,6 +16645,157 @@
               0,
               2
             ]
+          }
+        },
+        {
+          "era": "1980-1993, 8-digit numeric serials",
+          "examples": [
+            {
+              "expectedWeek": 5,
+              "expectedYear": [
+                1983,
+                1993
+              ],
+              "serial": "30512345"
+            }
+          ],
+          "id": "style-4",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, week is the 2nd-3rd digits. The chart itself states the unit was manufactured in the 5th week of either 1983/1993, so the year is an explicit dual candidate, not a guess. Era 1980-1993 is chart-stated.",
+          "pattern": "^\\d{8}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "0": [
+                1980,
+                1990
+              ],
+              "1": [
+                1981,
+                1991
+              ],
+              "2": [
+                1982,
+                1992
+              ],
+              "3": [
+                1983,
+                1993
+              ],
+              "4": 1984,
+              "5": 1985,
+              "6": 1986,
+              "7": 1987,
+              "8": 1988,
+              "9": 1989
+            }
+          }
+        },
+        {
+          "era": "1970-1994, letter-digit-letter prefix + 5-character tail",
+          "examples": [
+            {
+              "expectedYear": 1977,
+              "serial": "Z3ZXXXXX"
+            }
+          ],
+          "id": "style-5",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the 3rd character. The page shows only the placeholder sample Z3Z xxxxx, used here as the example (the page's own placeholder, not an invented serial). The 5-character tail is shown only as undifferentiated XXXXX on the chart; the pattern uses [A-Z0-9]{5} because no tail shape is evidenced (digit-only would be an unevidenced narrowing). Year letters skip I. Era 1970-1994 is chart-stated.",
+          "pattern": "^[A-Z]\\d[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              2,
+              3
+            ],
+            "table": {
+              "A": 1978,
+              "B": 1979,
+              "C": 1980,
+              "D": 1981,
+              "E": 1982,
+              "F": 1983,
+              "G": 1984,
+              "H": 1985,
+              "J": 1986,
+              "K": 1987,
+              "L": 1988,
+              "M": 1989,
+              "N": 1990,
+              "O": 1991,
+              "P": 1992,
+              "Q": 1993,
+              "R": 1994,
+              "S": 1970,
+              "T": 1971,
+              "U": 1972,
+              "V": 1973,
+              "W": 1974,
+              "X": 1975,
+              "Y": 1976,
+              "Z": 1977
+            }
+          }
+        },
+        {
+          "era": "1970-1994, two-letter prefix + 5-character tail",
+          "examples": [
+            {
+              "expectedYear": 1977,
+              "serial": "ZZXXXXX"
+            }
+          ],
+          "id": "style-6",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): same year table as style 5; year is the 2nd character (the digit separating the two letters in style 5 is not present here). Example is the page's own placeholder sample. Same tail caveat as style 5. Era 1970-1994 is chart-stated.",
+          "pattern": "^[A-Z]{2}[A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1978,
+              "B": 1979,
+              "C": 1980,
+              "D": 1981,
+              "E": 1982,
+              "F": 1983,
+              "G": 1984,
+              "H": 1985,
+              "J": 1986,
+              "K": 1987,
+              "L": 1988,
+              "M": 1989,
+              "N": 1990,
+              "O": 1991,
+              "P": 1992,
+              "Q": 1993,
+              "R": 1994,
+              "S": 1970,
+              "T": 1971,
+              "U": 1972,
+              "V": 1973,
+              "W": 1974,
+              "X": 1975,
+              "Y": 1976,
+              "Z": 1977
+            }
           }
         }
       ]
@@ -15874,7 +17067,7 @@
     "trane": {
       "aliases": null,
       "brand": "Trane",
-      "notes": "Multiple overlapping serial systems; the page advises using data-plate MFR date, ANSI standard date, condition and appearance to disambiguate overlapping styles. Page Style 1 (2002 onward) is documented as used under the Trane, American Standard, Ameristar and Ingersoll Rand names; the page also names GE among brands under which these styles appear. Known-context correction: the page documents the letter-year system from 1983 (not from 1987) through 2001, then the year-first digit system from 2002. Parent per the page header is Ingersoll Rand; the page history notes the 2020 rename to Trane Technologies. HELD, NOT SHIPPED: page Style 7 (8-character serials, documented serial F9190391 with no stated decode; year positions inferred only from similarity to page Style 3) and page Styles 4 (1981-1983, year letter in first or last position depending on product type, ambiguous letter wording), 5 (single-digit year + month letter with no table, decade ambiguous 1970s vs early 1980s), 6 (third-to-last letter year, last two digits week, 1980-1982, no L/M/N letter table), 8 (European; page states it cannot be decoded from any known chart).",
+      "notes": "Multiple overlapping serial systems; the page advises using data-plate MFR date, ANSI standard date, condition and appearance to disambiguate overlapping styles. Page Style 1 (2002 onward) is documented as used under the Trane, American Standard, Ameristar and Ingersoll Rand names; the page also names GE among brands under which these styles appear. Known-context correction: the page documents the letter-year system from 1983 (not from 1987) through 2001, then the year-first digit system from 2002. Parent per the page header is Ingersoll Rand; the page history notes the 2020 rename to Trane Technologies. SHIPPED (image-pass Nov 8): page Styles 4, 5, 6 and 7 (file styles 5-9). HELD, NOT SHIPPED: page Style 8 (European; page states it cannot be decoded from any known chart).",
       "parent": "Ingersoll Rand",
       "sisters": [
         "American Standard",
@@ -15884,6 +17077,64 @@
       "slug": "trane",
       "sourceUrl": "https://www.building-center.org/trane-hvac-age/",
       "styles": [
+        {
+          "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+          "examples": [
+            {
+              "expectedYear": 1981,
+              "serial": "B123456"
+            }
+          ],
+          "id": "style-5",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): the year letter may occur at the beginning or the end of the serial; this is the letter-first form. Table: A or O = 1980, B or T = 1981, C or U = 1982. The image says 1980-1982; the page text says 1981-1983 -- the chart table governs. ORDERING: these two exact 7-character styles sit first in the file, ahead of the open-ended digit-led style-2, so a 7-character digit-led serial with a trailing letter decodes as this 1980-1982 system rather than as a 2010+ digit-led serial; a 2010+ serial in exactly this shape would decode here instead, a documented page ambiguity the data plate must disambiguate.",
+          "pattern": "^[A-Z]\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
+        {
+          "era": "1980-1982, 7-character serials with year letter first or last (page Style 4)",
+          "examples": [
+            {
+              "expectedYear": 1981,
+              "serial": "123456T"
+            }
+          ],
+          "id": "style-6",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): letter-last form of page Style 4. See style-5 notes for the table and the ordering rationale.",
+          "pattern": "^\\d{6}[A-Z]$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              6,
+              7
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
         {
           "era": "2010-present, digit-led serials (page Style 1, later form)",
           "examples": [
@@ -15981,7 +17232,7 @@
           ],
           "id": "style-3",
           "month": null,
-          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. DISCREPANCY FLAGGED: page text says letters A, I, L, O and Q were not used, yet the standard chart reading (corroborated by three independent sources) gives L = 1996; L = 1996 is included pending visual chart verification. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
+          "notes": "Letter table: the page's chart is an image that text fetch cannot OCR. Anchors confirmed in page text: S = 1986, Z = 2001, F = 1991 (page example F23456789, 23rd week of 1991), C = 1988 (page example C01D47415, 1st week of 1988); header examples are consistent with R = 2000 and M = 1997. Remaining mappings corroborated by independent published Trane charts. CHART-VERIFIED (image-pass Nov 8): the page's own year chart lists L = 1996, so the page text's claim that A, I, L, O and Q were not used is wrong about L; A genuinely has no entry. L = 1996 stays. The page warns this style is easily confused with page styles 3, 4, 6 and 7.",
           "pattern": "^[A-Z][0-9]{2}[A-Z0-9]{6}$",
           "week": {
             "kind": "digits",
@@ -16023,14 +17274,169 @@
           "era": "1970s onward, factory letter + 2-digit year + month letter, 9 characters (page Style 3)",
           "examples": [
             {
+              "expectedMonth": 12,
               "expectedYear": 1992,
               "serial": "A92M07217"
             }
           ],
           "id": "style-4",
-          "month": null,
-          "notes": "Page states the 4th position encodes month but gives no letter-to-month table (the documented example's 4th character is M), so month is not encoded. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              3,
+              4
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): the page's chart supplies the month table (A January through M December, I skipped), so month is now encoded; the example decodes as December 1992. The page warns this style is easily confused with page Style 2; ordering (letter-year style tried first) plus week-range validation resolves most collisions, since a page-Style-3 serial whose factory letter is in the year table and whose year digits are 01-53 would otherwise decode as a letter-year serial.",
           "pattern": "^[A-Z][0-9]{2}[A-Z][A-Z0-9]{5}$",
+          "week": null,
+          "year": {
+            "kind": "digits",
+            "positions": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "era": "1971-1979, digit + month letter + 4 digits (page Style 5)",
+          "examples": [
+            {
+              "expectedMonth": 4,
+              "expectedYear": 1972,
+              "serial": "2D1234"
+            }
+          ],
+          "id": "style-7",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st digit, month is the 2nd letter. Single-digit year encoded as an explicit digit-keyed table because the schema digits kind cannot express a 1-character year slice; the chart bounds the era to 1971-1979. The page text mentions possible early-1980s reuse for limited products, but no mapping is given for it.",
+          "pattern": "^\\d[A-Z]\\d{4}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "1": 1971,
+              "2": 1972,
+              "3": 1973,
+              "4": 1974,
+              "5": 1975,
+              "6": 1976,
+              "7": 1977,
+              "8": 1978,
+              "9": 1979
+            }
+          }
+        },
+        {
+          "era": "1980s, letter + 6 digits + year letter + 2-digit week (page Style 6)",
+          "examples": [
+            {
+              "expectedWeek": 3,
+              "expectedYear": 1981,
+              "serial": "H011870M03"
+            }
+          ],
+          "id": "style-8",
+          "month": null,
+          "notes": "Chart-verified (image-pass Nov 8): year is the third-to-last character, week is the last two digits. The L/M/N letters the file note said were unmapped are in this chart (A, L, or O = 1980; B, M, or T = 1981; C, N, or U = 1982). NOTE: this 10-character pattern does not overlap shipped style-3's 9-character pattern, so no ordering trade-off applies; it sits after style-3 in file order.",
+          "pattern": "^[A-Z]\\d{6}[A-Z]\\d{2}$",
+          "week": {
+            "kind": "digits",
+            "positions": [
+              8,
+              10
+            ]
+          },
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              7,
+              8
+            ],
+            "table": {
+              "A": 1980,
+              "B": 1981,
+              "C": 1982,
+              "L": 1980,
+              "M": 1981,
+              "N": 1982,
+              "O": 1980,
+              "T": 1981,
+              "U": 1982
+            }
+          }
+        },
+        {
+          "era": "1970s into the 1990s, month letter + 2-digit year + 5 digits (page Style 7)",
+          "examples": [
+            {
+              "expectedMonth": 6,
+              "expectedYear": 1991,
+              "serial": "F9190391"
+            }
+          ],
+          "id": "style-9",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): month is the 1st letter, year is the 2nd-3rd digits. 'Generally used from the 70's into the 90's' per the page.",
+          "pattern": "^[A-Z]\\d{7}$",
           "week": null,
           "year": {
             "kind": "digits",
@@ -16687,7 +18093,7 @@
     "waterfurnace": {
       "aliases": null,
       "brand": "WaterFurnace",
-      "notes": "Independent subsidiary of NIBE (acquired 2014, per page history). Style 1 (Building Center Style 1) ships YEAR-ONLY: year positions are text-verified (2018), but its month is HELD by coordinator decision \u2014 the spaced example '18 0100228' yields October under normalized counting but January under space-counted positions, with no page-stated decode to falsify either; doubtful stays held, pending image-pass confirmation on WaterFurnace-HVAC-style-1.jpg. Style 2 (Building Center Style 2, 1985-2012) is HELD entirely: year (1st character) and month (2nd character) are chart-only. The shipped file style-2 is Building Center Style 3 (pre-1985), year-only: its month (1st character) is chart-only.",
+      "notes": "Independent subsidiary of NIBE (acquired 2014, per page history). Style 1 (Building Center Style 1) now ships with month (image-pass Nov 8): the chart image boxes '01' as MONTH, confirming January and falsifying the October reading. Style 2 (Building Center Style 2, 1985-2012) ships as new file style-3 (image-pass Nov 8), with the dual-candidate year table and the F=[1990,2015] era caveat recorded in its notes. The shipped file style-2 is Building Center Style 3 (pre-1985), which now also carries its month (image-pass Nov 8).",
       "parent": "NIBE",
       "sisters": null,
       "slug": "waterfurnace",
@@ -16697,13 +18103,20 @@
           "era": "Current as of at least 2012, 9-digit numeric serials (Building Center Style 1)",
           "examples": [
             {
+              "expectedMonth": 1,
               "expectedYear": 2018,
               "serial": "180100228"
             }
           ],
           "id": "style-1",
-          "month": null,
-          "notes": "Page positions 1-based: year = 1st & 2nd positions, month = 4th & 5th positions. COORDINATOR HOLD (supersedes slice report): month HELD, file ships year-only for this style. The page example is shown spaced as '18 0100228': normalized counting gives month '10' (October) but space-counted positions 4-5 give '01' (January), and no page-stated decode falsifies either reading, so the month is doubtful and stays held per program rule (image-pass check on WaterFurnace-HVAC-style-1.jpg may confirm the green month segment; if it shows '01', the hold stands, since the schema cannot express space-counted positions). Year is unaffected (2018 under both readings). Year value derived from the stated positions, not page-stated for this example.",
+          "month": {
+            "kind": "digits",
+            "positions": [
+              2,
+              4
+            ]
+          },
+          "notes": "Page positions 1-based: year = 1st & 2nd positions, month = 4th & 5th positions. MONTH CONFIRMED JANUARY (image-pass Nov 8): the style-1 chart image boxes '18' as YEAR and '01' as MONTH on serial 180100228, so the month is positions [2,4] = '01' = January; the October reading (normalized positions 4-5 = '10') is falsified by the image, which governs over the page text's space-counted positions. Year is 2018 under both readings. Year value derived from the stated positions, not page-stated for this example.",
           "pattern": "^\\d{9}$",
           "week": null,
           "year": {
@@ -16719,13 +18132,34 @@
           "era": "Used prior to 1985 (Building Center Style 3)",
           "examples": [
             {
+              "expectedMonth": 4,
               "expectedYear": 1983,
               "serial": "D8367019"
             }
           ],
           "id": "style-2",
-          "month": null,
-          "notes": "Page positions 1-based: year = 2nd & 3rd positions, month = 1st position (letter chart image WaterFurnace-HVAC-style-3.jpg only, held), so this style ships year-only. Year value derived from the stated positions, not page-stated for this example; 1983 is consistent with the pre-1985 era.",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Page positions 1-based: year = 2nd & 3rd positions, month = 1st position. MONTH ADDED (image-pass Nov 8): the style-3 chart image shows the month table (A January through M December, I skipped) and the example D8367019 decodes as April 1983. Year value derived from the stated positions, not page-stated for this example; 1983 is consistent with the pre-1985 era.",
           "pattern": "^[A-Z]\\d{7}$",
           "week": null,
           "year": {
@@ -16736,6 +18170,101 @@
             ]
           },
           "yearFloor": 1960
+        },
+        {
+          "era": "1985-2012 (Building Center Style 2)",
+          "examples": [
+            {
+              "expectedMonth": 9,
+              "expectedYear": 2004,
+              "serial": "UJ1087"
+            },
+            {
+              "expectedMonth": 9,
+              "expectedYear": [
+                1985,
+                2010
+              ],
+              "serial": "AJ1087"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              1,
+              2
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "J": 9,
+              "K": 10,
+              "L": 11,
+              "M": 12
+            }
+          },
+          "notes": "Chart-verified (image-pass Nov 8): year is the 1st letter, month is the 2nd letter. Year letters A-F are dual-candidate (1985/2010 through 1989/2014); G-Z are single years 1991-2009. CAVEAT: F maps to 1990 or 2015, which puts 2015 outside the stated 1985-2012 usage era; the chart is explicit, flagged not hidden. Month letters skip I.",
+          "pattern": "^[A-Z]{2}\\d{4}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              0,
+              1
+            ],
+            "table": {
+              "A": [
+                1985,
+                2010
+              ],
+              "B": [
+                1986,
+                2011
+              ],
+              "C": [
+                1987,
+                2012
+              ],
+              "D": [
+                1988,
+                2013
+              ],
+              "E": [
+                1989,
+                2014
+              ],
+              "F": [
+                1990,
+                2015
+              ],
+              "G": 1991,
+              "H": 1992,
+              "J": 1993,
+              "K": 1994,
+              "L": 1995,
+              "M": 1996,
+              "N": 1997,
+              "O": 1998,
+              "P": 1999,
+              "Q": 2000,
+              "R": 2001,
+              "S": 2002,
+              "T": 2003,
+              "U": 2004,
+              "V": 2005,
+              "W": 2006,
+              "X": 2007,
+              "Y": 2008,
+              "Z": 2009
+            }
+          }
         }
       ]
     },
@@ -17252,7 +18781,7 @@
     "york": {
       "aliases": null,
       "brand": "York",
-      "notes": "Style-1 year uses split-year extraction as an ordered list of half-open ranges [[1,2],[3,4]] whose sliced digits concatenate ('0'+'5'='05') before the century rule; style-2 year uses a dual-candidate letter table whose values are either a single full year (exactly one year) or a two-element candidate list (21-year cycle, both years, never a guessed pick). MONTH CONFLICT RESOLVED FOR YORK: both York charts (style 1 and style 2) map K to September, agreeing with Coleman and with Luxaire's style-4 table; Luxaire's own style-1 chart (K October) remains the sole outlier and is a Luxaire-internal inconsistency, not a York question \u2014 York's decode of W0K5896070 is September 2005. No usesStylesOf: York's two styles are defined here in full; Coleman and Luxaire share these two systems (same sample serials, same tables, same October 2004 boundary) but each carries additional numeric styles, so reuse would be wrong in both directions. Parent note: the page names Johnson Controls International as parent and records Bosch's July 2024 agreement to buy the residential/light-commercial HVAC business (sale slated within ~12 months); completion status is not verified on this page (last updated 12/26/2024), so the parent field keeps Johnson Controls International. Quirk: the style-2 data-plate image header reads 'Style 4 Data Plate' although the page text numbers this system Style 2; the plate serial is the same WAKM011379, so this is a legacy image label, not a third style. PARENTHETICAL-PREFIX EDGE, NOT ENCODED: the page cautions that some serials of this style begin with a letter in parentheses, e.g. (S)EBHM062202, meaning 'ignore the first letter in parenthesis' (decodes as EBHM062202: February, 1978 or 1999); the locked normalization strips spaces/dashes only, so that literal input would not match this pattern \u2014 left in notes only, deliberately not a formal example, so the builder's every-example-must-decode rule is not broken.",
+      "notes": "Style-1 year uses split-year extraction as an ordered list of half-open ranges [[1,2],[3,4]] whose sliced digits concatenate ('0'+'5'='05') before the century rule; style-2 year uses a dual-candidate letter table whose values are either a single full year (exactly one year) or a two-element candidate list (21-year cycle, both years, never a guessed pick). MONTH CONFLICT RESOLVED FOR YORK: both York charts (style 1 and style 2) map K to September, agreeing with Coleman and with Luxaire's style-4 table; Luxaire's own style-1 chart (K October) remains the sole outlier and is a Luxaire-internal inconsistency, not a York question \u2014 York's decode of W0K5896070 is September 2005. No usesStylesOf: York's two styles are defined here in full; Coleman and Luxaire share these two systems (same sample serials, same tables, same October 2004 boundary) but each carries additional numeric styles, so reuse would be wrong in both directions. Parent note: the page names Johnson Controls International as parent and records Bosch's July 2024 agreement to buy the residential/light-commercial HVAC business (sale slated within ~12 months); completion status is not verified on this page (last updated 12/26/2024), so the parent field keeps Johnson Controls International. Quirk: the style-2 data-plate image header reads 'Style 4 Data Plate' although the page text numbers this system Style 2; the plate serial is the same WAKM011379, so this is a legacy image label, not a third style. PARENTHETICAL-PREFIX EDGE, ENCODED as style-3 (image-pass Nov 8, coordinator ruling): the page cautions that some serials of this style begin with a letter in parentheses, e.g. (S)EBHM062202, meaning 'ignore the first letter in parenthesis' (decodes as EBHM062202: February, 1978 or 1999); the locked normalization strips spaces/dashes only, so the parentheses survive and the literal-parenthesis pattern matches. See style-3 notes.",
       "parent": "Johnson Controls International",
       "sisters": [
         "Coleman",
@@ -17352,6 +18881,113 @@
             "positions": [
               2,
               3
+            ],
+            "table": {
+              "A": [
+                1971,
+                1992
+              ],
+              "B": [
+                1972,
+                1993
+              ],
+              "C": [
+                1973,
+                1994
+              ],
+              "D": [
+                1974,
+                1995
+              ],
+              "E": [
+                1975,
+                1996
+              ],
+              "F": [
+                1976,
+                1997
+              ],
+              "G": [
+                1977,
+                1998
+              ],
+              "H": [
+                1978,
+                1999
+              ],
+              "J": [
+                1979,
+                2000
+              ],
+              "K": [
+                1980,
+                2001
+              ],
+              "L": [
+                1981,
+                2002
+              ],
+              "M": [
+                1982,
+                2003
+              ],
+              "N": [
+                1983,
+                2004
+              ],
+              "P": 1984,
+              "R": 1985,
+              "S": 1986,
+              "T": 1987,
+              "V": 1988,
+              "W": 1989,
+              "X": 1990,
+              "Y": 1991
+            }
+          }
+        },
+        {
+          "era": "1971 to October 2004, parenthetical-prefix variant of style-2",
+          "examples": [
+            {
+              "expectedMonth": 2,
+              "expectedYear": [
+                1978,
+                1999
+              ],
+              "serial": "(S)EBHM062202"
+            }
+          ],
+          "id": "style-3",
+          "month": {
+            "kind": "letterTable",
+            "positions": [
+              4,
+              5
+            ],
+            "table": {
+              "A": 1,
+              "B": 2,
+              "C": 3,
+              "D": 4,
+              "E": 5,
+              "F": 6,
+              "G": 7,
+              "H": 8,
+              "K": 9,
+              "L": 10,
+              "M": 11,
+              "N": 12
+            }
+          },
+          "notes": "COORDINATOR RULING (image-pass Nov 8): the page cautions that some serials of this style begin with a letter in parentheses, e.g. (S)EBHM062202, meaning 'ignore the first letter in parenthesis'. The locked normalization strips spaces/dashes only, so the parentheses survive and this literal-parenthesis pattern matches; the pattern consumes the parenthetical letter and decodes the rest as style-2 (February, 1978 or 1999). If normalization ever stripped parentheses, this pattern could never match -- the ruling rests on the locked normalization.",
+          "pattern": "^\\([A-Z]\\)[A-Z]{4}\\d{6}$",
+          "week": null,
+          "year": {
+            "kind": "letterTable",
+            "positions": [
+              5,
+              6
             ],
             "table": {
               "A": [
